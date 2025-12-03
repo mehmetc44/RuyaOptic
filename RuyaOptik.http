@@ -1,6 +1,0 @@
-@RuyaOptik_HostAddress = http://localhost:5084
-
-GET {{RuyaOptik_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

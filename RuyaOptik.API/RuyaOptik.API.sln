@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuyaOptik.API", "RuyaOptik.API.csproj", "{47E217CD-D1BF-4AED-A191-143FF9A8F736}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuyaOptik.Entity", "..\RuyaOptik.Entity\RuyaOptik.Entity.csproj", "{620F066A-60E1-429D-A5A9-45C1C6AFC85C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuyaOptik.DataAccess", "..\RuyaOptik.DataAccess\RuyaOptik.DataAccess.csproj", "{CF2B7EF2-ABF8-4346-9C03-2B043D4FE368}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuyaOptik.Business", "..\RuyaOptik.Business\RuyaOptik.Business.csproj", "{23C657C4-3B84-4FA0-945D-2A8F93A811B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuyaOptik.DTO", "..\RuyaOptik.DTO\RuyaOptik.DTO.csproj", "{2B621A7C-E60E-47FC-8050-4A4318FCDF99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47E217CD-D1BF-4AED-A191-143FF9A8F736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47E217CD-D1BF-4AED-A191-143FF9A8F736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47E217CD-D1BF-4AED-A191-143FF9A8F736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47E217CD-D1BF-4AED-A191-143FF9A8F736}.Release|Any CPU.Build.0 = Release|Any CPU
+		{620F066A-60E1-429D-A5A9-45C1C6AFC85C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{620F066A-60E1-429D-A5A9-45C1C6AFC85C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{620F066A-60E1-429D-A5A9-45C1C6AFC85C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{620F066A-60E1-429D-A5A9-45C1C6AFC85C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF2B7EF2-ABF8-4346-9C03-2B043D4FE368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF2B7EF2-ABF8-4346-9C03-2B043D4FE368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF2B7EF2-ABF8-4346-9C03-2B043D4FE368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF2B7EF2-ABF8-4346-9C03-2B043D4FE368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23C657C4-3B84-4FA0-945D-2A8F93A811B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23C657C4-3B84-4FA0-945D-2A8F93A811B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23C657C4-3B84-4FA0-945D-2A8F93A811B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23C657C4-3B84-4FA0-945D-2A8F93A811B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B621A7C-E60E-47FC-8050-4A4318FCDF99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B621A7C-E60E-47FC-8050-4A4318FCDF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B621A7C-E60E-47FC-8050-4A4318FCDF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B621A7C-E60E-47FC-8050-4A4318FCDF99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B54D129B-EAEC-41C5-85F8-CFEDE705903C}
+	EndGlobalSection
+EndGlobal
