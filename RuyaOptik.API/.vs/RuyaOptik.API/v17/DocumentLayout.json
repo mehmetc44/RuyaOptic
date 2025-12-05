@@ -1,12 +1,216 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{47E217CD-D1BF-4AED-A191-143FF9A8F736}|RuyaOptik.API.csproj|c:\\users\\mehmet \u00E7akmak\\desktop\\ruyaoptik\\ruyaoptik.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{47E217CD-D1BF-4AED-A191-143FF9A8F736}|RuyaOptik.API.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2B7EF2-ABF8-4346-9C03-2B043D4FE368}|..\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj|c:\\users\\mehmet \u00E7akmak\\desktop\\ruyaoptik\\ruyaoptik.dataaccess\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2B7EF2-ABF8-4346-9C03-2B043D4FE368}|..\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj|c:\\users\\mehmet \u00E7akmak\\desktop\\ruyaoptik\\ruyaoptik.dataaccess\\migrations\\20251205181131_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2B7EF2-ABF8-4346-9C03-2B043D4FE368}|..\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj|c:\\users\\mehmet \u00E7akmak\\desktop\\ruyaoptik\\ruyaoptik.dataaccess\\context\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47E217CD-D1BF-4AED-A191-143FF9A8F736}|RuyaOptik.API.csproj|c:\\users\\mehmet \u00E7akmak\\desktop\\ruyaoptik\\ruyaoptik.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{47E217CD-D1BF-4AED-A191-143FF9A8F736}|RuyaOptik.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47E217CD-D1BF-4AED-A191-143FF9A8F736}|RuyaOptik.API.csproj|c:\\users\\mehmet \u00E7akmak\\desktop\\ruyaoptik\\ruyaoptik.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47E217CD-D1BF-4AED-A191-143FF9A8F736}|RuyaOptik.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47E217CD-D1BF-4AED-A191-143FF9A8F736}|RuyaOptik.API.csproj|c:\\users\\mehmet \u00E7akmak\\desktop\\ruyaoptik\\ruyaoptik.api\\ruyaoptik.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{47E217CD-D1BF-4AED-A191-143FF9A8F736}|RuyaOptik.API.csproj|solutionrelative:ruyaoptik.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2B7EF2-ABF8-4346-9C03-2B043D4FE368}|..\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj|c:\\users\\mehmet \u00E7akmak\\desktop\\ruyaoptik\\ruyaoptik.dataaccess\\ruyaoptik.dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\20251205180720_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\20251205180328_InitialSqlLite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{620F066A-60E1-429D-A5A9-45C1C6AFC85C}|..\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj|c:\\users\\mehmet \u00E7akmak\\desktop\\ruyaoptik\\ruyaoptik.entity\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\20251205171131_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-05T18:15:51.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\DataContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "..\\RuyaOptik.DataAccess\\Migrations\\DataContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\DataContextModelSnapshot.cs",
+              "RelativeToolTip": "..\\RuyaOptik.DataAccess\\Migrations\\DataContextModelSnapshot.cs",
+              "ViewState": "AQIAAPoAAAAAAAAAAAAQwMQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T18:14:26.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20251205181131_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\20251205181131_InitialCreate.cs",
+              "RelativeDocumentMoniker": "..\\RuyaOptik.DataAccess\\Migrations\\20251205181131_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\20251205181131_InitialCreate.cs",
+              "RelativeToolTip": "..\\RuyaOptik.DataAccess\\Migrations\\20251205181131_InitialCreate.cs",
+              "ViewState": "AQIAAN4AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T18:11:31.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20251205180720_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\20251205180720_InitialCreate.cs",
+              "RelativeDocumentMoniker": "..\\RuyaOptik.DataAccess\\Migrations\\20251205180720_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\20251205180720_InitialCreate.cs",
+              "RelativeToolTip": "..\\RuyaOptik.DataAccess\\Migrations\\20251205180720_InitialCreate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T18:07:20.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RuyaOptik.DataAccess",
+              "DocumentMoniker": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj",
+              "RelativeDocumentMoniker": "..\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj",
+              "ToolTip": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj",
+              "RelativeToolTip": "..\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-05T17:59:06.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T17:52:39.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RuyaOptik.API",
+              "DocumentMoniker": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\RuyaOptik.API.csproj",
+              "RelativeDocumentMoniker": "RuyaOptik.API.csproj",
+              "ToolTip": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\RuyaOptik.API.csproj",
+              "RelativeToolTip": "RuyaOptik.API.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-05T17:46:12.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Context\\DataContext.cs",
+              "RelativeDocumentMoniker": "..\\RuyaOptik.DataAccess\\Context\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Context\\DataContext.cs",
+              "RelativeToolTip": "..\\RuyaOptik.DataAccess\\Context\\DataContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T17:48:14.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20251205180328_InitialSqlLite.cs",
+              "DocumentMoniker": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\20251205180328_InitialSqlLite.cs",
+              "RelativeDocumentMoniker": "..\\RuyaOptik.DataAccess\\Migrations\\20251205180328_InitialSqlLite.cs",
+              "ToolTip": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\20251205180328_InitialSqlLite.cs",
+              "RelativeToolTip": "..\\RuyaOptik.DataAccess\\Migrations\\20251205180328_InitialSqlLite.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T18:03:29.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-05T17:12:36.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "..\\RuyaOptik.Entity\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\Entities\\User.cs",
+              "RelativeToolTip": "..\\RuyaOptik.Entity\\Entities\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T17:49:49.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20251205171131_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\20251205171131_InitialCreate.cs",
+              "RelativeDocumentMoniker": "..\\RuyaOptik.DataAccess\\Migrations\\20251205171131_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Mehmet \u00C7akmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\Migrations\\20251205171131_InitialCreate.cs",
+              "RelativeToolTip": "..\\RuyaOptik.DataAccess\\Migrations\\20251205171131_InitialCreate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T17:11:32.111Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

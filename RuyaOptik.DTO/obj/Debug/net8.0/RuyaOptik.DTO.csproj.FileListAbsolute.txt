@@ -1,0 +1,16 @@
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\bin\Debug\net8.0\RuyaOptik.DTO.deps.json
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\bin\Debug\net8.0\RuyaOptik.DTO.dll
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\bin\Debug\net8.0\RuyaOptik.DTO.pdb
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\bin\Debug\net8.0\RuyaOptik.Entity.dll
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\bin\Debug\net8.0\RuyaOptik.Entity.pdb
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\obj\Debug\net8.0\RuyaOptik.DTO.csproj.AssemblyReference.cache
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\obj\Debug\net8.0\RuyaOptik.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\obj\Debug\net8.0\RuyaOptik.DTO.AssemblyInfoInputs.cache
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\obj\Debug\net8.0\RuyaOptik.DTO.AssemblyInfo.cs
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\obj\Debug\net8.0\RuyaOptik.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\obj\Debug\net8.0\RuyaOptik.DTO.sourcelink.json
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\obj\Debug\net8.0\RuyaOpti.6706BB06.Up2Date
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\obj\Debug\net8.0\RuyaOptik.DTO.dll
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\obj\Debug\net8.0\refint\RuyaOptik.DTO.dll
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\obj\Debug\net8.0\RuyaOptik.DTO.pdb
+C:\Users\Mehmet Çakmak\Desktop\RuyaOptik\RuyaOptik.DTO\obj\Debug\net8.0\ref\RuyaOptik.DTO.dll
