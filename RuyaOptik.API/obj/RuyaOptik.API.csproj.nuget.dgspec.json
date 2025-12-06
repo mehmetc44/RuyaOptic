@@ -1,42 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\RuyaOptik.API.csproj": {}
+    "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.API\\RuyaOptik.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\RuyaOptik.API.csproj": {
+    "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.API\\RuyaOptik.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\RuyaOptik.API.csproj",
+        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.API\\RuyaOptik.API.csproj",
         "projectName": "RuyaOptik.API",
-        "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\RuyaOptik.API.csproj",
-        "packagesPath": "C:\\Users\\Mehmet Çakmak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.API\\obj\\",
+        "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.API\\RuyaOptik.API.csproj",
+        "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mehmet Çakmak\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Hakan\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Business\\RuyaOptik.Business.csproj": {
-                "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Business\\RuyaOptik.Business.csproj"
+              "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Business\\RuyaOptik.Business.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Business\\RuyaOptik.Business.csproj"
               },
-              "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj"
+              "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj"
               },
-              "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj": {
-                "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj"
+              "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj"
               }
             }
           }
@@ -92,37 +89,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Business\\RuyaOptik.Business.csproj": {
+    "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Business\\RuyaOptik.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Business\\RuyaOptik.Business.csproj",
+        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Business\\RuyaOptik.Business.csproj",
         "projectName": "RuyaOptik.Business",
-        "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Business\\RuyaOptik.Business.csproj",
-        "packagesPath": "C:\\Users\\Mehmet Çakmak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Business\\obj\\",
+        "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Business\\RuyaOptik.Business.csproj",
+        "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mehmet Çakmak\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Hakan\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj"
+              "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj"
               }
             }
           }
@@ -157,37 +151,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj": {
+    "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj",
         "projectName": "RuyaOptik.DataAccess",
-        "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Mehmet Çakmak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mehmet Çakmak\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Hakan\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj": {
-                "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj"
+              "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj"
               }
             }
           }
@@ -240,37 +231,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj": {
+    "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj",
+        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj",
         "projectName": "RuyaOptik.DTO",
-        "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj",
-        "packagesPath": "C:\\Users\\Mehmet Çakmak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\obj\\",
+        "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj",
+        "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mehmet Çakmak\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Hakan\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj": {
-                "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj"
+              "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj"
               }
             }
           }
@@ -305,29 +293,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj": {
+    "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj",
         "projectName": "RuyaOptik.Entity",
-        "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj",
-        "packagesPath": "C:\\Users\\Mehmet Çakmak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\obj\\",
+        "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj",
+        "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mehmet Çakmak\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Hakan\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -372,7 +357,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
