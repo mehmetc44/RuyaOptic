@@ -5,13 +5,17 @@ using RuyaOptik.Entity.Entities;
 
 namespace RuyaOptik.DataAccess.Context
 {
-    public class DataContext : IdentityDbContext<IdentityUser>
+    public class DataContext : IdentityDbContext<AspUser>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
         }
-        public DbSet<User> users { get; set; }
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+     
+        }
+        public DbSet<AspUser> users { get; set; }
 
     }
 }

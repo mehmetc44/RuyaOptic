@@ -1,8 +1,6 @@
 
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using RuyaOptik.DataAccess.Context;
-
+using RuyaOptik.API.Extensions;
 namespace RuyaOptik.API
 {
     public class Program
@@ -11,13 +9,13 @@ namespace RuyaOptik.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            
+            
+            builder.Services.ConfigureCors();
+            builder.Services.ConfigureIISIntegration();
             // Add services to the container.
-            builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("SqlConnection"),
-        b => b.MigrationsAssembly("RuyaOptik.DataAccess")
-    ));
+            builder.Services.ConfigureSqliteContext(builder.Configuration);
 
-            builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<DataContext>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
