@@ -1,5 +1,8 @@
 ﻿using RuyaOptik.DataAccess.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using RuyaOptik.Entity.Entities;
 namespace RuyaOptik.API.Extensions
 {
     public static class ServiceExtensions
@@ -25,5 +28,20 @@ namespace RuyaOptik.API.Extensions
             )
             );
         }
+        public static void ConfigureIdentity(this IServiceCollection services)
+        {
+            var builder = services.AddIdentity<AspUser, IdentityRole>( o =>
+            {
+                o.Password.RequireDigit = true;
+                o.Password.RequireLowercase = false;
+                o.Password.RequireUppercase = false;
+                o.Password.RequireNonAlphanumeric = false;
+                o.Password.RequiredLength = 10;
+                o.User.RequireUniqueEmail = true;
+            })
+            .AddEntityFrameworkStores<DataContext>()
+            .AddDefaultTokenProviders();
+        }
+
     }
 }
