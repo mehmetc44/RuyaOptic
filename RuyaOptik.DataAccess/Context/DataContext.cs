@@ -5,7 +5,7 @@ using RuyaOptik.Entity.Entities;
 using RuyaOptik.DataAccess.Repositories.Configuration;
 namespace RuyaOptik.DataAccess.Context
 {
-    public class DataContext : IdentityDbContext<AspUser>
+    public class DataContext : IdentityDbContext<AspUser,AspRole,string>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using RuyaOptik.Entity.Entities;
+using RuyaOptik.DataAccess.Repositories.Configuration;
 namespace RuyaOptik.API.Extensions
 {
     public static class ServiceExtensions
@@ -23,7 +24,7 @@ namespace RuyaOptik.API.Extensions
         {
             services.AddDbContext<DataContext>(options =>
             options.UseSqlite(
-                configuration.GetConnectionString("SqlConnection"),
+                AppConfiguration.ConnectionString,
                 b => b.MigrationsAssembly("RuyaOptik.DataAccess")
             )
             );
