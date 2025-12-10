@@ -8,6 +8,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RuyaOptik.DataAccess\RuyaOptik.DataAccess.csproj" />
+    <ProjectReference Include="..\RuyaOptik.DTO\RuyaOptik.DTO.csproj" />
+    <ProjectReference Include="..\RuyaOptik.Entity\RuyaOptik.Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
   </ItemGroup>
 
 </Project>

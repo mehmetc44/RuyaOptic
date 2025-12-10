@@ -6,10 +6,7 @@ namespace RuyaOptik.Entity.Entities.Concrete
     {
         public string Name { get; set; } = null!;
         public string? Description { get; set; }
-
-        // Örn: Gözlük, Lens, Güneş Gözlüğü vb.
         public string? Slug { get; set; }
-
         public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }

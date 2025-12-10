@@ -763,7 +763,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.6"
         },
         "runtime": {
-          "RuyaOptik.Entity.dll": {}
+          "RuyaOptik.Entity.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
