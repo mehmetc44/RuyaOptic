@@ -15,7 +15,7 @@ namespace RuyaOptik.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // DbContext -> Artık DataContext değil, RuyaOptikDbContext
+            // DbContext
             builder.Services.AddDbContext<RuyaOptikDbContext>(options =>
                 options.UseSqlite(
                     builder.Configuration.GetConnectionString("SqlConnection"),
@@ -23,17 +23,22 @@ namespace RuyaOptik.API
                 )
             );
 
-            // Identity -> RuyaOptikDbContext üzerinden çalışacak
+            // Identity
             builder.Services
                 .AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<RuyaOptikDbContext>();
 
+            // =======================
             // Repositories
+            // =======================
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-            // Buraya ileride: IProductRepository, IOrderRepository vs. eklersin
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
+            // =======================
             // Services
+            // =======================
             builder.Services.AddScoped<ICategoryService, CategoryService>();
+            builder.Services.AddScoped<IProductService, ProductService>();
 
             // AutoMapper
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
@@ -51,7 +56,7 @@ namespace RuyaOptik.API
             }
 
             app.UseHttpsRedirection();
-            app.UseAuthentication();   // Identity için
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();
