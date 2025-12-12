@@ -1,6 +1,7 @@
 using AutoMapper;
 using RuyaOptik.DTO.Category;
 using RuyaOptik.DTO.Product;
+using RuyaOptik.DTO.Inventory;
 using RuyaOptik.Entity.Entities.Concrete;
 
 namespace RuyaOptik.Business.Mapping
@@ -18,6 +19,11 @@ namespace RuyaOptik.Business.Mapping
             CreateMap<Product, ProductDto>().ReverseMap();
             CreateMap<ProductCreateDto, Product>();
             CreateMap<ProductUpdateDto, Product>();
+
+            // Inventory
+            CreateMap<Inventory, InventoryDto>().ReverseMap();
+            CreateMap<InventoryCreateDto, Inventory>();
+            CreateMap<InventoryUpdateDto, Inventory>();
         }
     }
 }

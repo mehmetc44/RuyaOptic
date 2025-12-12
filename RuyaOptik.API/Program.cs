@@ -7,61 +7,52 @@ using RuyaOptik.DataAccess.Context;
 using RuyaOptik.DataAccess.Repositories.Concrete;
 using RuyaOptik.DataAccess.Repositories.Interfaces;
 
-namespace RuyaOptik.API
+var builder = WebApplication.CreateBuilder(args);
+
+// Database
+builder.Services.AddDbContext<RuyaOptikDbContext>(options =>
+    options.UseSqlite(
+        builder.Configuration.GetConnectionString("SqlConnection"),
+        b => b.MigrationsAssembly("RuyaOptik.DataAccess")
+    )
+);
+
+// Identity
+builder.Services
+    .AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<RuyaOptikDbContext>();
+
+// Repositories
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IInventoryRepository, InventoryRepository>();
+
+// Services
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IInventoryService, InventoryService>();
+
+// AutoMapper
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
+
+// Controllers & Swagger
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Middleware
+if (app.Environment.IsDevelopment())
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
-
-            // DbContext
-            builder.Services.AddDbContext<RuyaOptikDbContext>(options =>
-                options.UseSqlite(
-                    builder.Configuration.GetConnectionString("SqlConnection"),
-                    b => b.MigrationsAssembly("RuyaOptik.DataAccess")
-                )
-            );
-
-            // Identity
-            builder.Services
-                .AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<RuyaOptikDbContext>();
-
-            // =======================
-            // Repositories
-            // =======================
-            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
-
-            // =======================
-            // Services
-            // =======================
-            builder.Services.AddScoped<ICategoryService, CategoryService>();
-            builder.Services.AddScoped<IProductService, ProductService>();
-
-            // AutoMapper
-            builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
-
-            builder.Services.AddControllers();
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
-            var app = builder.Build();
-
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseHttpsRedirection();
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            app.MapControllers();
-
-            app.Run();
-        }
-    }
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
