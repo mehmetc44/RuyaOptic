@@ -3,6 +3,7 @@ using RuyaOptik.DTO.Category;
 using RuyaOptik.DTO.Product;
 using RuyaOptik.DTO.Inventory;
 using RuyaOptik.DTO.Order;
+using RuyaOptik.DTO.Cart;
 using RuyaOptik.Entity.Entities.Concrete;
 
 namespace RuyaOptik.Business.Mapping
@@ -28,6 +29,13 @@ namespace RuyaOptik.Business.Mapping
 
             // Order
             CreateMap<Order, OrderDto>();
+
+            // Cart
+            CreateMap<Cart, CartDto>();
+            CreateMap<CartItem, CartItemDto>()
+                .ForMember(d => d.ProductName, o => o.MapFrom(s => s.Product.Name))
+                .ForMember(d => d.TotalPrice, o => o.MapFrom(s => s.UnitPrice * s.Quantity));
+
         }
     }
 }
