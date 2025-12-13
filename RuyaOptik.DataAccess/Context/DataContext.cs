@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using RuyaOptik.Entity.Entities;
+using RuyaOptik.Entity.Identity;
 using RuyaOptik.DataAccess.Repositories.Configuration;
 namespace RuyaOptik.DataAccess.Context
 {

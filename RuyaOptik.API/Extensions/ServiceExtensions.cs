@@ -2,8 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using RuyaOptik.Entity.Entities;
+using RuyaOptik.Entity.Identity;
 using RuyaOptik.DataAccess.Repositories.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 namespace RuyaOptik.API.Extensions
 {
     public static class ServiceExtensions
@@ -31,7 +32,7 @@ namespace RuyaOptik.API.Extensions
         }
         public static void ConfigureIdentity(this IServiceCollection services)
         {
-            var builder = services.AddIdentity<AspUser, IdentityRole>( o =>
+            var builder = services.AddIdentity<AspUser, AspRole>( o =>
             {
                 o.Password.RequireDigit = true;
                 o.Password.RequireLowercase = false;
@@ -40,8 +41,19 @@ namespace RuyaOptik.API.Extensions
                 o.Password.RequiredLength = 10;
                 o.User.RequireUniqueEmail = true;
             })
+            .AddRoles<AspRole>()
             .AddEntityFrameworkStores<DataContext>()
             .AddDefaultTokenProviders();
+        }
+        public static void ConfigureAutoMappings(this IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(RuyaOptik.Business.Mapping.AutoMappingProfile));
+        }
+        public static void ConfigureDependencyInjections(this IServiceCollection services)
+        {
+            services.AddScoped<RuyaOptik.Business.Interfaces.ITokenService, RuyaOptik.Business.Services.TokenService>();
+            
+            services.AddScoped<RuyaOptik.Business.Interfaces.IAuthService, RuyaOptik.Business.Services.AuthService>();
         }
 
     }

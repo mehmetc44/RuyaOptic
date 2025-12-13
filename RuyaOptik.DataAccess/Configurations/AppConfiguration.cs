@@ -15,7 +15,7 @@ namespace RuyaOptik.DataAccess.Repositories.Configuration
                 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
 
                 var configuration = new ConfigurationBuilder()
-                    .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../../RuyaOptik.API"))
+                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                     .AddJsonFile("appsettings.json", optional: false)
                     .AddJsonFile($"appsettings.{environment}.json", optional: true)
                     .Build();

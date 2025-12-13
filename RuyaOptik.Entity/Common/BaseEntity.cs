@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RuyaOptik.Entity.Entities.Common
+namespace RuyaOptik.Entity.Common
 {
     public abstract class BaseEntity
     {
