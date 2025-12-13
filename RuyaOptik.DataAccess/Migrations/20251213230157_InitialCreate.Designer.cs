@@ -11,7 +11,7 @@ using RuyaOptik.DataAccess.Context;
 namespace RuyaOptik.DataAccess.Migrations
 {
     [DbContext(typeof(RuyaOptikDbContext))]
-    [Migration("20251210164255_InitialCreate")]
+    [Migration("20251213230157_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

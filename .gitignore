@@ -21,6 +21,7 @@ appsettings.Development.json
 appsettings.Production.json
 
 # Secrets
+secrets.json
 *.secrets.json
 
 # Others

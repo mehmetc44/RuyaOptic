@@ -76,6 +76,25 @@ namespace RuyaOptik.Business.Services
             return _mapper.Map<OrderDto>(order);
         }
 
+        public async Task<bool> UpdateStatusAsync(int orderId, OrderStatus status)
+        {
+            var order = await _orderRepository.GetByIdAsync(orderId);
+            if (order == null || order.IsDeleted)
+                return false;
+
+            // Final state kontrolü
+            if (order.Status == OrderStatus.Delivered || order.Status == OrderStatus.Cancelled)
+                throw new Exception("Finalized orders cannot be updated.");
+
+            order.Status = status;
+            order.UpdatedDate = DateTime.UtcNow;
+
+            await _orderRepository.UpdateAsync(order);
+            await _orderRepository.SaveChangesAsync();
+
+            return true;
+        }
+
         public async Task<List<OrderDto>> GetByUserIdAsync(string userId)
         {
             var orders = await _orderRepository.GetOrdersByUserIdAsync(userId);

@@ -1,4 +1,5 @@
 using RuyaOptik.DTO.Order;
+using RuyaOptik.Entity.Entities.Enums;
 
 namespace RuyaOptik.Business.Interfaces
 {
@@ -6,5 +7,7 @@ namespace RuyaOptik.Business.Interfaces
     {
         Task<OrderDto> CreateAsync(OrderCreateDto dto);
         Task<List<OrderDto>> GetByUserIdAsync(string userId);
+
+        Task<bool> UpdateStatusAsync(int orderId, OrderStatus status);
     }
 }
