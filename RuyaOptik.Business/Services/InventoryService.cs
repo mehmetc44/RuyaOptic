@@ -27,14 +27,18 @@ namespace RuyaOptik.Business.Services
             return _mapper.Map<InventoryDto>(inventory);
         }
 
-        public async Task<InventoryDto> CreateAsync(InventoryCreateDto dto)
+        public async Task CreateAsync(InventoryCreateDto dto)
         {
-            var entity = _mapper.Map<Inventory>(dto);
+            var existingInventory = await _inventoryRepository
+                .GetByProductIdAsync(dto.ProductId);
 
-            await _inventoryRepository.AddAsync(entity);
+            if (existingInventory != null)
+                throw new Exception("This product already has inventory.");
+
+            var inventory = _mapper.Map<Inventory>(dto);
+
+            await _inventoryRepository.AddAsync(inventory);
             await _inventoryRepository.SaveChangesAsync();
-
-            return _mapper.Map<InventoryDto>(entity);
         }
 
         public async Task<bool> UpdateAsync(int id, InventoryUpdateDto dto)

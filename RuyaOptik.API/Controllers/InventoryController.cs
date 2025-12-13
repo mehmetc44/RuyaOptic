@@ -20,7 +20,8 @@ namespace RuyaOptik.API.Controllers
         public async Task<IActionResult> GetByProduct(int productId)
         {
             var result = await _inventoryService.GetByProductIdAsync(productId);
-            if (result == null) return NotFound();
+            if (result == null)
+                return NotFound(new { message = "Inventory not found for this product." });
 
             return Ok(result);
         }
@@ -32,8 +33,15 @@ namespace RuyaOptik.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var created = await _inventoryService.CreateAsync(dto);
-            return Ok(created);
+            try
+            {
+                await _inventoryService.CreateAsync(dto);
+                return Ok(new { message = "Inventory created successfully." });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
         }
 
         // PUT: api/inventory/5
@@ -44,7 +52,8 @@ namespace RuyaOptik.API.Controllers
                 return BadRequest(ModelState);
 
             var success = await _inventoryService.UpdateAsync(id, dto);
-            if (!success) return NotFound();
+            if (!success)
+                return NotFound(new { message = "Inventory not found." });
 
             return NoContent();
         }

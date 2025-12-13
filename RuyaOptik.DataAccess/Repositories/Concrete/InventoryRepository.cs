@@ -8,15 +8,18 @@ namespace RuyaOptik.DataAccess.Repositories.Concrete
     public class InventoryRepository
         : EfRepository<Inventory>, IInventoryRepository
     {
+        private readonly RuyaOptikDbContext _context;
+
         public InventoryRepository(RuyaOptikDbContext context)
             : base(context)
         {
+            _context = context;
         }
 
         public async Task<Inventory?> GetByProductIdAsync(int productId)
         {
-            return await _dbSet
-                .FirstOrDefaultAsync(x => x.ProductId == productId && !x.IsDeleted);
+            return await _context.Inventories
+                .FirstOrDefaultAsync(x => x.ProductId == productId);
         }
     }
 }
