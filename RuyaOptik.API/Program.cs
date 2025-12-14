@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using RuyaOptik.API.Middlewares;          // 🔴 EKLENDİ
 using RuyaOptik.Business.Interfaces;
 using RuyaOptik.Business.Mapping;
 using RuyaOptik.Business.Services;
@@ -9,7 +10,8 @@ using RuyaOptik.DataAccess.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Database
+
+// DATABASE
 builder.Services.AddDbContext<RuyaOptikDbContext>(options =>
     options.UseSqlite(
         builder.Configuration.GetConnectionString("SqlConnection"),
@@ -17,43 +19,48 @@ builder.Services.AddDbContext<RuyaOptikDbContext>(options =>
     )
 );
 
-// Identity
+// IDENTITY
 builder.Services
     .AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<RuyaOptikDbContext>();
 
-// Repositories
+// REPOSITORIES
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IInventoryRepository, InventoryRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<ICartRepository, CartRepository>();
 
-// Services
+// SERVICES
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IInventoryService, InventoryService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<ICartService, CartService>();
 
-// AutoMapper
+// AUTOMAPPER
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
-// Controllers & Swagger
+// CONTROLLERS & SWAGGER
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Middleware
+// GLOBAL EXCEPTION MIDDLEWARE
+app.UseMiddleware<ExceptionMiddleware>();
+
+// SWAGGER
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
+// PIPELINE
 app.UseHttpsRedirection();
+
 app.UseAuthentication();
 app.UseAuthorization();
 

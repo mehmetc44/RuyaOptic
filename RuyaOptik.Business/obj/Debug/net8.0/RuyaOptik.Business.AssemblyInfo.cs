@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RuyaOptik.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+466cec5bf05e6651cb545277a516b8fd7d363f01")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+598a4d2a53856f46795291573ded9a6524cd512c")]
 [assembly: System.Reflection.AssemblyProductAttribute("RuyaOptik.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RuyaOptik.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

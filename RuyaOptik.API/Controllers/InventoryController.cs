@@ -33,16 +33,10 @@ namespace RuyaOptik.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            try
-            {
-                await _inventoryService.CreateAsync(dto);
-                return Ok(new { message = "Inventory created successfully." });
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { error = ex.Message });
-            }
+            await _inventoryService.CreateAsync(dto);
+            return Ok(new { message = "Inventory created successfully." });
         }
+
 
         // PUT: api/inventory/5
         [HttpPut("{id:int}")]
