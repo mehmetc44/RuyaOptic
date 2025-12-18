@@ -8,5 +8,6 @@ namespace RuyaOptik.Business.Interfaces
     public interface IAuthService
     {
         Task<AspUserRegisterResponseDto> RegisterAsync(AspUserRegisterDto model);
+        Task<AspUserLoginResponseDto> LoginAsync(AspUserLoginDto model);
     }
 }

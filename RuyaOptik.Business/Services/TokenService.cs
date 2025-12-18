@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using RuyaOptik.Business.Interfaces;
 using RuyaOptik.DTO.AuthDtos;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Cryptography;
 namespace RuyaOptik.Business.Services
 {
     public class TokenService : ITokenService
@@ -17,18 +18,12 @@ namespace RuyaOptik.Business.Services
         {
             _configuration = configuration;
         }
-        public AccesTokenDto CreateAccessToken(int minute)
+        public TokenDto CreateAccessToken(int minute)
         {
-            AccesTokenDto token = new AccesTokenDto();
-
-            //Symmetric of our security key
+            TokenDto token = new TokenDto();
             SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-            
-            //Hashing operation
             SigningCredentials credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             token.Expiration = DateTime.Now.AddMinutes(minute);
-
-            //Identifying the token
             JwtSecurityToken jwtToken = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Audience"],
@@ -37,12 +32,18 @@ namespace RuyaOptik.Business.Services
             );
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
             token.AccessToken = tokenHandler.WriteToken(jwtToken);
+            token.RefreshToken = CreateRefreshToken();
             return token;
         }
 
-        public void CreateRefreshToken()
+        public string CreateRefreshToken()
         {
-            throw new NotImplementedException();
+            byte[] data = new byte[32];
+            using RandomNumberGenerator rng = RandomNumberGenerator.Create();
+            rng.GetBytes(data);
+            return Convert.ToBase64String(data);
         }
+ 
+
     }
 }

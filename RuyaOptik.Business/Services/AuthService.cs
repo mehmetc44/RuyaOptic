@@ -50,11 +50,11 @@ namespace RuyaOptik.Business.Services
             {
                 throw new Exception("Girdiğiniz şifre hatalı.");
             }
-            AccesTokenDto accessToken = _tokenService.CreateAccessToken(10);
+            TokenDto accessToken = _tokenService.CreateAccessToken(10);
 
             AspUserLoginResponseDto response = new AspUserLoginResponseDto
             {
-                AccessToken = accessToken,
+                Token = accessToken,
                 UserId = user.Id,
                 UserName = user.UserName,
             };

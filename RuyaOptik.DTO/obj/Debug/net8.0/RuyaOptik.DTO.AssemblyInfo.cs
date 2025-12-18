@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RuyaOptik.DTO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13af14782407457f9fe02bbdfd94825a7b108a19")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6682be7efb3621a75541d55140c598d0a4918add")]
 [assembly: System.Reflection.AssemblyProductAttribute("RuyaOptik.DTO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RuyaOptik.DTO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

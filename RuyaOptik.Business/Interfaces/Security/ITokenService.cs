@@ -9,7 +9,7 @@ namespace RuyaOptik.Business.Interfaces
 {
     public interface ITokenService
     {
-        public AccesTokenDto CreateAccessToken(int minute);
-        public void CreateRefreshToken();
+        public TokenDto CreateAccessToken(int minute);
+        public string CreateRefreshToken();
     }
 }

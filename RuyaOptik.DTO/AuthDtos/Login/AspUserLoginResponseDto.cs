@@ -9,6 +9,6 @@ namespace RuyaOptik.DTO.AuthDtos
     {
         public string UserId { get; set; } = string.Empty;
         public string UserName { get; set; } = string.Empty;
-        public AccesTokenDto AccessToken { get; set; } = new AccesTokenDto();
+        public TokenDto Token { get; set; } = new TokenDto();
     }
 }

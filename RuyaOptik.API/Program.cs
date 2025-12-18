@@ -29,7 +29,15 @@ namespace RuyaOptik.API
 
                     ValidIssuer = builder.Configuration["Jwt:Issuer"],
                     ValidAudience = builder.Configuration["Jwt:Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+                    LifetimeValidator = (notBefore, expires, securityToken, validationParameters) =>
+                    {
+                        if (expires != null)
+                        {
+                            return DateTime.UtcNow < expires;
+                        }
+                        return false;
+                    }
                 };
                 
                 
