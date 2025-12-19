@@ -23,13 +23,26 @@ namespace RuyaOptik.Business.Services
         // FILTER
         private Expression<Func<Product, bool>> BuildFilter(ProductFilterDto filter)
         {
+            var search = filter.Search?.ToLower();
+
             return p =>
                 !p.IsDeleted &&
+
                 (!filter.CategoryId.HasValue || p.CategoryId == filter.CategoryId) &&
                 (string.IsNullOrWhiteSpace(filter.Brand) || p.Brand == filter.Brand) &&
+
                 (!filter.MinPrice.HasValue || (p.DiscountedPrice ?? p.Price) >= filter.MinPrice) &&
                 (!filter.MaxPrice.HasValue || (p.DiscountedPrice ?? p.Price) <= filter.MaxPrice) &&
-                (!filter.IsActive.HasValue || p.IsActive == filter.IsActive);
+
+                (!filter.IsActive.HasValue || p.IsActive == filter.IsActive) &&
+
+                // 🔍 SEARCH
+                (string.IsNullOrWhiteSpace(search) ||
+                    p.Name.ToLower().Contains(search) ||
+                    p.Brand.ToLower().Contains(search) ||
+                    p.ModelCode.ToLower().Contains(search) ||
+                    (p.Description != null && p.Description.ToLower().Contains(search))
+                );
         }
 
         // SORTING
@@ -63,8 +76,8 @@ namespace RuyaOptik.Business.Services
             page = page < 1 ? 1 : page;
             pageSize = pageSize is < 1 or > 50 ? 10 : pageSize;
 
-            var predicate = BuildFilter(filter);
             var skip = (page - 1) * pageSize;
+            var predicate = BuildFilter(filter);
 
             var query = _productRepository.Query(predicate);
             query = ApplySorting(query, sort);

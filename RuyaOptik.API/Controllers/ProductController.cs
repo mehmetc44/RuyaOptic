@@ -15,7 +15,8 @@ namespace RuyaOptik.API.Controllers
             _productService = productService;
         }
 
-        // FILTER + PAGINATION + SORTING
+        // FILTER + SEARCH + SORT + PAGINATION
+        // GET: api/product?page=1&pageSize=10&search=ray&sort=PriceAsc
         [HttpGet]
         public async Task<IActionResult> GetPaged(
             [FromQuery] int page = 1,
