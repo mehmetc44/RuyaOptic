@@ -9,5 +9,7 @@ namespace RuyaOptik.DTO.Product
         public decimal? MaxPrice { get; set; }
 
         public bool? IsActive { get; set; }
+
+        public string? Search { get; set; }
     }
 }
