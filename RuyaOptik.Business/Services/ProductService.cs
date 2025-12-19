@@ -1,6 +1,7 @@
 using AutoMapper;
 using RuyaOptik.Business.Interfaces;
 using RuyaOptik.DataAccess.Repositories.Interfaces;
+using RuyaOptik.DTO.Common;
 using RuyaOptik.DTO.Product;
 using RuyaOptik.Entity.Entities.Concrete;
 
@@ -16,6 +17,28 @@ namespace RuyaOptik.Business.Services
             _productRepository = productRepository;
             _mapper = mapper;
         }
+
+        // PAGINATION
+        public async Task<PagedResultDto<ProductDto>> GetPagedAsync(int page, int pageSize)
+        {
+            page = page < 1 ? 1 : page;
+            pageSize = pageSize is < 1 or > 50 ? 10 : pageSize;
+
+            var totalCount = await _productRepository.CountAsync();
+            var skip = (page - 1) * pageSize;
+
+            var products = await _productRepository.GetPagedAsync(skip, pageSize);
+
+            return new PagedResultDto<ProductDto>
+            {
+                Items = _mapper.Map<List<ProductDto>>(products),
+                Page = page,
+                PageSize = pageSize,
+                TotalCount = totalCount,
+                TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize)
+            };
+        }
+
 
         public async Task<List<ProductDto>> GetAllAsync()
         {

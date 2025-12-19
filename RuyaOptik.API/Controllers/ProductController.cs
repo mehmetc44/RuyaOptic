@@ -15,11 +15,14 @@ namespace RuyaOptik.API.Controllers
             _productService = productService;
         }
 
-        // GET: api/product
+        // PAGINATION’LI GET
+        // GET: api/product?page=1&pageSize=10
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetPaged(
+            [FromQuery] int page = 1,
+            [FromQuery] int pageSize = 10)
         {
-            var result = await _productService.GetAllAsync();
+            var result = await _productService.GetPagedAsync(page, pageSize);
             return Ok(result);
         }
 
@@ -59,7 +62,7 @@ namespace RuyaOptik.API.Controllers
             return NoContent();
         }
 
-        // DELETE: api/product/5 (soft delete)
+        // DELETE: api/product/5
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {

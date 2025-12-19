@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uN/X2D/s6WU=",
+  "dgSpecHash": "QP5TkxQZaIQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj",
+  "projectFilePath": "C:\\Users\\Hakan\\Desktop\\RuyaOptic\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hakan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.6\\microsoft.aspnetcore.cryptography.internal.8.0.6.nupkg.sha512",
     "C:\\Users\\Hakan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.6\\microsoft.aspnetcore.cryptography.keyderivation.8.0.6.nupkg.sha512",

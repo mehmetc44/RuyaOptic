@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "slkcKm+4GXE=",
+  "dgSpecHash": "ShR9LHoqGuY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.API\\RuyaOptik.API.csproj",
+  "projectFilePath": "C:\\Users\\Hakan\\Desktop\\RuyaOptic\\RuyaOptik.API\\RuyaOptik.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hakan\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Hakan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

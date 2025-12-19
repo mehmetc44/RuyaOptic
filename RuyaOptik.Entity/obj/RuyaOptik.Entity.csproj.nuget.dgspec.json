@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj": {}
+    "C:\\Users\\Hakan\\Desktop\\RuyaOptic\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj": {
+    "C:\\Users\\Hakan\\Desktop\\RuyaOptic\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\RuyaOptic\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj",
         "projectName": "RuyaOptik.Entity",
-        "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj",
+        "projectPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptic\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj",
         "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\obj\\",
+        "outputPath": "C:\\Users\\Hakan\\Desktop\\RuyaOptic\\RuyaOptik.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hakan\\AppData\\Roaming\\NuGet\\NuGet.Config"
