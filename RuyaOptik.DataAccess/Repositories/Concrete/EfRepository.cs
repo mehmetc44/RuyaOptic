@@ -16,26 +16,48 @@ namespace RuyaOptik.DataAccess.Repositories.Concrete
             _dbSet = _context.Set<T>();
         }
 
-        public async Task<T?> GetByIdAsync(int id) => await _dbSet.FindAsync(id);
+        // BASIC
 
-        public async Task<List<T>> GetAllAsync() => await _dbSet.ToListAsync();
+        public async Task<T?> GetByIdAsync(int id)
+        {
+            return await _dbSet.FindAsync(id);
+        }
+
+        public async Task<List<T>> GetAllAsync()
+        {
+            return await _dbSet.ToListAsync();
+        }
 
         public async Task<List<T>> GetWhereAsync(Expression<Func<T, bool>> predicate)
-            => await _dbSet.Where(predicate).ToListAsync();
+        {
+            return await _dbSet.Where(predicate).ToListAsync();
+        }
+
+        // QUERY (Filter / Sort / Pagination)
+        public IQueryable<T> Query(Expression<Func<T, bool>> predicate)
+        {
+            return _dbSet
+                .Where(predicate)
+                .AsQueryable();
+        }
+
+        // CRUD
 
         public async Task AddAsync(T entity)
         {
             await _dbSet.AddAsync(entity);
         }
 
-        public async Task UpdateAsync(T entity)
+        public Task UpdateAsync(T entity)
         {
             _dbSet.Update(entity);
+            return Task.CompletedTask;
         }
 
-        public async Task DeleteAsync(T entity)
+        public Task DeleteAsync(T entity)
         {
             _dbSet.Remove(entity);
+            return Task.CompletedTask;
         }
 
         public async Task<int> SaveChangesAsync()

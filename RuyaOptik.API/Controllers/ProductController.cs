@@ -15,24 +15,22 @@ namespace RuyaOptik.API.Controllers
             _productService = productService;
         }
 
-        // FILTER + PAGINATION
-        // GET: api/product?page=1&pageSize=10&categoryId=1&brand=Ray-Ban
+        // FILTER + PAGINATION + SORTING
         [HttpGet]
         public async Task<IActionResult> GetPaged(
             [FromQuery] int page = 1,
             [FromQuery] int pageSize = 10,
-            [FromQuery] ProductFilterDto? filter = null)
+            [FromQuery] ProductFilterDto? filter = null,
+            [FromQuery] ProductSortOption sort = ProductSortOption.Newest)
         {
-            // filter null gelirse boş DTO oluştur
             filter ??= new ProductFilterDto();
 
             var result = await _productService
-                .GetFilteredPagedAsync(page, pageSize, filter);
+                .GetFilteredPagedAsync(page, pageSize, filter, sort);
 
             return Ok(result);
         }
 
-        // GET: api/product/5
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -43,24 +41,16 @@ namespace RuyaOptik.API.Controllers
             return Ok(result);
         }
 
-        // POST: api/product
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] ProductCreateDto dto)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             var created = await _productService.CreateAsync(dto);
             return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
         }
 
-        // PUT: api/product/5
         [HttpPut("{id:int}")]
         public async Task<IActionResult> Update(int id, [FromBody] ProductUpdateDto dto)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             var success = await _productService.UpdateAsync(id, dto);
             if (!success)
                 return NotFound();
@@ -68,7 +58,6 @@ namespace RuyaOptik.API.Controllers
             return NoContent();
         }
 
-        // DELETE: api/product/5
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {

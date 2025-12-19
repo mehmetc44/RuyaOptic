@@ -5,14 +5,13 @@ namespace RuyaOptik.Business.Interfaces
 {
     public interface IProductService
     {
-        // Pagination
         Task<PagedResultDto<ProductDto>> GetPagedAsync(int page, int pageSize);
 
-        // Filtering
         Task<PagedResultDto<ProductDto>> GetFilteredPagedAsync(
             int page,
             int pageSize,
-            ProductFilterDto filter);
+            ProductFilterDto filter,
+            ProductSortOption sort);
 
         Task<List<ProductDto>> GetAllAsync();
         Task<List<ProductDto>> GetActiveAsync();
