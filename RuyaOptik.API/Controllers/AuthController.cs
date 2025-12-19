@@ -11,7 +11,6 @@ namespace RuyaOptik.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(AuthenticationSchemes = "Admin")]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
@@ -47,6 +46,12 @@ namespace RuyaOptik.API.Controllers
                     Error = ex.Message
                 });
             }
+        }
+        [HttpPost("refresh-token")]
+        public async Task<TokenDto> RefreshTokenLogin([FromForm] string refreshToken)
+        {
+            TokenDto token= await _authService.RefreshTokenLoginAsync(refreshToken);
+            return token;
         }
 
     }

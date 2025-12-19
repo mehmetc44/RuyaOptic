@@ -43,9 +43,18 @@ namespace RuyaOptik.Business.Services
             throw new AuthenticationErrorException();
         }
 
-        public Task<TokenDto> RefreshTokenLoginAsync(string refreshToken)
+        public async Task<TokenDto> RefreshTokenLoginAsync(string refreshToken)
         {
-            throw new NotImplementedException();
+            AspUser user = _userManager.Users.FirstOrDefault(b => b.RefreshToken == refreshToken);
+            if (user != null && user?.RefreshTokenEndDate>DateTime.UtcNow)
+            {
+                TokenDto token = _tokenService.CreateAccessToken(15);
+                _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.Expiration, 10);
+                return token;
+            }
+            else
+            throw new NotFoundUserException();
+
         }
     }
 }

@@ -9,7 +9,7 @@ namespace RuyaOptik.Business.Interfaces
     public interface IAuthService
     {
         Task<TokenDto> LoginAsync(AspUserLoginDto model,int accessTokenLifeTime);
-        Task<TokenDto> RefreshTokenLoginAsync(string refreshToken, AspUser user, DateTime accessTokenDate, int refrashTokenLifeTime);
+        Task<TokenDto> RefreshTokenLoginAsync(string refreshToken);
 
         //Task PasswordResetAsnyc(string email);
         //Task<bool> VerifyResetTokenAsync(string resetToken, string userId);
