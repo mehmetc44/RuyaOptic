@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -31,6 +30,12 @@
             "projectReferences": {
               "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj": {
                 "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DataAccess\\RuyaOptik.DataAccess.csproj"
+              },
+              "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj": {
+                "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj"
+              },
+              "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj": {
+                "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj"
               }
             }
           }
@@ -49,6 +54,28 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -65,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.319/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -87,7 +114,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -130,6 +156,18 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[10.0.0, )"
             }
           },
           "imports": [
@@ -148,7 +186,71 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.319/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj",
+        "projectName": "RuyaOptik.DTO",
+        "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\RuyaOptik.DTO.csproj",
+        "packagesPath": "C:\\Users\\Mehmet Çakmak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mehmet Çakmak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj": {
+                "projectPath": "C:\\Users\\Mehmet Çakmak\\Desktop\\RuyaOptik\\RuyaOptik.Entity\\RuyaOptik.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.319/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -170,7 +272,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -215,7 +316,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.319/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RuyaOptik.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+77404b16604f52c388d300cbe011fa2e4a794323")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13771708853501affcb30271fe6952707b11c3c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("RuyaOptik.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RuyaOptik.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

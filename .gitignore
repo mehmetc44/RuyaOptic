@@ -3,3 +3,4 @@
 *.db-wal
 *appsettings.json
 *appsettings.Development.json
+.vs/
