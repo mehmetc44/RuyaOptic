@@ -15,14 +15,20 @@ namespace RuyaOptik.API.Controllers
             _productService = productService;
         }
 
-        // PAGINATION’LI GET
-        // GET: api/product?page=1&pageSize=10
+        // FILTER + PAGINATION
+        // GET: api/product?page=1&pageSize=10&categoryId=1&brand=Ray-Ban
         [HttpGet]
         public async Task<IActionResult> GetPaged(
             [FromQuery] int page = 1,
-            [FromQuery] int pageSize = 10)
+            [FromQuery] int pageSize = 10,
+            [FromQuery] ProductFilterDto? filter = null)
         {
-            var result = await _productService.GetPagedAsync(page, pageSize);
+            // filter null gelirse boş DTO oluştur
+            filter ??= new ProductFilterDto();
+
+            var result = await _productService
+                .GetFilteredPagedAsync(page, pageSize, filter);
+
             return Ok(result);
         }
 

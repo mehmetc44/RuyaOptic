@@ -1,4 +1,5 @@
 using RuyaOptik.Entity.Entities.Concrete;
+using System.Linq.Expressions;
 
 namespace RuyaOptik.DataAccess.Repositories.Interfaces
 {
@@ -6,8 +7,12 @@ namespace RuyaOptik.DataAccess.Repositories.Interfaces
     {
         Task<List<Product>> GetActiveProductsAsync();
 
-        // PAGINATION
-        Task<int> CountAsync();
-        Task<List<Product>> GetPagedAsync(int skip, int take);
+        // Pagination + Filtering (Expression ile)
+        Task<int> CountAsync(Expression<Func<Product, bool>> predicate);
+
+        Task<List<Product>> GetPagedAsync(
+            Expression<Func<Product, bool>> predicate,
+            int skip,
+            int take);
     }
 }

@@ -4,6 +4,7 @@ using RuyaOptik.DataAccess.Repositories.Interfaces;
 using RuyaOptik.DTO.Common;
 using RuyaOptik.DTO.Product;
 using RuyaOptik.Entity.Entities.Concrete;
+using System.Linq.Expressions;
 
 namespace RuyaOptik.Business.Services
 {
@@ -18,16 +19,30 @@ namespace RuyaOptik.Business.Services
             _mapper = mapper;
         }
 
-        // PAGINATION
+        // FILTER BUILDER
+        private Expression<Func<Product, bool>> BuildFilter(ProductFilterDto filter)
+        {
+            return p =>
+                !p.IsDeleted &&
+                (!filter.CategoryId.HasValue || p.CategoryId == filter.CategoryId) &&
+                (string.IsNullOrWhiteSpace(filter.Brand) || p.Brand == filter.Brand) &&
+                (!filter.MinPrice.HasValue || (p.DiscountedPrice ?? p.Price) >= filter.MinPrice) &&
+                (!filter.MaxPrice.HasValue || (p.DiscountedPrice ?? p.Price) <= filter.MaxPrice) &&
+                (!filter.IsActive.HasValue || p.IsActive == filter.IsActive);
+        }
+
+        // PAGINATION (NO FILTER)
         public async Task<PagedResultDto<ProductDto>> GetPagedAsync(int page, int pageSize)
         {
             page = page < 1 ? 1 : page;
             pageSize = pageSize is < 1 or > 50 ? 10 : pageSize;
 
-            var totalCount = await _productRepository.CountAsync();
+            Expression<Func<Product, bool>> predicate = p => !p.IsDeleted;
+
             var skip = (page - 1) * pageSize;
 
-            var products = await _productRepository.GetPagedAsync(skip, pageSize);
+            var totalCount = await _productRepository.CountAsync(predicate);
+            var products = await _productRepository.GetPagedAsync(predicate, skip, pageSize);
 
             return new PagedResultDto<ProductDto>
             {
@@ -39,7 +54,32 @@ namespace RuyaOptik.Business.Services
             };
         }
 
+        // FILTER + PAGINATION
+        public async Task<PagedResultDto<ProductDto>> GetFilteredPagedAsync(
+            int page,
+            int pageSize,
+            ProductFilterDto filter)
+        {
+            page = page < 1 ? 1 : page;
+            pageSize = pageSize is < 1 or > 50 ? 10 : pageSize;
 
+            var predicate = BuildFilter(filter);
+            var skip = (page - 1) * pageSize;
+
+            var totalCount = await _productRepository.CountAsync(predicate);
+            var products = await _productRepository.GetPagedAsync(predicate, skip, pageSize);
+
+            return new PagedResultDto<ProductDto>
+            {
+                Items = _mapper.Map<List<ProductDto>>(products),
+                Page = page,
+                PageSize = pageSize,
+                TotalCount = totalCount,
+                TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize)
+            };
+        }
+
+        // BASIC METHODS
         public async Task<List<ProductDto>> GetAllAsync()
         {
             var products = await _productRepository.GetWhereAsync(x => !x.IsDeleted);
@@ -55,7 +95,8 @@ namespace RuyaOptik.Business.Services
         public async Task<ProductDto?> GetByIdAsync(int id)
         {
             var product = await _productRepository.GetByIdAsync(id);
-            if (product == null || product.IsDeleted) return null;
+            if (product == null || product.IsDeleted)
+                return null;
 
             return _mapper.Map<ProductDto>(product);
         }
@@ -73,7 +114,8 @@ namespace RuyaOptik.Business.Services
         public async Task<bool> UpdateAsync(int id, ProductUpdateDto dto)
         {
             var product = await _productRepository.GetByIdAsync(id);
-            if (product == null || product.IsDeleted) return false;
+            if (product == null || product.IsDeleted)
+                return false;
 
             _mapper.Map(dto, product);
             await _productRepository.UpdateAsync(product);
@@ -85,7 +127,8 @@ namespace RuyaOptik.Business.Services
         public async Task<bool> DeleteAsync(int id)
         {
             var product = await _productRepository.GetByIdAsync(id);
-            if (product == null || product.IsDeleted) return false;
+            if (product == null || product.IsDeleted)
+                return false;
 
             product.IsDeleted = true;
             await _productRepository.UpdateAsync(product);

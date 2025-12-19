@@ -2,16 +2,14 @@ using Microsoft.EntityFrameworkCore;
 using RuyaOptik.DataAccess.Context;
 using RuyaOptik.DataAccess.Repositories.Interfaces;
 using RuyaOptik.Entity.Entities.Concrete;
+using System.Linq.Expressions;
 
 namespace RuyaOptik.DataAccess.Repositories.Concrete
 {
     public class ProductRepository : EfRepository<Product>, IProductRepository
     {
-        public ProductRepository(RuyaOptikDbContext context) : base(context)
-        {
-        }
+        public ProductRepository(RuyaOptikDbContext context) : base(context) { }
 
-        // Aktif ürünler (mevcut kullanım)
         public async Task<List<Product>> GetActiveProductsAsync()
         {
             return await _dbSet
@@ -19,17 +17,18 @@ namespace RuyaOptik.DataAccess.Repositories.Concrete
                 .ToListAsync();
         }
 
-        // TOPLAM ÜRÜN SAYISI (pagination)
-        public async Task<int> CountAsync()
+        public async Task<int> CountAsync(Expression<Func<Product, bool>> predicate)
         {
-            return await _dbSet.CountAsync(p => !p.IsDeleted);
+            return await _dbSet.CountAsync(predicate);
         }
 
-        // PAGED LIST (pagination)
-        public async Task<List<Product>> GetPagedAsync(int skip, int take)
+        public async Task<List<Product>> GetPagedAsync(
+            Expression<Func<Product, bool>> predicate,
+            int skip,
+            int take)
         {
             return await _dbSet
-                .Where(p => !p.IsDeleted)
+                .Where(predicate)
                 .OrderByDescending(p => p.CreatedDate)
                 .Skip(skip)
                 .Take(take)
