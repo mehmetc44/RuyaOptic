@@ -54,6 +54,8 @@ namespace RuyaOptik.API.Extensions
             services.AddScoped<RuyaOptik.Business.Interfaces.ITokenService, RuyaOptik.Business.Services.TokenService>();
             
             services.AddScoped<RuyaOptik.Business.Interfaces.IAuthService, RuyaOptik.Business.Services.AuthService>();
+
+            services.AddScoped<RuyaOptik.Business.Interfaces.IUserService, RuyaOptik.Business.Services.UserService>();
         }
 
     }

@@ -3,6 +3,8 @@ using RuyaOptik.Business.Interfaces;
 using RuyaOptik.DTO.AuthDtos;
 using AutoMapper;
 using RuyaOptik.Entity.Identity;
+using Microsoft.IdentityModel.Tokens;
+using RuyaOptik.Business.Exceptions;
 
 namespace RuyaOptik.Business.Services
 {
@@ -12,55 +14,38 @@ namespace RuyaOptik.Business.Services
         private readonly SignInManager<AspUser> _signInManager;
         private readonly IMapper _mapper;
         private readonly ITokenService _tokenService;
-        public AuthService(UserManager<AspUser> userManager, SignInManager<AspUser> signInManager, IMapper mapper, ITokenService tokenService)
+        private readonly IUserService _userService;
+        public AuthService(UserManager<AspUser> userManager, SignInManager<AspUser> signInManager, IMapper mapper, ITokenService tokenService, IUserService userService)
         {
             _userManager = userManager;
             this._signInManager = signInManager;
             _mapper = mapper;
             _tokenService = tokenService;
+            _userService = userService;
         }
 
-
-        public async Task<AspUserRegisterResponseDto> RegisterAsync(AspUserRegisterDto model)
+        public async Task<TokenDto> LoginAsync(AspUserLoginDto model, int accessTokenLifeTime)
         {
-            var user = _mapper.Map<AspUser>(model);
-
-            var result = await _userManager.CreateAsync(user, model.Password);
-
-            if (!result.Succeeded)
-            {
-                var errors = string.Join(", ", result.Errors.Select(x => x.Description));
-                throw new Exception(errors);
-            }
-
-            return _mapper.Map<AspUserRegisterResponseDto>(user);
-        }
-        public async Task<AspUserLoginResponseDto> LoginAsync(AspUserLoginDto model)
-        {
-            var user = await _userManager.FindByNameAsync(model.UserNameOrEmail)
-            ?? await _userManager.FindByEmailAsync(model.UserNameOrEmail);
+            AspUser user = await _userManager.FindByNameAsync(model.UserNameOrEmail);
+            if (user == null)
+                user = await _userManager.FindByEmailAsync(model.UserNameOrEmail);
 
             if (user == null)
-            {
-                throw new Exception("Kullanıcı bulunamadı.");
-            }
+                throw new NotFoundUserException();
 
             SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
-            if (!result.Succeeded)
+            if (result.Succeeded) //Authentication başarılı!
             {
-                throw new Exception("Girdiğiniz şifre hatalı.");
+                TokenDto token = _tokenService.CreateAccessToken(accessTokenLifeTime);
+                await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.Expiration, 15);
+                return token;
             }
-            TokenDto accessToken = _tokenService.CreateAccessToken(10);
-
-            AspUserLoginResponseDto response = new AspUserLoginResponseDto
-            {
-                Token = accessToken,
-                UserId = user.Id,
-                UserName = user.UserName,
-            };
-
-            return response;
+            throw new AuthenticationErrorException();
         }
 
+        public Task<TokenDto> RefreshTokenLoginAsync(string refreshToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

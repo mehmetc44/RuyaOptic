@@ -15,37 +15,39 @@ namespace RuyaOptik.API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
+        private readonly IUserService _userService;
 
-        public AuthController(IAuthService authService)
+        public AuthController(IAuthService authService,IUserService userService)
         {
             _authService = authService;
+            _userService = userService;
         }
 
-        [HttpPost("register")]
-        [AllowAnonymous]
-        public async Task<IActionResult> Register([FromBody] AspUserRegisterDto model)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var result = await _authService.RegisterAsync(model);
-
-            return Ok(result);
-        }
+        
         [HttpPost("login")]
         [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] AspUserLoginDto model)
         {
             try
             {
-                var result = await _authService.LoginAsync(model);
-                return Ok(result);
+                var token = await _authService.LoginAsync( new AspUserLoginDto()
+                {
+                    UserNameOrEmail = model.UserNameOrEmail,
+                    Password= model.Password
+                },900);
+                return Ok(new
+                {
+                    Token = token
+                });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { error = ex.Message });
+                return BadRequest(new
+                {
+                    Error = ex.Message
+                });
             }
         }
-        
+
     }
 }

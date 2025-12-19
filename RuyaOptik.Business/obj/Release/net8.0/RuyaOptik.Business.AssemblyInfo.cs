@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("RuyaOptik.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+153c5f8c9bcaa4f930ed1acc1aa8d1fb71c970ea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13771708853501affcb30271fe6952707b11c3c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("RuyaOptik.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RuyaOptik.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

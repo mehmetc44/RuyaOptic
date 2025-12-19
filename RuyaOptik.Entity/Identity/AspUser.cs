@@ -11,7 +11,7 @@ namespace RuyaOptik.Entity.Identity
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; }   = string.Empty;
 
-        public string RefreshToken { get; set; }
+        public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenEndDate { get; set; }
 
         
