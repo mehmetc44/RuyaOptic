@@ -5,6 +5,11 @@ using Microsoft.AspNetCore.Identity;
 using RuyaOptik.Entity.Identity;
 using RuyaOptik.DataAccess.Repositories.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RuyaOptik.Business.Interfaces;
+using RuyaOptik.Business.Services;
+using RuyaOptik.DataAccess.Repositories.Concrete;
+using RuyaOptik.DataAccess.Repositories.Interfaces;
+
 namespace RuyaOptik.API.Extensions
 {
     public static class ServiceExtensions
@@ -23,7 +28,7 @@ namespace RuyaOptik.API.Extensions
         });
         public static void ConfigureSqliteContext(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<DataContext>(options =>
+            services.AddDbContext<RuyaOptikDbContext>(options =>
             options.UseSqlite(
                 AppConfiguration.ConnectionString,
                 b => b.MigrationsAssembly("RuyaOptik.DataAccess")
@@ -42,21 +47,28 @@ namespace RuyaOptik.API.Extensions
                 o.User.RequireUniqueEmail = true;
             })
             .AddRoles<AspRole>()
-            .AddEntityFrameworkStores<DataContext>()
+            .AddEntityFrameworkStores<RuyaOptikDbContext>()
             .AddDefaultTokenProviders();
         }
         public static void ConfigureAutoMappings(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(RuyaOptik.Business.Mapping.AutoMappingProfile));
+            services.AddAutoMapper(typeof(RuyaOptik.Business.Mapping.AutoMapperProfile));
         }
         public static void ConfigureDependencyInjections(this IServiceCollection services)
         {
-            services.AddScoped<RuyaOptik.Business.Interfaces.ITokenService, RuyaOptik.Business.Services.TokenService>();
-            
-            services.AddScoped<RuyaOptik.Business.Interfaces.IAuthService, RuyaOptik.Business.Services.AuthService>();
-
-            services.AddScoped<RuyaOptik.Business.Interfaces.IUserService, RuyaOptik.Business.Services.UserService>();
+            services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IInventoryRepository, InventoryRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<ICartRepository, CartRepository>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IInventoryService, InventoryService>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<ICartService, CartService>();
         }
-
     }
 }

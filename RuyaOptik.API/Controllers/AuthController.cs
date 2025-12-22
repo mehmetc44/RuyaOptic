@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RuyaOptik.Business.Interfaces;
-using RuyaOptik.DTO.AuthDtos;
+using RuyaOptik.DTO.Auth;
 
 namespace RuyaOptik.API.Controllers
 {

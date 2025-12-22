@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using RuyaOptik.Business.Interfaces;
-using RuyaOptik.DTO.AuthDtos;
+using RuyaOptik.DTO.Auth;
 using AutoMapper;
 using RuyaOptik.Entity.Identity;
 using Microsoft.IdentityModel.Tokens;
 using RuyaOptik.Business.Exceptions;
+
+
 
 namespace RuyaOptik.Business.Services
 {

@@ -8,13 +8,13 @@ using Microsoft.Extensions.Configuration;
 using RuyaOptik.DataAccess.Repositories.Configuration;
 namespace RuyaOptik.DataAccess.Context
 {
-    public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<DataContext>
+    public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<RuyaOptikDbContext>
 {
-    public DataContext CreateDbContext(string[] args)
+    public RuyaOptikDbContext CreateDbContext(string[] args)
     {
-            DbContextOptionsBuilder<DataContext> optionsBuilder = new();
+            DbContextOptionsBuilder<RuyaOptikDbContext> optionsBuilder = new();
             optionsBuilder.UseSqlite(AppConfiguration.ConnectionString);
-            return new DataContext(optionsBuilder.Options);
+            return new RuyaOptikDbContext(optionsBuilder.Options);
     }
 }
 

@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using RuyaOptik.DTO.AuthDtos;
+using RuyaOptik.DTO.Auth;
 using RuyaOptik.Entity.Identity;
+
+
+
 namespace RuyaOptik.Business.Interfaces
 {
     public interface IAuthService

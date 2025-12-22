@@ -1,6 +1,28 @@
+# OS / IDE
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.cache
+*.log
+
+# Build outputs
+bin/
+obj/
+
+# SQLite (LOCAL ONLY)
 *.db
 *.db-shm
 *.db-wal
-*appsettings.json
-*appsettings.Development.json
-.vs/
+
+# Environment-specific configs
+appsettings.Development.json
+appsettings.Production.json
+
+# Secrets
+secrets.json
+*.secrets.json
+
+# Others
+node_modules/

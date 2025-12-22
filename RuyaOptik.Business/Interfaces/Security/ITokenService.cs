@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel;
-using RuyaOptik.DTO.AuthDtos;
+using RuyaOptik.DTO.Auth;
 
 namespace RuyaOptik.Business.Interfaces
 {

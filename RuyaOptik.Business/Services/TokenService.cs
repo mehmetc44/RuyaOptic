@@ -6,7 +6,7 @@ using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using RuyaOptik.Business.Interfaces;
-using RuyaOptik.DTO.AuthDtos;
+using RuyaOptik.DTO.Auth;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
 namespace RuyaOptik.Business.Services

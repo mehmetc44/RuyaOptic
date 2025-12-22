@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RuyaOptik.DTO.UserDtos;
+using RuyaOptik.DTO.User;
 using RuyaOptik.Business.Exceptions;
 
 namespace RuyaOptik.Business.Services
@@ -20,7 +20,7 @@ namespace RuyaOptik.Business.Services
             _userManager = userManager;
         }
 
-        public async Task<CreateUserResponse> CreateAsync(CreateUser model)
+        public async Task<CreateUserResponseDto> CreateAsync(CreateUserDto model)
         {
             IdentityResult result = await _userManager.CreateAsync(new()
             {
@@ -31,7 +31,7 @@ namespace RuyaOptik.Business.Services
                 LastName = model.LastName,
             }, model.Password);
 
-            CreateUserResponse response = new() { Succeeded = result.Succeeded };
+            CreateUserResponseDto response = new() { Succeeded = result.Succeeded };
 
             if (result.Succeeded)
                 response.Message = "Kullanıcı başarıyla oluşturulmuştur.";

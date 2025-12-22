@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RuyaOptik.Business.Interfaces;
-using RuyaOptik.DTO.AuthDtos;
-using RuyaOptik.DTO.UserDtos;
+using RuyaOptik.DTO.Auth;
+using RuyaOptik.DTO.User;
 
 namespace RuyaOptik.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(AuthenticationSchemes = "Admin")]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly IAuthService _authService;
@@ -24,11 +24,11 @@ namespace RuyaOptik.API.Controllers
             _userService = userService;
         }
 
-        [HttpPost]
+        [HttpPost("register")]
         [AllowAnonymous]
-        public async Task<CreateUserResponse> CreateUserAsync(CreateUser user)
+        public async Task<CreateUserResponseDto> CreateUserAsync(CreateUserDto user)
         {
-            var result = await _userService.CreateAsync(new CreateUser
+            var result = await _userService.CreateAsync(new CreateUserDto
             {
                 Email = user.Email,
                 FirstName = user.FirstName,
@@ -38,7 +38,7 @@ namespace RuyaOptik.API.Controllers
                 Username = user.Username
             });
 
-            return new CreateUserResponse
+            return new CreateUserResponseDto
             {
                 Message = result.Message,
                 Succeeded = result.Succeeded
