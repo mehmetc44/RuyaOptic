@@ -6,10 +6,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace RuyaOptik.Entity.Identity
 {
-    public class AspRole : IdentityRole<string>
+    public class AspRole : IdentityRole
     {
-        public string FirstName { get; set; } = string.Empty;
-        public string LastName { get; set; }  = string.Empty;
+        public string Name { get; set; }
 
     }
 }

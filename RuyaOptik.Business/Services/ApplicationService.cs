@@ -17,7 +17,7 @@ namespace RuyaOptik.Business.Services
 {
     public class ApplicationService : IApplicationService
 	{
-		public List<Menu> getAuthorizeDefinitionEndpoints(Type type)
+		public Task<List<Menu>> GetAuthorizeDefinitionEndpoints(Type type)
 		{
 			Assembly assembly = Assembly.GetAssembly(type);
 			var controllers = assembly.GetTypes().Where(t => t.IsAssignableTo(typeof(ControllerBase)));
@@ -46,8 +46,8 @@ namespace RuyaOptik.Business.Services
 
 								DTO.Configurations.Action _action = new()
 								{
-									ActionType = Enum.GetName(typeof(ActionType), authorizeDefinitionAttribute.ActionType),
-									Descripiton = authorizeDefinitionAttribute.Definition
+									ActionType = authorizeDefinitionAttribute.Action,
+									Definition = authorizeDefinitionAttribute.Definition
 								};
 
 								var httpAttribute = attributes.FirstOrDefault(a => a.GetType().IsAssignableTo(typeof(HttpMethodAttribute))) as HttpMethodAttribute;
@@ -56,15 +56,13 @@ namespace RuyaOptik.Business.Services
 								else
 									_action.HttpType = HttpMethods.Get;
 
-								_action.Code = $"{_action.HttpType}.{_action.ActionType}.{_action.Descripiton.Replace(" ", "")}";
+								_action.Code = $"{_action.HttpType}.{_action.ActionType}.{_action.Definition.Replace(" ", "")}";
 
 								menu.Actions.Add(_action);
 							}
 						}
 				}
-
-
-			return menus;
+			return Task.FromResult(menus);
 		}
 	}
 }

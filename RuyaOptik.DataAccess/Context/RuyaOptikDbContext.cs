@@ -18,7 +18,6 @@ namespace RuyaOptik.DataAccess.Context
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
 
         }
-        public DbSet<AspUser> users { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Cart> Carts { get; set; }

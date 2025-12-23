@@ -9,6 +9,6 @@ namespace RuyaOptik.Business.Interfaces
 {
     public interface IApplicationService
     {
-        List<Menu> getAuthorizeDefinitionEndpoints(Type type);
+        Task<List<Menu>> GetAuthorizeDefinitionEndpoints(Type type);
     }
 }
