@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RuyaOptik.DTO.Configurations
+namespace RuyaOptik.Entity.Configurations
 {
     public class Menu
     {

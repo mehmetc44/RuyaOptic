@@ -8,7 +8,6 @@ namespace RuyaOptik.Entity.Identity
 {
     public class AspRole : IdentityRole
     {
-        public string Name { get; set; }
 
     }
 }

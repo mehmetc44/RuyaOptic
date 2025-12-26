@@ -45,7 +45,27 @@ namespace RuyaOptik.API.Controllers
             };
         }
 
- 
-        
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsersAsync([FromQuery] int page, [FromQuery] int size)
+        {
+            var users = await _userService.GetAllUsersAsync(page, size);
+            return Ok(users);
+        }
+
+        [HttpPost("assign-role-to-user")]
+        public async Task<IActionResult> AssignRoleToUserAsync(string userId, string[] roles)
+        {
+            await _userService.AssignRoleToUserAsnyc(userId, roles);
+            return Ok();
+        }
+        [HttpGet("get-roles-from-user/{userIdOrName}")]
+        public async Task<IActionResult> GetRolesFromUser([FromRoute] string userIdOrName)
+        {
+            var roles = await _userService.GetRolesFromUserAsync(userIdOrName);
+            return Ok(roles);
+        }
+
+
+
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RuyaOptik.Entity.Enums;
 
-namespace RuyaOptik.DTO.Configurations
+namespace RuyaOptik.Entity.Configurations
 {
     public class Action
     {

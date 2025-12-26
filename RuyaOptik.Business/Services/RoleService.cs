@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RuyaOptik.Business.Exceptions;
+using RuyaOptik.DTO.Role;
 namespace RuyaOptik.Business.Services
 {
     public class RoleService : IRoleService
@@ -20,31 +21,14 @@ namespace RuyaOptik.Business.Services
             _roleManager = roleManager;
         }
 
-        public async Task<RoleDto> CreateRole(CreateRoleDto dto)
+        public async Task<CreateRoleResponseDto> CreateRole(CreateRoleDto dto)
         {
-            var role = new AspRole
-            {
-                Name = dto.Name.Trim(),
-                NormalizedName = dto.Name.Trim().ToUpperInvariant()
-            };
+            AspRole role = new AspRole() { Id = Guid.NewGuid().ToString(), Name = dto.Name, NormalizedName = dto.Name.Trim() };
 
-            var result = await _roleManager.CreateAsync(role);
+            IdentityResult result = await _roleManager.CreateAsync(role);
 
-            // DEBUG LOG
-            Console.WriteLine("Succeeded: " + result.Succeeded);
-            foreach (var error in result.Errors)
-                Console.WriteLine(error.Code + " - " + error.Description);
 
-            if (!result.Succeeded)
-            {
-                throw new Exception(
-                    result.Errors.Any()
-                        ? string.Join(" | ", result.Errors.Select(e => e.Description))
-                        : "CreateAsync başarısız ama Identity hata döndürmedi. DB/migration/duplicate role sorunu olabilir."
-                );
-            }
-
-            return new RoleDto
+            return new CreateRoleResponseDto
             {
                 Id = role.Id,
                 Name = role.Name
@@ -84,15 +68,13 @@ namespace RuyaOptik.Business.Services
         }
 
 
-        public async Task<List<RoleDto>> GetAllRoles()
+        public Task<List<RoleDto>> GetAllRoles()
         {
-            return await _roleManager.Roles
-                .Select(role => new RoleDto
-                {
-                    Id = role.Id,
-                    Name = role.Name
-                })
-                .ToListAsync();
+            return Task.FromResult(_roleManager.Roles.Select(role => new RoleDto
+            {
+                Id = role.Id,
+                Name = role.Name
+            }).ToList());
         }
 
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RuyaOptik.DTO.Configurations;
+using RuyaOptik.Entity.Configurations;
 using RuyaOptik.Business.Interfaces;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc;

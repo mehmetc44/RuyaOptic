@@ -22,10 +22,10 @@ namespace RuyaOptik.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetRoles()
         {
-            var datas = await _roleService.GetAllRoles();
+            var datas = await  _roleService.GetAllRoles();
+
             return Ok(datas);
         }
-
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRoleById(string id)
         {
@@ -37,17 +37,20 @@ namespace RuyaOptik.API.Controllers
             return Ok(role);
         }
 
-
         [HttpPost]
         public async Task<IActionResult> CreateRole([FromBody] CreateRoleDto dto)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             var createdRole = await _roleService.CreateRole(dto);
 
             return CreatedAtAction(
-                nameof(GetRoleById),               // Hangi action çağrılacak
-                new { id = createdRole.Id },       // routeValues: GetRoleById'deki {id} parametresi
-                createdRole                        // response body
+                nameof(GetRoleById),       
+                new { id = createdRole.Id },
+                createdRole                 
             );
+
         }
 
 
