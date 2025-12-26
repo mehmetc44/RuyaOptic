@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RuyaOptik.Business.Interfaces;
-using RuyaOptik.DTO.Configurations;
+using RuyaOptik.Entity.Configurations;
 namespace RuyaOptik.API.Controllers
 {
     [ApiController]

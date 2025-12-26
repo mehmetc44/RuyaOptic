@@ -14,7 +14,7 @@ namespace RuyaOptik.Business.Interfaces
         Task<TokenDto> LoginAsync(AspUserLoginDto model,int accessTokenLifeTime);
         Task<TokenDto> RefreshTokenLoginAsync(string refreshToken);
 
-        //Task PasswordResetAsnyc(string email);
-        //Task<bool> VerifyResetTokenAsync(string resetToken, string userId);
+        Task PasswordResetAsnyc(string email);
+        Task<bool> VerifyResetTokenAsync(string resetToken, string userId);
     }
 }

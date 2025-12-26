@@ -15,6 +15,8 @@ namespace RuyaOptik.DataAccess.Repositories.Concrete
             _context = context;
             _dbSet = _context.Set<T>();
         }
+        public DbSet<T> Table => _context.Set<T>();
+
 
         // BASIC
 

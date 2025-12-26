@@ -1,10 +1,11 @@
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace RuyaOptik.DataAccess.Repositories.Interfaces
 {
     public interface IRepository<T> where T : class
     {
-        // BASIC
+        DbSet<T> Table { get; }
         Task<T?> GetByIdAsync(int id);
         Task<List<T>> GetAllAsync();
         Task<List<T>> GetWhereAsync(Expression<Func<T, bool>> predicate);

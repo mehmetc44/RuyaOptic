@@ -45,7 +45,8 @@ namespace RuyaOptik.API.Controllers
             };
         }
 
-        [HttpGet]
+        [HttpGet("get-users")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllUsersAsync([FromQuery] int page, [FromQuery] int size)
         {
             var users = await _userService.GetAllUsersAsync(page, size);

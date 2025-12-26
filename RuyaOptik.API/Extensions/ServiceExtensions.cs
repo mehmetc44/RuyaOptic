@@ -71,6 +71,8 @@ namespace RuyaOptik.API.Extensions
             services.AddScoped<ICartService, CartService>();
             services.AddScoped<IApplicationService, ApplicationService>();
             services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+
         }
     }
 }

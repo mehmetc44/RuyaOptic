@@ -44,7 +44,7 @@ namespace RuyaOptik.Business.Services
 								else
 									menu = menus.FirstOrDefault(m => m.Name == authorizeDefinitionAttribute.Menu);
 
-								DTO.Configurations.Action _action = new()
+								Entity.Configurations.Action _action = new()
 								{
 									ActionType = authorizeDefinitionAttribute.Action,
 									Definition = authorizeDefinitionAttribute.Definition

@@ -15,9 +15,9 @@ namespace RuyaOptik.Business.Services
     public class UserService : IUserService
     {
         readonly UserManager<AspUser> _userManager;
-        readonly IRepository<AspRole> _efRepository;
+        readonly IRepository<Endpoint> _efRepository;
 
-        public UserService(UserManager<AspUser> userManager, EfRepository<AspRole> efRepository)
+        public UserService(UserManager<AspUser> userManager, IRepository<Endpoint> efRepository)
         {
             _userManager = userManager;
             _efRepository = efRepository;
@@ -116,9 +116,7 @@ namespace RuyaOptik.Business.Services
         if (!userRoles.Any())
             return false;
 
-        Endpoint? endpoint = await _efRepository
-                    .Include(e => e.Roles)
-                    .FirstOrDefaultAsync(e => e.Code == code);
+        Endpoint? endpoint = await _efRepository.Table.Include(e => e.Roles).FirstOrDefaultAsync(e => e.Code == code);
 
         if (endpoint == null)
             return false;
