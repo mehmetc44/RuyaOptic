@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RuyaOptik.Business.Interfaces;
 using RuyaOptik.DTO.Auth;
+using RuyaOptik.Business.Attributes;
+using RuyaOptik.Business.Consts;
+using RuyaOptik.Entity.Enums;
+
 
 namespace RuyaOptik.API.Controllers
 {
@@ -54,5 +58,18 @@ namespace RuyaOptik.API.Controllers
             return token;
         }
 
+        [HttpPost("password-reset")]
+        public async Task<IActionResult> ResetPassword([FromForm] string email)
+        {
+             await _authService.PasswordResetAsnyc(email);
+             return Ok();
+        }
+
+        [HttpPost("verify-reset-token")]
+        public async Task<IActionResult> VerifyResetToken([FromForm] string resetToken, string userId)
+        {
+            var res = await _authService.VerifyResetTokenAsync(resetToken,userId);
+            return Ok(res);
+        }
     }
 }

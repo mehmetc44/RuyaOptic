@@ -3,8 +3,9 @@ using RuyaOptik.Business.Interfaces;
 using RuyaOptik.DTO.Cart;
 using RuyaOptik.Business.Attributes;
 using RuyaOptik.Business.Consts;
-using Microsoft.AspNetCore.Authorization;
 using RuyaOptik.Entity.Enums;
+using Microsoft.AspNetCore.Authorization;
+
 namespace RuyaOptik.API.Controllers
 {
     [ApiController]
@@ -20,7 +21,7 @@ namespace RuyaOptik.API.Controllers
 
         // GET: api/cart/user/{userId}
         [HttpGet("user/{userId}")]
-        [AuthorizeDefinition(Action=ActionType.Reading,Definition = "Definition",Menu=AuthorizeDefinitionConstants.Cart)]
+        [AuthorizeDefinition(Action=ActionType.Reading,Definition = "Kullancının Sepeti",Menu=AuthorizeDefinitionConstants.Cart)]
         public async Task<IActionResult> GetCart(string userId)
         {
             var cart = await _cartService.GetCartAsync(userId);

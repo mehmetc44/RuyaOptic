@@ -12,7 +12,7 @@ namespace RuyaOptik.Business.Interfaces
         Task<CreateUserResponseDto> CreateAsync(CreateUserDto model);
         Task UpdateRefreshTokenAsync(string refreshToken, AspUser user, DateTime accessTokenDate, int addOnAccessTokenDate);
         Task UpdatePasswordAsync(string userId, string resetToken, string newPassword);
-        Task<List<UserDto>> GetAllUsersAsync(int page, int size);
+        Task<List<UserGetDto>> GetAllUsersAsync(int page, int size);
         Task<int> TotalUsersCount();
         Task AssignRoleToUserAsnyc(string userId, string[] roles);
         Task<List<string>> GetRolesFromUserAsync(string userIdOrName);

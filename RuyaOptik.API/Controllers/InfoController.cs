@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using RuyaOptik.DTO.System;
-
+using RuyaOptik.Business.Attributes;
+using RuyaOptik.Business.Consts;
+using RuyaOptik.Entity.Enums;
+using Microsoft.AspNetCore.Authorization;
 namespace RuyaOptik.API.Controllers
 {
     [ApiController]
@@ -16,6 +19,8 @@ namespace RuyaOptik.API.Controllers
 
         /// API about / info endpoint
         [HttpGet]
+        [Authorize("Admin")]
+        [AuthorizeDefinition(Action=ActionType.Reading,Definition = "API Hakkında",Menu=AuthorizeDefinitionConstants.Info)]
         public IActionResult Get()
         {
             var info = new ApiInfoDto

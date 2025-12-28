@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RuyaOptik.Business.Interfaces;
 using RuyaOptik.Entity.Configurations;
+using RuyaOptik.Business.Attributes;
+using RuyaOptik.Business.Consts;
+using RuyaOptik.Entity.Enums;
+using Microsoft.AspNetCore.Authorization;
 namespace RuyaOptik.API.Controllers
 {
     [ApiController]
@@ -13,6 +17,8 @@ namespace RuyaOptik.API.Controllers
             _appService = appService;
         }
         [HttpGet("authorize-definitions")]
+        [Authorize("Admin")]
+        [AuthorizeDefinition(Action=ActionType.Reading,Definition = "Adminin Erişebileceği Tanımlar",Menu=AuthorizeDefinitionConstants.Auth)]
         public async Task<IActionResult> GetAuthorizeDefinitions()
         {
             var data = await _appService.GetAuthorizeDefinitionEndpoints(typeof(Program));

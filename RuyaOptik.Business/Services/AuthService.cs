@@ -18,13 +18,15 @@ namespace RuyaOptik.Business.Services
         private readonly IMapper _mapper;
         private readonly ITokenService _tokenService;
         private readonly IUserService _userService;
-        public AuthService(UserManager<AspUser> userManager, SignInManager<AspUser> signInManager, IMapper mapper, ITokenService tokenService, IUserService userService)
+        private readonly IMailService _mailService;
+        public AuthService(UserManager<AspUser> userManager, SignInManager<AspUser> signInManager, IMapper mapper, ITokenService tokenService, IUserService userService, IMailService mailService)
         {
             _userManager = userManager;
             this._signInManager = signInManager;
             _mapper = mapper;
             _tokenService = tokenService;
             _userService = userService;
+            _mailService = mailService;
         }
 
         public async Task<TokenDto> LoginAsync(AspUserLoginDto model, int accessTokenLifeTime)
@@ -58,7 +60,7 @@ namespace RuyaOptik.Business.Services
             else
             throw new NotFoundUserException();
         }
-        public async Task PasswordResetAsync(string email)
+        public async Task PasswordResetAsnyc(string email)
         {
             AspUser user = await _userManager.FindByEmailAsync(email);
             if (user != null)
@@ -71,15 +73,11 @@ namespace RuyaOptik.Business.Services
 
         public async Task<bool> VerifyResetTokenAsync(string resetToken, string userId)
         {
-            // Kullanıcıyı ID ile bul
             AspUser user = await _userManager.FindByIdAsync(userId);
             if (user != null)
             {
-                // Token'ı Base64UrlDecode ile çöz
                 byte[] decodedBytes = WebEncoders.Base64UrlDecode(resetToken);
                 string decodedToken = Encoding.UTF8.GetString(decodedBytes);
-
-                // Token doğrulama
                 return await _userManager.VerifyUserTokenAsync(
                     user,
                     _userManager.Options.Tokens.PasswordResetTokenProvider,
@@ -87,7 +85,6 @@ namespace RuyaOptik.Business.Services
                     decodedToken
                 );
             }
-
             return false;
         }
     }

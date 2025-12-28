@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using RuyaOptik.Business.Interfaces;
 using RuyaOptik.DTO.Inventory;
-
+using RuyaOptik.Business.Attributes;
+using RuyaOptik.Business.Consts;
+using RuyaOptik.Entity.Enums;
+using Microsoft.AspNetCore.Authorization;
 namespace RuyaOptik.API.Controllers
 {
     [ApiController]
@@ -28,6 +31,8 @@ namespace RuyaOptik.API.Controllers
 
         // POST: api/inventory
         [HttpPost]
+        [Authorize("Admin")]
+        [AuthorizeDefinition(Action=ActionType.Writing,Definition = "Envanter Oluştur",Menu=AuthorizeDefinitionConstants.Inventory)]
         public async Task<IActionResult> Create([FromBody] InventoryCreateDto dto)
         {
             if (!ModelState.IsValid)
@@ -40,6 +45,8 @@ namespace RuyaOptik.API.Controllers
 
         // PUT: api/inventory/5
         [HttpPut("{id:int}")]
+        [Authorize("Admin")]
+        [AuthorizeDefinition(Action=ActionType.Updating,Definition = "Envanter Güncelle",Menu=AuthorizeDefinitionConstants.Inventory)]
         public async Task<IActionResult> Update(int id, [FromBody] InventoryUpdateDto dto)
         {
             if (!ModelState.IsValid)

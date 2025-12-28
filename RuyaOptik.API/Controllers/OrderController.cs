@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using RuyaOptik.Business.Interfaces;
 using RuyaOptik.DTO.Order;
-
+using RuyaOptik.Business.Attributes;
+using RuyaOptik.Business.Consts;
+using RuyaOptik.Entity.Enums;
+using Microsoft.AspNetCore.Authorization;
 namespace RuyaOptik.API.Controllers
 {
     [ApiController]
@@ -33,6 +36,8 @@ namespace RuyaOptik.API.Controllers
 
         // PUT: api/order/{id}/status
         [HttpPut("{id:int}/status")]
+        [Authorize("Admin")]
+        [AuthorizeDefinition(Action=ActionType.Updating,Definition = "Sipariş Durumu Güncelle",Menu=AuthorizeDefinitionConstants.Order)]
         public async Task<IActionResult> UpdateStatus(
             int id,
             [FromBody] OrderStatusUpdateDto dto)

@@ -15,5 +15,7 @@ namespace RuyaOptik.Business.Consts
         public const string Order = "Order";
         public const string Product = "Product";
         public const string User = "User";
+        public const string Role = "Role";
+        public const string Auth = "Auth";
     }
 }

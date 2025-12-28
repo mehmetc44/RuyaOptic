@@ -5,21 +5,21 @@ using RuyaOptik.Business.Interfaces;
 using RuyaOptik.DTO.User;
 using RuyaOptik.Business.Exceptions;
 using Microsoft.EntityFrameworkCore;
-using RuyaOptik.Entity.Configurations;
 using RuyaOptik.DataAccess.Repositories.Interfaces;
-using RuyaOptik.DataAccess.Repositories.Concrete;
-
-
+using Microsoft.AspNetCore.WebUtilities;
+using System.Text;
 namespace RuyaOptik.Business.Services
 {
     public class UserService : IUserService
     {
         readonly UserManager<AspUser> _userManager;
+        readonly RoleManager<AspRole> _roleManager;
         readonly IRepository<Endpoint> _efRepository;
 
-        public UserService(UserManager<AspUser> userManager, IRepository<Endpoint> efRepository)
+        public UserService(UserManager<AspUser> userManager, RoleManager<AspRole> roleManager, IRepository<Endpoint> efRepository)
         {
             _userManager = userManager;
+            _roleManager = roleManager;
             _efRepository = efRepository;
         }
 
@@ -44,12 +44,12 @@ namespace RuyaOptik.Business.Services
             return response;
         }
 
-        public async Task<List<UserDto>> GetAllUsersAsync(int page, int size)
+        public async Task<List<UserGetDto>> GetAllUsersAsync(int page, int size)
         {
             var users = await _userManager.Users
                 .Skip(page * size)
                 .Take(size)
-                .Select(u => new UserDto
+                .Select(u => new UserGetDto
                 {
                     Id = u.Id,
                     FirstName = u.FirstName,
@@ -61,9 +61,26 @@ namespace RuyaOptik.Business.Services
             return users;
         }
 
-        public Task UpdatePasswordAsync(string userId, string resetToken, string newPassword)
+        public async Task UpdatePasswordAsync(string userId, string resetToken, string newPassword)
         {
-            throw new NotImplementedException();
+            AspUser user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                string decodedToken = Encoding.UTF8.GetString(
+                    WebEncoders.Base64UrlDecode(resetToken)
+                );
+                IdentityResult result =
+                    await _userManager.ResetPasswordAsync(user, decodedToken, newPassword);
+
+                if (result.Succeeded)
+                {
+                    await _userManager.UpdateSecurityStampAsync(user);
+                }
+                else
+                {
+                    throw new PasswordChangeFailedException();
+                }
+            }
         }
 
         public async Task UpdateRefreshTokenAsync(string refreshToken, AspUser user, DateTime accessTokenDate, int addOnAccessTokenDate)
@@ -85,15 +102,29 @@ namespace RuyaOptik.Business.Services
         public async Task AssignRoleToUserAsnyc(string userId, string[] roles)
         {
             AspUser user = await _userManager.FindByIdAsync(userId);
-            if (user != null)
-            {
-                var userRoles = await _userManager.GetRolesAsync(user);
-                await _userManager.RemoveFromRolesAsync(user, userRoles);
-
-                await _userManager.AddToRolesAsync(user, userRoles);
-            }else 
+            if (user == null)
                 throw new NotFoundUserException();
+
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            if (userRoles.Any())
+            {
+                var removeResult = await _userManager.RemoveFromRolesAsync(user, userRoles);
+                if (!removeResult.Succeeded)
+                    throw new Exception("Existing roles could not be removed");
+            }
+
+            foreach (var role in roles)
+            {
+                if (!await _roleManager.RoleExistsAsync(role))
+                    throw new Exception($"Role '{role}' does not exist");
+            }
+
+            var addResult = await _userManager.AddToRolesAsync(user, roles);
+            if (!addResult.Succeeded)
+                throw new Exception("Roles could not be added");
         }
+
 
         public async Task<List<string>> GetRolesFromUserAsync(string userIdOrName)
         {
