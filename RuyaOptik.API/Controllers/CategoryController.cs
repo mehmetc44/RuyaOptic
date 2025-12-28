@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using RuyaOptik.Business.Interfaces;
 using RuyaOptik.DTO.Category;
-
+using RuyaOptik.Business.Attributes;
+using RuyaOptik.Business.Consts;
+using RuyaOptik.Entity.Enums;
+using Microsoft.AspNetCore.Authorization;
 namespace RuyaOptik.API.Controllers
 {
     [ApiController]
@@ -35,6 +38,8 @@ namespace RuyaOptik.API.Controllers
 
         // POST: api/category
         [HttpPost]
+        [Authorize("Admin")]
+        [AuthorizeDefinition(Action=ActionType.Writing,Definition = "Kategori Oluştur",Menu=AuthorizeDefinitionConstants.Category)]
         public async Task<IActionResult> Create([FromBody] CategoryCreateDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -45,6 +50,8 @@ namespace RuyaOptik.API.Controllers
 
         // PUT: api/category/5
         [HttpPut("{id:int}")]
+        [Authorize("Admin")]
+        [AuthorizeDefinition(Action=ActionType.Updating,Definition = "Kategori Güncelle",Menu=AuthorizeDefinitionConstants.Category)]
         public async Task<IActionResult> Update(int id, [FromBody] CategoryUpdateDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -57,6 +64,8 @@ namespace RuyaOptik.API.Controllers
 
         // DELETE: api/category/5
         [HttpDelete("{id:int}")]
+        [Authorize("Admin")]
+        [AuthorizeDefinition(Action=ActionType.Deleting,Definition = "Kategori Sil",Menu=AuthorizeDefinitionConstants.Category)]
         public async Task<IActionResult> Delete(int id)
         {
             var success = await _categoryService.DeleteAsync(id);

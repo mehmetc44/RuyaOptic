@@ -17,7 +17,7 @@ namespace RuyaOptik.API
             builder.Services.ConfigureIdentity();
             builder.Services.ConfigureAutoMappings();
             builder.Services.ConfigureDependencyInjections();
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            builder.Services.AddAuthentication("Admin")
             .AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters

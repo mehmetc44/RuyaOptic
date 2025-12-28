@@ -5,7 +5,8 @@ using AutoMapper;
 using RuyaOptik.Entity.Identity;
 using Microsoft.IdentityModel.Tokens;
 using RuyaOptik.Business.Exceptions;
-
+using Microsoft.AspNetCore.WebUtilities;
+using System.Text;
 
 
 namespace RuyaOptik.Business.Services
@@ -17,13 +18,15 @@ namespace RuyaOptik.Business.Services
         private readonly IMapper _mapper;
         private readonly ITokenService _tokenService;
         private readonly IUserService _userService;
-        public AuthService(UserManager<AspUser> userManager, SignInManager<AspUser> signInManager, IMapper mapper, ITokenService tokenService, IUserService userService)
+        private readonly IMailService _mailService;
+        public AuthService(UserManager<AspUser> userManager, SignInManager<AspUser> signInManager, IMapper mapper, ITokenService tokenService, IUserService userService, IMailService mailService)
         {
             _userManager = userManager;
             this._signInManager = signInManager;
             _mapper = mapper;
             _tokenService = tokenService;
             _userService = userService;
+            _mailService = mailService;
         }
 
         public async Task<TokenDto> LoginAsync(AspUserLoginDto model, int accessTokenLifeTime)
@@ -56,7 +59,33 @@ namespace RuyaOptik.Business.Services
             }
             else
             throw new NotFoundUserException();
+        }
+        public async Task PasswordResetAsnyc(string email)
+        {
+            AspUser user = await _userManager.FindByEmailAsync(email);
+            if (user != null)
+            { 
+                string resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
+                resetToken = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(resetToken));
+                await _mailService.SendPasswordResetMailAsync(email, user.Id, resetToken);
+            }
+        }
 
+        public async Task<bool> VerifyResetTokenAsync(string resetToken, string userId)
+        {
+            AspUser user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                byte[] decodedBytes = WebEncoders.Base64UrlDecode(resetToken);
+                string decodedToken = Encoding.UTF8.GetString(decodedBytes);
+                return await _userManager.VerifyUserTokenAsync(
+                    user,
+                    _userManager.Options.Tokens.PasswordResetTokenProvider,
+                    "ResetPassword",
+                    decodedToken
+                );
+            }
+            return false;
         }
     }
 }

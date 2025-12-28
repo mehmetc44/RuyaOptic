@@ -69,6 +69,12 @@ namespace RuyaOptik.API.Extensions
             services.AddScoped<IInventoryService, InventoryService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<ICartService, CartService>();
+            services.AddScoped<IApplicationService, ApplicationService>();
+            services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+            services.AddScoped<IMailService, MailService>();
+
+
         }
     }
 }

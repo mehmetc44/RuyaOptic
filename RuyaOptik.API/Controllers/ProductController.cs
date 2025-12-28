@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using RuyaOptik.Business.Interfaces;
 using RuyaOptik.DTO.Product;
-
+using RuyaOptik.Business.Attributes;
+using RuyaOptik.Business.Consts;
+using RuyaOptik.Entity.Enums;
+using Microsoft.AspNetCore.Authorization;
 namespace RuyaOptik.API.Controllers
 {
     [ApiController]
@@ -43,6 +46,8 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpPost]
+        [Authorize("Admin")]
+        [AuthorizeDefinition(Action=ActionType.Writing,Definition = "Ürün Oluştur",Menu=AuthorizeDefinitionConstants.Product)]
         public async Task<IActionResult> Create([FromBody] ProductCreateDto dto)
         {
             var created = await _productService.CreateAsync(dto);
@@ -50,6 +55,8 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpPut("{id:int}")]
+        [Authorize("Admin")]
+        [AuthorizeDefinition(Action=ActionType.Updating,Definition = "Ürün Güncelle",Menu=AuthorizeDefinitionConstants.Product)]
         public async Task<IActionResult> Update(int id, [FromBody] ProductUpdateDto dto)
         {
             var success = await _productService.UpdateAsync(id, dto);
@@ -60,6 +67,8 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize("Admin")]
+        [AuthorizeDefinition(Action=ActionType.Deleting,Definition = "Ürün Sil",Menu=AuthorizeDefinitionConstants.Product)]
         public async Task<IActionResult> Delete(int id)
         {
             var success = await _productService.DeleteAsync(id);
