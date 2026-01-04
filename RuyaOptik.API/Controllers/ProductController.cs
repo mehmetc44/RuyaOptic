@@ -5,6 +5,7 @@ using RuyaOptik.Business.Attributes;
 using RuyaOptik.Business.Consts;
 using RuyaOptik.Entity.Enums;
 using Microsoft.AspNetCore.Authorization;
+
 namespace RuyaOptik.API.Controllers
 {
     [ApiController]
@@ -18,9 +19,9 @@ namespace RuyaOptik.API.Controllers
             _productService = productService;
         }
 
-        // FILTER + SEARCH + SORT + PAGINATION
         // GET: api/product?page=1&pageSize=10&search=ray&sort=PriceAsc
         [HttpGet]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> GetPaged(
             [FromQuery] int page = 1,
             [FromQuery] int pageSize = 10,
@@ -36,6 +37,7 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpGet("{id:int}")]
+        [ResponseCache(Duration = 60)]
         public async Task<IActionResult> GetById(int id)
         {
             var result = await _productService.GetByIdAsync(id);
@@ -47,7 +49,7 @@ namespace RuyaOptik.API.Controllers
 
         [HttpPost]
         [Authorize("Admin")]
-        [AuthorizeDefinition(Action=ActionType.Writing,Definition = "Ürün Oluştur",Menu=AuthorizeDefinitionConstants.Product)]
+        [AuthorizeDefinition(Action = ActionType.Writing, Definition = "Ürün Oluştur", Menu = AuthorizeDefinitionConstants.Product)]
         public async Task<IActionResult> Create([FromBody] ProductCreateDto dto)
         {
             var created = await _productService.CreateAsync(dto);
@@ -56,7 +58,7 @@ namespace RuyaOptik.API.Controllers
 
         [HttpPut("{id:int}")]
         [Authorize("Admin")]
-        [AuthorizeDefinition(Action=ActionType.Updating,Definition = "Ürün Güncelle",Menu=AuthorizeDefinitionConstants.Product)]
+        [AuthorizeDefinition(Action = ActionType.Updating, Definition = "Ürün Güncelle", Menu = AuthorizeDefinitionConstants.Product)]
         public async Task<IActionResult> Update(int id, [FromBody] ProductUpdateDto dto)
         {
             var success = await _productService.UpdateAsync(id, dto);
@@ -68,7 +70,7 @@ namespace RuyaOptik.API.Controllers
 
         [HttpDelete("{id:int}")]
         [Authorize("Admin")]
-        [AuthorizeDefinition(Action=ActionType.Deleting,Definition = "Ürün Sil",Menu=AuthorizeDefinitionConstants.Product)]
+        [AuthorizeDefinition(Action = ActionType.Deleting, Definition = "Ürün Sil", Menu = AuthorizeDefinitionConstants.Product)]
         public async Task<IActionResult> Delete(int id)
         {
             var success = await _productService.DeleteAsync(id);
