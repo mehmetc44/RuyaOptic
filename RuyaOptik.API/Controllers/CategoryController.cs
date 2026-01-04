@@ -38,7 +38,7 @@ namespace RuyaOptik.API.Controllers
 
         // POST: api/category
         [HttpPost]
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Writing,Definition = "Kategori Oluştur",Menu=AuthorizeDefinitionConstants.Category)]
         public async Task<IActionResult> Create([FromBody] CategoryCreateDto dto)
         {
@@ -50,7 +50,7 @@ namespace RuyaOptik.API.Controllers
 
         // PUT: api/category/5
         [HttpPut("{id:int}")]
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Updating,Definition = "Kategori Güncelle",Menu=AuthorizeDefinitionConstants.Category)]
         public async Task<IActionResult> Update(int id, [FromBody] CategoryUpdateDto dto)
         {
@@ -64,7 +64,7 @@ namespace RuyaOptik.API.Controllers
 
         // DELETE: api/category/5
         [HttpDelete("{id:int}")]
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Deleting,Definition = "Kategori Sil",Menu=AuthorizeDefinitionConstants.Category)]
         public async Task<IActionResult> Delete(int id)
         {

@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.HttpOverrides;
-using Microsoft.AspNetCore.Identity;
 using RuyaOptik.API.Extensions;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 namespace RuyaOptik.API
 {
     public class Program
@@ -11,41 +9,21 @@ namespace RuyaOptik.API
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.ConfigureCors();
-            builder.Services.ConfigureIISIntegration();
             // Add services to the container.
-            builder.Services.ConfigureSqliteContext(builder.Configuration);
+            builder.Services.ConfigureSQLContext(builder.Configuration);
             builder.Services.ConfigureIdentity();
             builder.Services.ConfigureAutoMappings();
             builder.Services.ConfigureDependencyInjections();
-            builder.Services.AddAuthentication("Admin")
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true, // Oluşacak tokenin hangi sunucu tarafından oluşturulacağını belirler (bizim sunucumuz)
-                    ValidateAudience = true,//Oluşturulacak tokenin hangi kullanıcının hangi sitelerde geçerli olacağını belirler
-                    ValidateLifetime = true,//tokenin süresinin dolup dolmadığını kontrol eder
-                    ValidateIssuerSigningKey = true,//yazdığımız securuty key'in doğruluğunu kontrol eder
-
-                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                    ValidAudience = builder.Configuration["Jwt:Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
-                    LifetimeValidator = (notBefore, expires, securityToken, validationParameters) =>
-                    {
-                        if (expires != null)
-                        {
-                            return DateTime.UtcNow < expires;
-                        }
-                        return false;
-                    }
-                };
-                
-                
-            });
-
+            builder.Services.ConfigureAuthentication(builder.Configuration);
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.ConfigureSwagger();
+            //builder.Host.UseSerilog();
+            /*Logger logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .WriteTo.File("logs/log.txt")
+            .CreateLogger();
+            */
 
             var app = builder.Build();
 

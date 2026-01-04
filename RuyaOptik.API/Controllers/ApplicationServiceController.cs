@@ -17,13 +17,12 @@ namespace RuyaOptik.API.Controllers
             _appService = appService;
         }
         [HttpGet("authorize-definitions")]
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Reading,Definition = "Adminin Erişebileceği Tanımlar",Menu=AuthorizeDefinitionConstants.Auth)]
         public async Task<IActionResult> GetAuthorizeDefinitions()
         {
             var data = await _appService.GetAuthorizeDefinitionEndpoints(typeof(Program));
             return Ok(data);
         }
-
     }
 }

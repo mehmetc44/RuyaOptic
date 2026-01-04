@@ -46,7 +46,7 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpPost]
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Writing,Definition = "Ürün Oluştur",Menu=AuthorizeDefinitionConstants.Product)]
         public async Task<IActionResult> Create([FromBody] ProductCreateDto dto)
         {
@@ -55,7 +55,7 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpPut("{id:int}")]
-        [Authorize("Admin")]
+        [Authorize(Roles = "Admin")]
         [AuthorizeDefinition(Action=ActionType.Updating,Definition = "Ürün Güncelle",Menu=AuthorizeDefinitionConstants.Product)]
         public async Task<IActionResult> Update(int id, [FromBody] ProductUpdateDto dto)
         {
@@ -67,7 +67,7 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Deleting,Definition = "Ürün Sil",Menu=AuthorizeDefinitionConstants.Product)]
         public async Task<IActionResult> Delete(int id)
         {

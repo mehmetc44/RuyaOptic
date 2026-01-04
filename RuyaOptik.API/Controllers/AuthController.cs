@@ -28,7 +28,6 @@ namespace RuyaOptik.API.Controllers
 
         
         [HttpPost("login")]
-        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] AspUserLoginDto model)
         {
             try

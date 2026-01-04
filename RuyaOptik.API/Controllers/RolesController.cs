@@ -11,7 +11,7 @@ namespace RuyaOptik.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize("Admin")]
+    [Authorize(Roles ="Admin")]
     public class RolesController : ControllerBase
     {
 

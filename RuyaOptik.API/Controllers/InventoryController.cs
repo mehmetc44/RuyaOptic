@@ -9,6 +9,7 @@ namespace RuyaOptik.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Roles = "Admin")]
     public class InventoryController : ControllerBase
     {
         private readonly IInventoryService _inventoryService;
@@ -31,7 +32,7 @@ namespace RuyaOptik.API.Controllers
 
         // POST: api/inventory
         [HttpPost]
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Writing,Definition = "Envanter Oluştur",Menu=AuthorizeDefinitionConstants.Inventory)]
         public async Task<IActionResult> Create([FromBody] InventoryCreateDto dto)
         {
@@ -45,7 +46,7 @@ namespace RuyaOptik.API.Controllers
 
         // PUT: api/inventory/5
         [HttpPut("{id:int}")]
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Updating,Definition = "Envanter Güncelle",Menu=AuthorizeDefinitionConstants.Inventory)]
         public async Task<IActionResult> Update(int id, [FromBody] InventoryUpdateDto dto)
         {
