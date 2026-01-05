@@ -75,10 +75,6 @@
               "target": "Package",
               "version": "[8.0.6, )"
             },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[8.0.6, )"
-            },
             "Serilog": {
               "target": "Package",
               "version": "[4.3.0, )"
@@ -87,9 +83,9 @@
               "target": "Package",
               "version": "[10.0.0, )"
             },
-            "Serilog.Sinks.PostgreSQL": {
+            "Serilog.Sinks.MSSqlServer": {
               "target": "Package",
-              "version": "[2.3.0, )"
+              "version": "[9.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

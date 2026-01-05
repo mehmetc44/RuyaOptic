@@ -9,19 +9,21 @@ namespace RuyaOptik.DataAccess.Repositories.Configuration
     public static class AppConfiguration
     {
         public static string ConnectionString
-        {
-            get
-            {
-                var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+{
+    get
+    {
+        var apiPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName, "RuyaOptik.API");
 
-                var configuration = new ConfigurationBuilder()
-                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                    .AddJsonFile("appsettings.json", optional: false)
-                    .AddJsonFile($"appsettings.{environment}.json", optional: true)
-                    .Build();
+        var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
 
-                return configuration.GetConnectionString("SqlConnection")!;
-            }
-        }
+        var configuration = new ConfigurationBuilder()
+            .SetBasePath(apiPath)
+            .AddJsonFile("appsettings.json", optional: false)
+            .AddJsonFile($"appsettings.{environment}.json", optional: true)
+            .Build();
+
+        return configuration.GetConnectionString("SqlConnection")!;
+    }
+}
     }
 }

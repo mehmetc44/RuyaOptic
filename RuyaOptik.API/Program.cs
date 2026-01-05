@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.HttpOverrides;
 using RuyaOptik.API.Extensions;
+using Serilog;
+using Serilog.Context;
 
 namespace RuyaOptik.API
 {
@@ -8,46 +11,59 @@ namespace RuyaOptik.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+
             builder.Services.ConfigureCors();
-            // Add services to the container.
             builder.Services.ConfigureSQLContext(builder.Configuration);
             builder.Services.ConfigureIdentity();
             builder.Services.ConfigureAutoMappings();
             builder.Services.ConfigureDependencyInjections();
             builder.Services.ConfigureAuthentication(builder.Configuration);
+
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.ConfigureSwagger();
-            //builder.Host.UseSerilog();
-            /*Logger logger = new LoggerConfiguration()
-            .WriteTo.Console()
-            .WriteTo.File("logs/log.txt")
-            .CreateLogger();
-            */
-
+            builder.ConfigureSerilog();
+            builder.Services.ConfigureHttpLogging();
             var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
             else
+            {
                 app.UseHsts();
+            }
+
             app.UseHttpsRedirection();
+
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
                 ForwardedHeaders = ForwardedHeaders.All
             });
+
             app.UseRouting();
             app.UseCors("CorsPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
-            
+            app.Use(async (context, next) =>
+            {
+                var username = context.User?.Identity?.IsAuthenticated == true
+                    ? context.User.Identity.Name
+                    : "Anonymous";
+
+                using (LogContext.PushProperty("UserName", username))
+                {
+                    await next();
+                }
+            });
+            app.UseHttpLogging();
+            app.UseSerilogRequestLogging();
             app.MapControllers();
 
             app.Run();
         }
     }
 }
+

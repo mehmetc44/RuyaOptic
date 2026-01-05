@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RuyaOptik.DataAccess.Context;
 
@@ -11,9 +12,11 @@ using RuyaOptik.DataAccess.Context;
 namespace RuyaOptik.DataAccess.Migrations
 {
     [DbContext(typeof(RuyaOptikDbContext))]
-    partial class RuyaOptikDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260104163429_InitialCReateSqlServer")]
+    partial class InitialCReateSqlServer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
