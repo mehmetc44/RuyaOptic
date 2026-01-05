@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using RuyaOptik.Business.Exceptions;
 using Microsoft.AspNetCore.WebUtilities;
 using System.Text;
+using System.Security.Claims;
 
 
 namespace RuyaOptik.Business.Services
@@ -39,9 +40,19 @@ namespace RuyaOptik.Business.Services
                 throw new NotFoundUserException();
 
             SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
-            if (result.Succeeded) //Authentication başarılı!
+            if (result.Succeeded)
             {
-                TokenDto token = _tokenService.CreateAccessToken(accessTokenLifeTime);
+                var roles = await _userService.GetRolesFromUserAsync(user.UserName);
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.NameIdentifier, user.Id),
+                    new Claim(ClaimTypes.Name, user.UserName)
+                };
+                foreach (var role in roles)
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, role));
+                }
+                TokenDto token = _tokenService.CreateAccessToken(accessTokenLifeTime,claims);
                 await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.Expiration, 15);
                 return token;
             }
@@ -51,20 +62,30 @@ namespace RuyaOptik.Business.Services
         public async Task<TokenDto> RefreshTokenLoginAsync(string refreshToken)
         {
             AspUser user = _userManager.Users.FirstOrDefault(b => b.RefreshToken == refreshToken);
-            if (user != null && user?.RefreshTokenEndDate>DateTime.UtcNow)
+            if (user != null && user?.RefreshTokenEndDate > DateTime.UtcNow)
             {
-                TokenDto token = _tokenService.CreateAccessToken(15);
+                var roles = await _userService.GetRolesFromUserAsync(user.UserName);
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.NameIdentifier, user.Id),
+                    new Claim(ClaimTypes.Name, user.UserName)
+                };
+                foreach (var role in roles)
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, role));
+                }
+                TokenDto token = _tokenService.CreateAccessToken(15,claims);
                 _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.Expiration, 10);
                 return token;
             }
             else
-            throw new NotFoundUserException();
+                throw new NotFoundUserException();
         }
         public async Task PasswordResetAsnyc(string email)
         {
             AspUser user = await _userManager.FindByEmailAsync(email);
             if (user != null)
-            { 
+            {
                 string resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
                 resetToken = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(resetToken));
                 await _mailService.SendPasswordResetMailAsync(email, user.Id, resetToken);

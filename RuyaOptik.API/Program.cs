@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.HttpOverrides;
 using RuyaOptik.API.Extensions;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Serilog;
+using Serilog.Context;
 
 namespace RuyaOptik.API
 {
@@ -11,52 +11,21 @@ namespace RuyaOptik.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
             builder.Services.ConfigureCors();
-            builder.Services.ConfigureIISIntegration();
-
-            // CACHE (In-Memory)
-            builder.Services.AddMemoryCache();
-
-            // HTTP Response Cache
-            builder.Services.AddResponseCaching();
-
-            // Add services to the container.
-            builder.Services.ConfigureSqliteContext(builder.Configuration);
+            builder.Services.ConfigureSQLContext(builder.Configuration);
             builder.Services.ConfigureIdentity();
             builder.Services.ConfigureAutoMappings();
             builder.Services.ConfigureDependencyInjections();
-
-            builder.Services.AddAuthentication("Admin")
-                .AddJwtBearer(options =>
-                {
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
-                        ValidateLifetime = true,
-                        ValidateIssuerSigningKey = true,
-
-                        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                        ValidAudience = builder.Configuration["Jwt:Audience"],
-                        IssuerSigningKey = new SymmetricSecurityKey(
-                            System.Text.Encoding.UTF8.GetBytes(
-                                builder.Configuration["Jwt:Key"]
-                            )
-                        ),
-                        LifetimeValidator = (notBefore, expires, token, param) =>
-                        {
-                            return expires != null && DateTime.UtcNow < expires;
-                        }
-                    };
-                });
-
+            builder.Services.ConfigureAuthentication(builder.Configuration);
+            builder.Services.AddMemoryCache();
+            builder.Services.AddResponseCaching();
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
+            builder.Services.ConfigureSwagger();
+            builder.ConfigureSerilog();
+            builder.Services.ConfigureHttpLogging();
             var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -77,14 +46,28 @@ namespace RuyaOptik.API
             app.UseRouting();
             app.UseCors("CorsPolicy");
 
-            // HTTP Response Cache middleware
             app.UseResponseCaching();
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.Use(async (context, next) =>
+            {
+                var username = context.User?.Identity?.IsAuthenticated == true
+                    ? context.User.Identity.Name
+                    : "Anonymous";
+
+                using (LogContext.PushProperty("UserName", username))
+                {
+                    await next();
+                }
+            });
+            app.UseHttpLogging();
+            app.UseSerilogRequestLogging();
+            app.MapControllers();
 
             app.MapControllers();
             app.Run();
         }
     }
 }
+

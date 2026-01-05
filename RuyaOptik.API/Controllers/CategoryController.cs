@@ -38,8 +38,8 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpPost]
-        [Authorize("Admin")]
-        [AuthorizeDefinition(Action = ActionType.Writing, Definition = "Kategori Oluştur", Menu = AuthorizeDefinitionConstants.Category)]
+        [Authorize(Roles ="Admin")]
+        [AuthorizeDefinition(Action=ActionType.Writing,Definition = "Kategori Oluştur",Menu=AuthorizeDefinitionConstants.Category)]
         public async Task<IActionResult> Create([FromBody] CategoryCreateDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -49,8 +49,8 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpPut("{id:int}")]
-        [Authorize("Admin")]
-        [AuthorizeDefinition(Action = ActionType.Updating, Definition = "Kategori Güncelle", Menu = AuthorizeDefinitionConstants.Category)]
+        [Authorize(Roles ="Admin")]
+        [AuthorizeDefinition(Action=ActionType.Updating,Definition = "Kategori Güncelle",Menu=AuthorizeDefinitionConstants.Category)]
         public async Task<IActionResult> Update(int id, [FromBody] CategoryUpdateDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -62,8 +62,8 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        [Authorize("Admin")]
-        [AuthorizeDefinition(Action = ActionType.Deleting, Definition = "Kategori Sil", Menu = AuthorizeDefinitionConstants.Category)]
+        [Authorize(Roles ="Admin")]
+        [AuthorizeDefinition(Action=ActionType.Deleting,Definition = "Kategori Sil",Menu=AuthorizeDefinitionConstants.Category)]
         public async Task<IActionResult> Delete(int id)
         {
             var success = await _categoryService.DeleteAsync(id);

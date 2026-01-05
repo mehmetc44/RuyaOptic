@@ -50,7 +50,7 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpGet("get-users")]
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Reading,Definition = "Tüm Kullanıcıları Getir",Menu=AuthorizeDefinitionConstants.User)]
         public async Task<IActionResult> GetAllUsersAsync([FromQuery] int page, [FromQuery] int size)
         {
@@ -59,7 +59,7 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpPost("{userId}/roles")]
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Updating,Definition = "Kullanıcıya Rol Ata",Menu=AuthorizeDefinitionConstants.User)]
         public async Task<IActionResult> AssignRolesToUser(string userId,[FromBody] string[] roles)
         {
@@ -68,6 +68,7 @@ namespace RuyaOptik.API.Controllers
         }
 
         [HttpGet("get-roles-from-user/{userIdOrName}")]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> GetRolesFromUser([FromRoute] string userIdOrName)
         {
             var roles = await _userService.GetRolesFromUserAsync(userIdOrName);

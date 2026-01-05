@@ -9,6 +9,7 @@ using RuyaOptik.Business.Interfaces;
 using RuyaOptik.DTO.Auth;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
+using System.Security.Claims;
 namespace RuyaOptik.Business.Services
 {
     public class TokenService : ITokenService
@@ -18,7 +19,7 @@ namespace RuyaOptik.Business.Services
         {
             _configuration = configuration;
         }
-        public TokenDto CreateAccessToken(int minute)
+        public TokenDto CreateAccessToken(int minute, List<Claim> claims)
         {
             TokenDto token = new TokenDto();
             SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
@@ -28,7 +29,8 @@ namespace RuyaOptik.Business.Services
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Audience"],
                 expires: token.Expiration,
-                signingCredentials: credentials
+                signingCredentials: credentials,
+                claims: claims
             );
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
             token.AccessToken = tokenHandler.WriteToken(jwtToken);

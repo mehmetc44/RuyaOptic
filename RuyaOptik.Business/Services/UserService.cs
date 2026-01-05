@@ -25,19 +25,33 @@ namespace RuyaOptik.Business.Services
 
         public async Task<CreateUserResponseDto> CreateAsync(CreateUserDto model)
         {
-            IdentityResult result = await _userManager.CreateAsync(new()
+            var user = new AspUser
             {
                 Id = Guid.NewGuid().ToString(),
                 UserName = model.Username,
                 Email = model.Email,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
-            }, model.Password);
-
+            };
+            IdentityResult result = await _userManager.CreateAsync(user, model.Password);
             CreateUserResponseDto response = new() { Succeeded = result.Succeeded };
+                if (result.Succeeded)
+                {
+                    var userRole = await _roleManager.FindByNameAsync("User");
+                    if (userRole != null)
+                    {
+                        if (!await _userManager.IsInRoleAsync(user, userRole.Name))
+                        {
+                            await _userManager.AddToRoleAsync(user, userRole.Name);
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Varsayılan 'User' rolü veritabanında bulunamadı!");
+                    }
 
-            if (result.Succeeded)
-                response.Message = "Kullanıcı başarıyla oluşturulmuştur.";
+                    response.Message = "Kullanıcı başarıyla oluşturulmuştur.";
+                }
             else
                 foreach (var error in result.Errors)
                     response.Message += $"{error.Code} - {error.Description}\n";
@@ -55,7 +69,7 @@ namespace RuyaOptik.Business.Services
                     FirstName = u.FirstName,
                     LastName = u.LastName,
                     Username = u.UserName,
-                    Email = u.Email
+                    Email = u.Email,
                 }).ToListAsync();
 
             return users;

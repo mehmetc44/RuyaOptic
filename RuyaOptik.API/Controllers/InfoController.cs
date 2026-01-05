@@ -19,7 +19,7 @@ namespace RuyaOptik.API.Controllers
 
         /// API about / info endpoint
         [HttpGet]
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Reading,Definition = "API Hakkında",Menu=AuthorizeDefinitionConstants.Info)]
         public IActionResult Get()
         {

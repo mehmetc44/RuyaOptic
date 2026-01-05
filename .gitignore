@@ -8,8 +8,8 @@
 *.log
 
 # Build outputs
-bin/
-obj/
+*/bin/
+*/obj/
 
 # SQLite (LOCAL ONLY)
 *.db

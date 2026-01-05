@@ -20,6 +20,7 @@ namespace RuyaOptik.API.Controllers
 
         // POST: api/order
         [HttpPost]
+        [Authorize(Roles ="Admin, User")]
         public async Task<IActionResult> Create([FromBody] OrderCreateDto dto)
         {
             var result = await _orderService.CreateAsync(dto);
@@ -28,6 +29,7 @@ namespace RuyaOptik.API.Controllers
 
         // GET: api/order/user/{userId}
         [HttpGet("user/{userId}")]
+        [Authorize(Roles ="Admin, User")]
         public async Task<IActionResult> GetByUser(string userId)
         {
             var orders = await _orderService.GetByUserIdAsync(userId);
@@ -36,7 +38,7 @@ namespace RuyaOptik.API.Controllers
 
         // PUT: api/order/{id}/status
         [HttpPut("{id:int}/status")]
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Updating,Definition = "Sipariş Durumu Güncelle",Menu=AuthorizeDefinitionConstants.Order)]
         public async Task<IActionResult> UpdateStatus(
             int id,
