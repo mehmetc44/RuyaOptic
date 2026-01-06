@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RuyaOptik SignalR Admin Test</title>
+
+    <!-- SignalR CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.0/dist/browser/signalr.min.js"></script>
+  </head>
+  <body>
+    <h2>🟢 SignalR Admin Listener</h2>
+    <p>Yeni sipariş gelince aşağıda görünecek.</p>
+
+    <pre id="log" style="background: #111; color: #0f0; padding: 10px"></pre>
+
+    <script>
+      // 🔴 BURAYA ADMIN TOKEN YAPIŞTIR
+      const token =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjY1ZmU2ZDE4LWRmYWUtNDg5ZC1iY2RmLWE1NWQzNjk5NzFmYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdHJpbmciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc2Nzc4NDYyNSwiaXNzIjoicnV5YW9wdGlrLWFwaSIsImF1ZCI6InJ1eWFvcHRpay1jbGllbnQifQ.S0OTg5HrWRgiI9AQ7ckK1Lajy_IV1bncn9jNVsjDLLs";
+
+      const connection = new signalR.HubConnectionBuilder()
+        .withUrl("http://localhost:5188/hubs/orders", {
+          accessTokenFactory: () => token,
+        })
+        .withAutomaticReconnect()
+        .build();
+
+      connection.on("NewOrderCreated", (data) => {
+        document.getElementById("log").textContent +=
+          "\n🛒 YENİ SİPARİŞ:\n" + JSON.stringify(data, null, 2);
+      });
+
+      connection
+        .start()
+        .then(() => {
+          document.getElementById("log").textContent +=
+            "\n✅ SignalR connected as ADMIN\n";
+        })
+        .catch((err) => {
+          document.getElementById("log").textContent +=
+            "\n❌ SignalR ERROR\n" + err;
+        });
+    </script>
+  </body>
+</html>

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.HttpOverrides;
 using RuyaOptik.API.Extensions;
 using Serilog;
 using Serilog.Context;
+using RuyaOptik.API.Hubs;
 
 namespace RuyaOptik.API
 {
@@ -10,7 +11,6 @@ namespace RuyaOptik.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
 
             builder.Services.ConfigureCors();
             builder.Services.ConfigureSQLContext(builder.Configuration);
@@ -21,11 +21,17 @@ namespace RuyaOptik.API
             builder.Services.AddMemoryCache();
             builder.Services.AddResponseCaching();
             builder.Services.AddControllers();
+
+            // SignalR
+            builder.Services.AddSignalR();
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.ConfigureSwagger();
             builder.ConfigureSerilog();
             builder.Services.ConfigureHttpLogging();
+
             var app = builder.Build();
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -36,7 +42,9 @@ namespace RuyaOptik.API
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection(); signalr test için kapalı
+
+            app.UseStaticFiles();
 
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
@@ -50,6 +58,7 @@ namespace RuyaOptik.API
 
             app.UseAuthentication();
             app.UseAuthorization();
+
             app.Use(async (context, next) =>
             {
                 var username = context.User?.Identity?.IsAuthenticated == true
@@ -61,13 +70,16 @@ namespace RuyaOptik.API
                     await next();
                 }
             });
+
             app.UseHttpLogging();
             app.UseSerilogRequestLogging();
-            app.MapControllers();
 
             app.MapControllers();
+
+            // Hub endpoint
+            app.MapHub<OrdersHub>("/hubs/orders");
+
             app.Run();
         }
     }
 }
-

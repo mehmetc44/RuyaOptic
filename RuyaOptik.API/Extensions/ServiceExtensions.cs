@@ -26,10 +26,15 @@ namespace RuyaOptik.API.Extensions
         services.AddCors(options =>
         {
             options.AddPolicy("CorsPolicy", builder =>
-            builder.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
+                builder
+                    .WithOrigins("http://localhost:5188")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials()
+            );
         });
+
+
         public static void ConfigureSQLContext(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<RuyaOptikDbContext>(options =>
@@ -39,6 +44,7 @@ namespace RuyaOptik.API.Extensions
             )
             );
         }
+
         public static void ConfigureIdentity(this IServiceCollection services)
         {
             var builder = services.AddIdentity<AspUser, AspRole>(o =>
@@ -54,10 +60,12 @@ namespace RuyaOptik.API.Extensions
             .AddEntityFrameworkStores<RuyaOptikDbContext>()
             .AddDefaultTokenProviders();
         }
+
         public static void ConfigureAutoMappings(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(RuyaOptik.Business.Mapping.AutoMapperProfile));
         }
+
         public static void ConfigureDependencyInjections(this IServiceCollection services)
         {
             services.AddSingleton<CacheVersionService>();
@@ -78,9 +86,8 @@ namespace RuyaOptik.API.Extensions
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
             services.AddScoped<IMailService, MailService>();
-
-
         }
+
         public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddAuthentication(options =>
@@ -106,8 +113,25 @@ namespace RuyaOptik.API.Extensions
                     NameClaimType = ClaimTypes.Name,
                     RoleClaimType = ClaimTypes.Role
                 };
-            });
 
+                // SIGNALR: token querystring’ten de okunabilsin
+                options.Events = new JwtBearerEvents
+                {
+                    OnMessageReceived = context =>
+                    {
+                        var accessToken = context.Request.Query["access_token"];
+                        var path = context.HttpContext.Request.Path;
+
+                        if (!string.IsNullOrEmpty(accessToken) &&
+                            path.StartsWithSegments("/hubs/orders"))
+                        {
+                            context.Token = accessToken;
+                        }
+
+                        return Task.CompletedTask;
+                    }
+                };
+            });
         }
 
         public static void ConfigureSwagger(this IServiceCollection services)
@@ -119,6 +143,7 @@ namespace RuyaOptik.API.Extensions
                     Title = "RuyaOptik API",
                     Version = "v1"
                 });
+
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -144,7 +169,6 @@ namespace RuyaOptik.API.Extensions
                 }
                 });
             });
-
         }
 
         public static void ConfigureSerilog(this WebApplicationBuilder builder)
@@ -196,29 +220,26 @@ namespace RuyaOptik.API.Extensions
         public static void ConfigureHttpLogging(this IServiceCollection services)
         {
             services.AddHttpLogging(options =>
-                {
-                    options.LoggingFields =
-                        HttpLoggingFields.RequestMethod |
-                        HttpLoggingFields.RequestPath |
-                        HttpLoggingFields.RequestHeaders |
-                        HttpLoggingFields.ResponseStatusCode |
-                        HttpLoggingFields.ResponseHeaders;
+            {
+                options.LoggingFields =
+                    HttpLoggingFields.RequestMethod |
+                    HttpLoggingFields.RequestPath |
+                    HttpLoggingFields.RequestHeaders |
+                    HttpLoggingFields.ResponseStatusCode |
+                    HttpLoggingFields.ResponseHeaders;
 
-                    options.RequestBodyLogLimit = 4096;
-                    options.ResponseBodyLogLimit = 4096;
+                options.RequestBodyLogLimit = 4096;
+                options.ResponseBodyLogLimit = 4096;
 
-                    options.RequestHeaders.Remove("Authorization");
-                    options.RequestHeaders.Remove("Cookie");
-                    options.RequestHeaders.Remove("Set-Cookie");
+                options.RequestHeaders.Remove("Authorization");
+                options.RequestHeaders.Remove("Cookie");
+                options.RequestHeaders.Remove("Set-Cookie");
 
-                    options.ResponseHeaders.Remove("Set-Cookie");
+                options.ResponseHeaders.Remove("Set-Cookie");
 
-                    options.MediaTypeOptions.AddText("application/json");
-                    options.MediaTypeOptions.AddText("application/problem+json");
-                });
+                options.MediaTypeOptions.AddText("application/json");
+                options.MediaTypeOptions.AddText("application/problem+json");
+            });
         }
     }
-
-
 }
-

@@ -17,8 +17,8 @@
 *.db-wal
 
 # Environment-specific configs
-appsettings.Development.json
-appsettings.Production.json
+*appsettings.json
+
 
 # Secrets
 secrets.json
