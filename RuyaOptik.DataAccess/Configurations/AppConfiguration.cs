@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 
 namespace RuyaOptik.DataAccess.Repositories.Configuration
@@ -9,21 +5,21 @@ namespace RuyaOptik.DataAccess.Repositories.Configuration
     public static class AppConfiguration
     {
         public static string ConnectionString
-{
-    get
-    {
-        var apiPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName, "RuyaOptik.API");
+        {
+            get
+            {
+                // Docker / Prod (ENV)
+                var envConn = Environment.GetEnvironmentVariable("SQL_CONNECTION_STRING");
+                if (!string.IsNullOrWhiteSpace(envConn))
+                    return envConn;
 
-        var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+                // Local
+                var configuration = new ConfigurationBuilder()
+                    .AddJsonFile("appsettings.json", optional: false)
+                    .Build();
 
-        var configuration = new ConfigurationBuilder()
-            .SetBasePath(apiPath)
-            .AddJsonFile("appsettings.json", optional: false)
-            .AddJsonFile($"appsettings.{environment}.json", optional: true)
-            .Build();
-
-        return configuration.GetConnectionString("SqlConnection")!;
-    }
-}
+                return configuration.GetConnectionString("SqlConnection")!;
+            }
+        }
     }
 }

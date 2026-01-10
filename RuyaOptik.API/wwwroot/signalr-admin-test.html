@@ -14,12 +14,12 @@
     <pre id="log" style="background: #111; color: #0f0; padding: 10px"></pre>
 
     <script>
-      // 🔴 BURAYA ADMIN TOKEN YAPIŞTIR
+      // BURAYA ADMIN TOKEN YAPIŞTIR
       const token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjY1ZmU2ZDE4LWRmYWUtNDg5ZC1iY2RmLWE1NWQzNjk5NzFmYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdHJpbmciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc2Nzc4NDYyNSwiaXNzIjoicnV5YW9wdGlrLWFwaSIsImF1ZCI6InJ1eWFvcHRpay1jbGllbnQifQ.S0OTg5HrWRgiI9AQ7ckK1Lajy_IV1bncn9jNVsjDLLs";
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjY1ZmU2ZDE4LWRmYWUtNDg5ZC1iY2RmLWE1NWQzNjk5NzFmYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdHJpbmciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc2ODA5NzkxNiwiaXNzIjoicnV5YW9wdGlrLWFwaSIsImF1ZCI6InJ1eWFvcHRpay1jbGllbnQifQ.zpkGrr3uB_iIS6AkT-QqqDOdsKj36s9bCz-JFiO0a9w";
 
       const connection = new signalR.HubConnectionBuilder()
-        .withUrl("http://localhost:5188/hubs/orders", {
+        .withUrl("http://localhost:8080/hubs/orders", {
           accessTokenFactory: () => token,
         })
         .withAutomaticReconnect()
@@ -34,11 +34,11 @@
         .start()
         .then(() => {
           document.getElementById("log").textContent +=
-            "\n✅ SignalR connected as ADMIN\n";
+            "\n SignalR connected as ADMIN\n";
         })
         .catch((err) => {
           document.getElementById("log").textContent +=
-            "\n❌ SignalR ERROR\n" + err;
+            "\n SignalR ERROR\n" + err;
         });
     </script>
   </body>

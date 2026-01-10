@@ -27,12 +27,17 @@ namespace RuyaOptik.API.Extensions
         {
             options.AddPolicy("CorsPolicy", builder =>
                 builder
-                    .WithOrigins("http://localhost:5188")
+                    .WithOrigins(
+                        "http://localhost:5188", // local dotnet run
+                        "http://localhost:8080"  // docker
+                    )
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials()
             );
         });
+
+
 
 
         public static void ConfigureSQLContext(this IServiceCollection services, IConfiguration configuration)
