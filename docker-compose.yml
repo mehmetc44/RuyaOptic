@@ -1,11 +1,21 @@
 services:
   ruyaoptik-api:
-    build: .
+    build:
+      context: .
+      dockerfile: RuyaOptik.API/Dockerfile
     container_name: ruyaoptik-api
     ports:
       - "8080:8080"
-    environment:
-      ASPNETCORE_ENVIRONMENT: "Development"
-      # connection string'i ENV ile vermek istersen buraya koy
-
-    restart: unless-stopped
+      - "8081:8081"
+    
+    # 👇 ESKİ environment KISMINI SİL, YERİNE BUNU YAZ
+    env_file:
+      - .env
+      
+    depends_on:
+      - db
+    volumes:
+      - ./certs:/https:ro
+      - ./RuyaOptik.API/wwwroot:/app/wwwroot
+    networks:
+      - ruyaoptik-network

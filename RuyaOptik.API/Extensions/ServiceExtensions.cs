@@ -23,19 +23,16 @@ namespace RuyaOptik.API.Extensions
     public static class ServiceExtensions
     {
         public static void ConfigureCors(this IServiceCollection services) =>
-        services.AddCors(options =>
-        {
-            options.AddPolicy("CorsPolicy", builder =>
-                builder
-                    .WithOrigins(
-                        "http://localhost:5188", // local dotnet run
-                        "http://localhost:8080"  // docker
-                    )
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials()
-            );
-        });
+    services.AddCors(options =>
+    {
+        options.AddPolicy("CorsPolicy", builder =>
+            builder
+                .SetIsOriginAllowed(origin => true)
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials()
+        );
+    });
 
 
 
