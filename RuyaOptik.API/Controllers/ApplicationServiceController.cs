@@ -12,17 +12,26 @@ namespace RuyaOptik.API.Controllers
     public class ApplicationServiceController : ControllerBase
     {
         readonly IApplicationService _appService;
-        public ApplicationServiceController(IApplicationService appService)
+        readonly IMailService _mailService;
+        public ApplicationServiceController(IApplicationService appService, IMailService mailService)
         {
             _appService = appService;
+            _mailService = mailService;
         }
         [HttpGet("authorize-definitions")]
-        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Reading,Definition = "Adminin Erişebileceği Tanımlar",Menu=AuthorizeDefinitionConstants.Auth)]
         public async Task<IActionResult> GetAuthorizeDefinitions()
         {
             var data = await _appService.GetAuthorizeDefinitionEndpoints(typeof(Program));
             return Ok(data);
+        }
+        
+        [HttpGet("send-test-mail")]
+        [AuthorizeDefinition(Action=ActionType.Reading,Definition = "Test Mail Gönder",Menu=AuthorizeDefinitionConstants.Auth)]
+        public async Task<IActionResult> SendTestMail()
+        {
+            await _mailService.SendMailAsync("cakmakm4400@gmail.com", "Test Subject", "Test Body");
+            return Ok();
         }
     }
 }

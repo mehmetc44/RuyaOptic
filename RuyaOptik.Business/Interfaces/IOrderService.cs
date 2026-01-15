@@ -5,7 +5,7 @@ namespace RuyaOptik.Business.Interfaces
 {
     public interface IOrderService
     {
-        Task<OrderDto> CreateAsync(OrderCreateDto dto);
+        Task<OrderDto> CreateAsync(string userId, OrderCreateDto dto);
         Task<List<OrderDto>> GetByUserIdAsync(string userId);
 
         Task<bool> UpdateStatusAsync(int orderId, OrderStatus status);

@@ -1,21 +1,49 @@
+version: '3.8'
+
 services:
   ruyaoptik-api:
     build:
       context: .
-      dockerfile: RuyaOptik.API/Dockerfile
+      dockerfile: Dockerfile
     container_name: ruyaoptik-api
-    ports:
-      - "8080:8080"
-      - "8081:8081"
     
-    # 👇 ESKİ environment KISMINI SİL, YERİNE BUNU YAZ
+    # Ağ sorunlarını önlemek için DNS ayarları
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+    ports:
+      - "8080:8080" # HTTP
+      - "8081:8081" # HTTPS
+    
+    # HTTPS ve Sertifika Ayarları
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:8081;http://+:8080
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Ruya123!
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/ruyaoptik.pfx
+      
+      # --- DÜZELTİLEN KISIM BURASI ---
+      # C# kodunda "Mail:Host" dediğin için burada "Mail__Host" olmalı
+      - Mail__Host=${MAIL_HOST}
+      - Mail__Port=${MAIL_PORT}
+      # C# kodunda "Mail:Username" dediğin için burada "Mail__Username" olmalı
+      - Mail__Username=${MAIL_USER} 
+      - Mail__Password=${MAIL_PASSWORD}
+      
+      # Şifre sıfırlama linki için gerekli (bunu da ekledim)
+      - ClientUrl=${ClientUrl}
+    
     env_file:
       - .env
       
-    depends_on:
-      - db
     volumes:
       - ./certs:/https:ro
       - ./RuyaOptik.API/wwwroot:/app/wwwroot
+    
     networks:
       - ruyaoptik-network
+
+networks:
+  ruyaoptik-network:
+    driver: bridge

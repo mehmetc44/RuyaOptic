@@ -37,7 +37,7 @@ namespace RuyaOptik.Business.Services
 
         // CREATE ORDER (TRANSACTION)
 
-        public async Task<OrderDto> CreateAsync(OrderCreateDto dto)
+        public async Task<OrderDto> CreateAsync(string userId, OrderCreateDto dto)
         {
             if (!dto.Items.Any())
                 throw new Exception("Sipariş en az bir ürün içermelidir.");
@@ -48,7 +48,7 @@ namespace RuyaOptik.Business.Services
             {
                 var order = new Order
                 {
-                    UserId = dto.UserId,
+                    UserId = userId,
                     CustomerName = dto.CustomerName,
                     PhoneNumber = dto.PhoneNumber,
                     AddressLine = dto.AddressLine,
@@ -94,7 +94,7 @@ namespace RuyaOptik.Business.Services
                 await _orderRepository.SaveChangesAsync();
 
                 // clear cart after successful order
-                var cart = await _cartRepository.GetCartByUserIdAsync(dto.UserId);
+                var cart = await _cartRepository.GetCartByUserIdAsync(userId);
                 if (cart != null)
                 {
                     foreach (var ci in cart.Items.ToList())

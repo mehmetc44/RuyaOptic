@@ -30,8 +30,8 @@ namespace RuyaOptik.API.Controllers
         [Authorize(Roles = "Admin, User")]
         public async Task<IActionResult> Create([FromBody] OrderCreateDto dto)
         {
-            var result = await _orderService.CreateAsync(dto);
-
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            var result = await _orderService.CreateAsync(userId, dto);
             // Yeni sipariş geldi → admin paneline anlık bildirim
             var notification = new NewOrderNotificationDto
             {

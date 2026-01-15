@@ -1,45 +1,166 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>RuyaOptik SignalR Admin Test</title>
-
-    <!-- SignalR CDN -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuyaOptik Admin SignalR Test</title>
     <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.0/dist/browser/signalr.min.js"></script>
-  </head>
-  <body>
-    <h2>🟢 SignalR Admin Listener</h2>
-    <p>Yeni sipariş gelince aşağıda görünecek.</p>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #1e1e1e; color: #fff; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .input-group { margin-bottom: 20px; background: #2d2d2d; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #aaa; }
+        textarea { width: 100%; height: 80px; background: #333; color: #fff; border: 1px solid #444; border-radius: 4px; padding: 8px; box-sizing: border-box; font-family: monospace; resize: vertical; }
+        .btn-group { margin-top: 10px; display: flex; gap: 10px; }
+        button { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.2s; }
+        #btnConnect { background-color: #28a745; color: white; }
+        #btnConnect:hover { background-color: #218838; }
+        #btnConnect:disabled { background-color: #555; cursor: not-allowed; }
+        #btnDisconnect { background-color: #dc3545; color: white; }
+        #btnDisconnect:hover { background-color: #c82333; }
+        #btnDisconnect:disabled { background-color: #555; cursor: not-allowed; }
+        
+        #status { margin-top: 10px; font-weight: bold; }
+        .status-disconnected { color: #dc3545; }
+        .status-connected { color: #28a745; }
+        .status-connecting { color: #ffc107; }
 
-    <pre id="log" style="background: #111; color: #0f0; padding: 10px"></pre>
+        pre { background: #000; color: #0f0; padding: 15px; border-radius: 4px; height: 400px; overflow-y: auto; border: 1px solid #333; font-size: 14px; }
+        .log-time { color: #888; margin-right: 10px; }
+        .log-event { color: #0ff; }
+        .log-error { color: #f00; }
+    </style>
+</head>
+<body>
 
-    <script>
-      // BURAYA ADMIN TOKEN YAPIŞTIR
-      const token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjY1ZmU2ZDE4LWRmYWUtNDg5ZC1iY2RmLWE1NWQzNjk5NzFmYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdHJpbmciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc2ODA5NzkxNiwiaXNzIjoicnV5YW9wdGlrLWFwaSIsImF1ZCI6InJ1eWFvcHRpay1jbGllbnQifQ.zpkGrr3uB_iIS6AkT-QqqDOdsKj36s9bCz-JFiO0a9w";
+<div class="container">
+    <h2>📡 RuyaOptik SignalR Admin Paneli</h2>
+    
+    <div class="input-group">
+        <label for="hubUrl">Hub URL:</label>
+        <input type="text" id="hubUrl" value="https://localhost:8081/hubs/orders" style="width: 100%; padding: 8px; background: #333; color: #fff; border: 1px solid #444; margin-bottom: 10px;">
 
-      const connection = new signalR.HubConnectionBuilder()
-        .withUrl("http://localhost:8080/hubs/orders", {
-          accessTokenFactory: () => token,
-        })
-        .withAutomaticReconnect()
-        .build();
+        <label for="tokenInput">JWT Admin Token (Bearer):</label>
+        <textarea id="tokenInput" placeholder="Login olduktan sonra aldığın token'ı buraya yapıştır..."></textarea>
+        
+        <div class="btn-group">
+            <button id="btnConnect" onclick="connect()">🔌 Bağlan</button>
+            <button id="btnDisconnect" onclick="disconnect()" disabled="">❌ Kopar</button>
+        </div>
+        <div id="status" class="status-disconnected">Durum: 🔴 BAĞLI DEĞİL</div>
+    </div>
 
-      connection.on("NewOrderCreated", (data) => {
-        document.getElementById("log").textContent +=
-          "\n🛒 YENİ SİPARİŞ:\n" + JSON.stringify(data, null, 2);
-      });
+    <h3>Olay Günlüğü (Logs)</h3>
+    <pre id="logArea">Sistem hazır. Token girip bağlanmayı bekliyor...
+<span class="log-time">[11:40:20 PM]</span> <span class="">Bağlantı başlatılıyor...</span>
+<span class="log-time">[11:40:21 PM]</span> <span class="log-event">SignalR bağlantısı başarıyla kuruldu.</span>
+<span class="log-time">[11:43:36 PM]</span> <span class="log-event">🔔 YENİ SİPARİŞ GELDİ!</span>
+<span class="log-time">[11:43:36 PM]</span> <span class="">{
+  "orderId": 4,
+  "userId": "7d42f660-1179-40cd-89be-7df7bcfc63a7",
+  "customerName": "Mehmet Çakmak",
+  "totalPrice": 2899,
+  "createdDate": "2026-01-15T20:43:36.9268144Z"
+}</span>
+<span class="log-time">[12:06:34 AM]</span> <span class="log-error">Bağlantı koptu.</span></pre>
+    <button onclick="clearLog()" style="background:#444; color:#fff; font-size:12px; padding:5px 10px;">Logları Temizle</button>
+</div>
 
-      connection
-        .start()
-        .then(() => {
-          document.getElementById("log").textContent +=
-            "\n SignalR connected as ADMIN\n";
-        })
-        .catch((err) => {
-          document.getElementById("log").textContent +=
-            "\n SignalR ERROR\n" + err;
-        });
-    </script>
-  </body>
-</html>
+<script>
+    let connection = null;
+
+    function log(message, type = 'info') {
+        const logArea = document.getElementById("logArea");
+        const time = new Date().toLocaleTimeString();
+        let colorClass = '';
+        if(type === 'event') colorClass = 'log-event';
+        if(type === 'error') colorClass = 'log-error';
+
+        logArea.innerHTML += `\n<span class="log-time">[${time}]</span> <span class="${colorClass}">${message}</span>`;
+        logArea.scrollTop = logArea.scrollHeight; // Auto scroll
+    }
+
+    function clearLog() {
+        document.getElementById("logArea").textContent = "Loglar temizlendi...";
+    }
+
+    function updateStatus(state) {
+        const el = document.getElementById("status");
+        const btnConnect = document.getElementById("btnConnect");
+        const btnDisconnect = document.getElementById("btnDisconnect");
+
+        if (state === 'connected') {
+            el.textContent = "Durum: 🟢 BAĞLANDI (Admin)";
+            el.className = "status-connected";
+            btnConnect.disabled = true;
+            btnDisconnect.disabled = false;
+        } else if (state === 'connecting') {
+            el.textContent = "Durum: 🟡 BAĞLANIYOR...";
+            el.className = "status-connecting";
+            btnConnect.disabled = true;
+            btnDisconnect.disabled = true;
+        } else {
+            el.textContent = "Durum: 🔴 BAĞLI DEĞİL";
+            el.className = "status-disconnected";
+            btnConnect.disabled = false;
+            btnDisconnect.disabled = true;
+        }
+    }
+
+    async function connect() {
+        const token = document.getElementById("tokenInput").value.trim();
+        const url = document.getElementById("hubUrl").value.trim();
+
+        if (!token) {
+            log("HATA: Lütfen önce bir Token yapıştırın!", "error");
+            return;
+        }
+
+        updateStatus('connecting');
+        log("Bağlantı başlatılıyor...");
+
+        try {
+            connection = new signalR.HubConnectionBuilder()
+                .withUrl(url, {
+                    accessTokenFactory: () => token,
+                    // Sertifika sorunu olursa (Localhost self-signed) bunu atlamak gerekebilir ama
+                    // tarayıcıda zaten güvenli olarak işaretlediysen gerek kalmaz.
+                })
+                .withAutomaticReconnect()
+                .configureLogging(signalR.LogLevel.Information)
+                .build();
+
+            // EVENT: Yeni Sipariş Geldiğinde
+            connection.on("NewOrderCreated", (data) => {
+                log("🔔 YENİ SİPARİŞ GELDİ!", "event");
+                log(JSON.stringify(data, null, 2));
+            });
+
+            // Bağlantı Koptuğunda
+            connection.onclose(async () => {
+                log("Bağlantı koptu.", "error");
+                updateStatus('disconnected');
+            });
+
+            await connection.start();
+            log("SignalR bağlantısı başarıyla kuruldu.", "event");
+            updateStatus('connected');
+
+        } catch (err) {
+            log("BAĞLANTI HATASI: " + err.toString(), "error");
+            updateStatus('disconnected');
+            console.error(err);
+        }
+    }
+
+    async function disconnect() {
+        if (connection) {
+            await connection.stop();
+            log("Bağlantı kullanıcı tarafından sonlandırıldı.");
+            updateStatus('disconnected');
+        }
+    }
+</script>
+
+
+
+</body>
