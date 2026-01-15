@@ -48,7 +48,7 @@ namespace RuyaOptik.Business.Services
         {
             var existingInventory = await _inventoryRepository.GetByProductIdAsync(dto.ProductId);
             if (existingInventory != null)
-                throw new Exception("This product already has inventory.");
+                throw new Exception("Bu ürün için zaten bir envanter kaydı bulunmaktadır.");
 
             var inventory = _mapper.Map<Inventory>(dto);
 

@@ -67,7 +67,7 @@ namespace RuyaOptik.API.Controllers
             var success = await _orderService.UpdateStatusAsync(id, dto.Status);
 
             if (!success)
-                return NotFound(new { message = "Order not found." });
+                return NotFound(new { message = "Sipariş bulunamadı." });
 
             return NoContent();
         }

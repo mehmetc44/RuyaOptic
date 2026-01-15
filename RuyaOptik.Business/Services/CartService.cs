@@ -45,7 +45,7 @@ namespace RuyaOptik.Business.Services
 
             var product = await _productRepository.GetByIdAsync(dto.ProductId);
             if (product == null || product.IsDeleted || !product.IsActive)
-                throw new Exception($"Product not found: {dto.ProductId}");
+                throw new Exception($"Ürün bulunamadı. Ürün Id: {dto.ProductId}");
 
             var cart = await _cartRepository.GetCartByUserIdAsync(dto.UserId);
             if (cart == null)

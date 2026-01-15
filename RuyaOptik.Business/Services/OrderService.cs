@@ -40,7 +40,7 @@ namespace RuyaOptik.Business.Services
         public async Task<OrderDto> CreateAsync(OrderCreateDto dto)
         {
             if (!dto.Items.Any())
-                throw new Exception("Order must contain at least one item.");
+                throw new Exception("Sipariş en az bir ürün içermelidir.");
 
             await using var tx = await _db.Database.BeginTransactionAsync();
 
@@ -63,15 +63,15 @@ namespace RuyaOptik.Business.Services
                 {
                     var product = await _productRepository.GetByIdAsync(item.ProductId);
                     if (product == null || product.IsDeleted || !product.IsActive)
-                        throw new Exception($"Product not found: {item.ProductId}");
+                        throw new Exception($"Ürün bulunamadı. Ürün Id: {item.ProductId}");
 
                     var inventory = await _inventoryRepository.GetByProductIdAsync(item.ProductId);
                     if (inventory == null)
-                        throw new Exception($"Inventory not found for product: {item.ProductId}");
+                        throw new Exception($"Ürün için envanter bulunamadı. Ürün Id: {item.ProductId}");
 
                     var available = inventory.Quantity - inventory.Reserved;
                     if (available < item.Quantity)
-                        throw new Exception($"Insufficient stock for product: {product.Name}");
+                        throw new Exception($"{product.Name} ürünü için yeterli stok bulunmamaktadır.");
 
                     var unitPrice = product.DiscountedPrice ?? product.Price;
 
@@ -135,7 +135,7 @@ namespace RuyaOptik.Business.Services
                 // finalized guard
                 if (order.Status == OrderStatus.Delivered ||
                     order.Status == OrderStatus.Cancelled)
-                    throw new Exception("Finalized orders cannot be updated.");
+                    throw new Exception("Tamamlanmış veya iptal edilmiş siparişler güncellenemez.");
 
                 // DELIVERED → stock düş
                 if (status == OrderStatus.Delivered)
@@ -144,13 +144,13 @@ namespace RuyaOptik.Business.Services
                     {
                         var inventory = await _inventoryRepository.GetByProductIdAsync(item.ProductId);
                         if (inventory == null)
-                            throw new Exception($"Inventory not found for product: {item.ProductId}");
+                            throw new Exception($"Ürün için envanter bulunamadı. Ürün Id: {item.ProductId}");
 
                         inventory.Reserved = Math.Max(0, inventory.Reserved - item.Quantity);
                         inventory.Quantity -= item.Quantity;
 
                         if (inventory.Quantity < 0)
-                            throw new Exception("Inventory quantity cannot be negative.");
+                            throw new Exception("Stok miktarı negatif olamaz.");
 
                         inventory.UpdatedDate = DateTime.UtcNow;
                         await _inventoryRepository.UpdateAsync(inventory);
@@ -164,7 +164,7 @@ namespace RuyaOptik.Business.Services
                     {
                         var inventory = await _inventoryRepository.GetByProductIdAsync(item.ProductId);
                         if (inventory == null)
-                            throw new Exception($"Inventory not found for product: {item.ProductId}");
+                            throw new Exception($"Ürün için envanter bulunamadı. Ürün Id: {item.ProductId}");
 
                         inventory.Reserved = Math.Max(0, inventory.Reserved - item.Quantity);
                         inventory.UpdatedDate = DateTime.UtcNow;

@@ -25,29 +25,29 @@ namespace RuyaOptik.API.Controllers
         {
             var result = await _inventoryService.GetByProductIdAsync(productId);
             if (result == null)
-                return NotFound(new { message = "Inventory not found for this product." });
+                return NotFound(new { message = "Bu ürün için envanter bulunamadı." });
 
             return Ok(result);
         }
 
         // POST: api/inventory
         [HttpPost]
-        [Authorize(Roles ="Admin")]
-        [AuthorizeDefinition(Action=ActionType.Writing,Definition = "Envanter Oluştur",Menu=AuthorizeDefinitionConstants.Inventory)]
+        [Authorize(Roles = "Admin")]
+        [AuthorizeDefinition(Action = ActionType.Writing, Definition = "Envanter Oluştur", Menu = AuthorizeDefinitionConstants.Inventory)]
         public async Task<IActionResult> Create([FromBody] InventoryCreateDto dto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             await _inventoryService.CreateAsync(dto);
-            return Ok(new { message = "Inventory created successfully." });
+            return Ok(new { message = "Envanter başarıyla oluşturuldu." });
         }
 
 
         // PUT: api/inventory/5
         [HttpPut("{id:int}")]
-        [Authorize(Roles ="Admin")]
-        [AuthorizeDefinition(Action=ActionType.Updating,Definition = "Envanter Güncelle",Menu=AuthorizeDefinitionConstants.Inventory)]
+        [Authorize(Roles = "Admin")]
+        [AuthorizeDefinition(Action = ActionType.Updating, Definition = "Envanter Güncelle", Menu = AuthorizeDefinitionConstants.Inventory)]
         public async Task<IActionResult> Update(int id, [FromBody] InventoryUpdateDto dto)
         {
             if (!ModelState.IsValid)
@@ -55,7 +55,7 @@ namespace RuyaOptik.API.Controllers
 
             var success = await _inventoryService.UpdateAsync(id, dto);
             if (!success)
-                return NotFound(new { message = "Inventory not found." });
+                return NotFound(new { message = "Envanter bulunamadı." });
 
             return NoContent();
         }

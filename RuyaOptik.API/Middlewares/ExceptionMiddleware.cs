@@ -51,7 +51,7 @@ namespace RuyaOptik.API.Middlewares
                 StatusCode = context.Response.StatusCode,
                 Message = exception.Message,
                 Detail = context.Response.StatusCode == 500
-                    ? "An unexpected error occurred."
+                    ? "Beklenmeyen bir hata oluştu."
                     : null
             };
 
