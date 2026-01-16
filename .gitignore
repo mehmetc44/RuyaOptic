@@ -12,20 +12,15 @@ Thumbs.db
 *~
 *.swp
 
-# --- Build ve Derleme Çıktıları ---
 */bin/
 */obj/
 *.dll
 *.exe
 *.pdb
 
-# --- Veritabanı (SQLite - Sadece Local) ---
 *.db
 *.db-shm
 *.db-wal
-
-# --- Güvenlik ve Şifreler (ÇOK ÖNEMLİ) ---
-# Environment dosyaları (Şifrelerin burada, ASLA yükleme)
 .env
 .env.*
 !.env.example
