@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using RuyaOptik.DataAccess.Repositories.Configuration;
+using RuyaOptik.DataAccess.Configurations;
 namespace RuyaOptik.DataAccess.Context
 {
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<RuyaOptikDbContext>

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using RuyaOptik.Entity.Identity;
 using RuyaOptik.Entity.Concrete;
 using RuyaOptik.Entity.Enums;
+using RuyaOptik.DataAccess.Configurations;
 using RuyaOptik.DataAccess.Repositories.Configuration;
 namespace RuyaOptik.DataAccess.Context
 {

@@ -14,8 +14,9 @@ namespace RuyaOptik.Business.Services
 using System.Net.Mail;
 using System.Text;
 using Microsoft.Extensions.Configuration;
+    using RuyaOptik.DataAccess.Configurations;
 
-public class MailService : IMailService
+    public class MailService : IMailService
 {
     readonly IConfiguration _configuration;
 
@@ -31,10 +32,10 @@ public class MailService : IMailService
 
     public async Task SendMailAsync(string[] tos, string subject, string body, bool isBodyHtml = true)
     {
-        var host = _configuration["Mail:Host"];
-        var port = _configuration.GetValue<int>("Mail:Port", 587); 
-        var username = _configuration["Mail:Username"];
-        var password = _configuration["Mail:Password"];
+        var host = AppConfiguration.MailHost;
+        var port = AppConfiguration.MailPort;
+        var username = AppConfiguration.MailUsername;
+        var password = AppConfiguration.MailPassword;
 
         if (string.IsNullOrEmpty(host) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
         {
@@ -62,7 +63,7 @@ public class MailService : IMailService
 
     public async Task SendPasswordResetMailAsync(string to, string userId, string resetToken)
     {
-        string clientUrl = _configuration["ClientUrl"] ?? "https://localhost:8081";
+        string clientUrl = AppConfiguration.ClientUrl;
 
         StringBuilder mail = new();
         mail.AppendLine("Merhaba<br>Eğer yeni şifre talebinde bulunduysanız aşağıdaki linkten şifrenizi yenileyebilirsiniz.<br><strong><a target=\"_blank\" href=\"");

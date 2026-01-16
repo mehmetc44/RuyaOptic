@@ -5,6 +5,7 @@ using RuyaOptik.Business.Attributes;
 using RuyaOptik.Business.Consts;
 using RuyaOptik.Entity.Enums;
 using Microsoft.AspNetCore.Authorization;
+using RuyaOptik.DTO.Mail;
 namespace RuyaOptik.API.Controllers
 {
     [ApiController]
@@ -25,12 +26,11 @@ namespace RuyaOptik.API.Controllers
             var data = await _appService.GetAuthorizeDefinitionEndpoints(typeof(Program));
             return Ok(data);
         }
-        
-        [HttpGet("send-test-mail")]
+        [HttpPost("send-test-mail")]
         [AuthorizeDefinition(Action=ActionType.Reading,Definition = "Test Mail Gönder",Menu=AuthorizeDefinitionConstants.Auth)]
-        public async Task<IActionResult> SendTestMail()
+        public async Task<IActionResult> SendTestMail([FromBody] SendMailDto sendMailDto)
         {
-            await _mailService.SendMailAsync("cakmakm4400@gmail.com", "Test Subject", "Test Body");
+            await _mailService.SendMailAsync(sendMailDto.To, sendMailDto.Subject, sendMailDto.Body);
             return Ok();
         }
     }
