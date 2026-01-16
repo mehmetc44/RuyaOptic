@@ -1,0 +1,6 @@
+@RuyaOptik.API_HostAddress = http://localhost:5188
+
+GET {{RuyaOptik.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

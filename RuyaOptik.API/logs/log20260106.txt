@@ -1,0 +1,1357 @@
+2026-01-06 22:58:19.950 +03:00 [INF] User profile is available. Using 'C:\Users\Hakan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-06 22:58:20.057 +03:00 [INF] Now listening on: http://localhost:5188
+2026-01-06 22:58:20.059 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-06 22:58:20.059 +03:00 [INF] Hosting environment: Development
+2026-01-06 22:58:20.059 +03:00 [INF] Content root path: C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.API
+2026-01-06 22:58:20.322 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/index.html - null null
+2026-01-06 22:58:20.427 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/index.html - 200 null text/html;charset=utf-8 105.6937ms
+2026-01-06 22:58:20.441 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-06 22:58:20.443 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 2.7758ms
+2026-01-06 22:58:20.519 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - null null
+2026-01-06 22:58:20.610 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 90.9246ms
+2026-01-06 22:58:35.020 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/api/Auth/login - application/json 62
+2026-01-06 22:58:35.025 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-06 22:58:35.043 +03:00 [INF] CORS policy execution successful.
+2026-01-06 22:58:35.069 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /api/Auth/login
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 62
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 22:58:35.070 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.AuthController.Login (RuyaOptik.API)'
+2026-01-06 22:58:35.086 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RuyaOptik.DTO.Auth.AspUserLoginDto) on controller RuyaOptik.API.Controllers.AuthController (RuyaOptik.API).
+2026-01-06 22:58:35.631 +03:00 [WRN] No store type was specified for the decimal property 'TotalPrice' on entity type 'Cart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-06 22:58:35.632 +03:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'CartItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-06 22:58:35.632 +03:00 [WRN] No store type was specified for the decimal property 'TotalPrice' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-06 22:58:35.632 +03:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-06 22:58:35.632 +03:00 [WRN] No store type was specified for the decimal property 'DiscountedPrice' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-06 22:58:35.632 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-06 22:58:51.550 +03:00 [ERR] An error occurred using the connection to database 'sql-ruyaoptikdatabase' on server 'tcp:sql-ruyaoptik.database.windows.net,1433'.
+2026-01-06 22:58:51.567 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'RuyaOptik.DataAccess.Context.RuyaOptikDbContext'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Database 'sql-ruyaoptikdatabase' on server 'sql-ruyaoptik.database.windows.net' is not currently available.  Please retry the connection later.  If the problem persists, contact customer support, and provide them the session tracing ID of '{A352E6AF-680E-49EE-9644-14ABEF40E86E}'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:f76fab92-a665-442b-972b-9a2d8ef112c8
+Error Number:40613,State:1,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Database 'sql-ruyaoptikdatabase' on server 'sql-ruyaoptik.database.windows.net' is not currently available.  Please retry the connection later.  If the problem persists, contact customer support, and provide them the session tracing ID of '{A352E6AF-680E-49EE-9644-14ABEF40E86E}'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:f76fab92-a665-442b-972b-9a2d8ef112c8
+Error Number:40613,State:1,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-01-06 22:58:51.579 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-06 22:58:51.591 +03:00 [INF] Executed action RuyaOptik.API.Controllers.AuthController.Login (RuyaOptik.API) in 16502.5932ms
+2026-01-06 22:58:51.591 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.AuthController.Login (RuyaOptik.API)'
+2026-01-06 22:58:51.593 +03:00 [INF] HTTP POST /api/Auth/login responded 400 in 16522.3148 ms
+2026-01-06 22:58:51.595 +03:00 [INF] Response:
+StatusCode: 400
+Content-Type: application/json; charset=utf-8
+Date: Tue, 06 Jan 2026 19:58:51 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+Transfer-Encoding: chunked
+2026-01-06 22:58:51.601 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/api/Auth/login - 400 null application/json; charset=utf-8 16581.3894ms
+2026-01-06 22:59:00.532 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/api/Auth/login - application/json 63
+2026-01-06 22:59:00.535 +03:00 [INF] CORS policy execution successful.
+2026-01-06 22:59:00.537 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /api/Auth/login
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 63
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 22:59:00.537 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.AuthController.Login (RuyaOptik.API)'
+2026-01-06 22:59:00.537 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RuyaOptik.DTO.Auth.AspUserLoginDto) on controller RuyaOptik.API.Controllers.AuthController (RuyaOptik.API).
+2026-01-06 22:59:15.991 +03:00 [ERR] An error occurred using the connection to database 'sql-ruyaoptikdatabase' on server 'tcp:sql-ruyaoptik.database.windows.net,1433'.
+2026-01-06 22:59:15.992 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'RuyaOptik.DataAccess.Context.RuyaOptikDbContext'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Database 'sql-ruyaoptikdatabase' on server 'sql-ruyaoptik.database.windows.net' is not currently available.  Please retry the connection later.  If the problem persists, contact customer support, and provide them the session tracing ID of '{665F1D63-D163-438A-8C14-2B7076E145D8}'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:e67c24ab-59da-41be-a5e6-f1d787076351
+Error Number:40613,State:1,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Database 'sql-ruyaoptikdatabase' on server 'sql-ruyaoptik.database.windows.net' is not currently available.  Please retry the connection later.  If the problem persists, contact customer support, and provide them the session tracing ID of '{665F1D63-D163-438A-8C14-2B7076E145D8}'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:e67c24ab-59da-41be-a5e6-f1d787076351
+Error Number:40613,State:1,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-01-06 22:59:15.998 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-06 22:59:15.999 +03:00 [INF] Executed action RuyaOptik.API.Controllers.AuthController.Login (RuyaOptik.API) in 15461.0862ms
+2026-01-06 22:59:15.999 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.AuthController.Login (RuyaOptik.API)'
+2026-01-06 22:59:15.999 +03:00 [INF] HTTP POST /api/Auth/login responded 400 in 15461.6563 ms
+2026-01-06 22:59:15.999 +03:00 [INF] Response:
+StatusCode: 400
+Content-Type: application/json; charset=utf-8
+Date: Tue, 06 Jan 2026 19:59:15 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+Transfer-Encoding: chunked
+2026-01-06 22:59:15.999 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/api/Auth/login - 400 null application/json; charset=utf-8 15467.4542ms
+2026-01-06 23:00:50.511 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/api/Auth/login - application/json 62
+2026-01-06 23:00:50.511 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:00:50.513 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /api/Auth/login
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 62
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:00:50.513 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.AuthController.Login (RuyaOptik.API)'
+2026-01-06 23:00:50.513 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RuyaOptik.DTO.Auth.AspUserLoginDto) on controller RuyaOptik.API.Controllers.AuthController (RuyaOptik.API).
+2026-01-06 23:00:51.123 +03:00 [INF] Executed DbCommand (81ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenEndDate], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-06 23:00:51.306 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenEndDate], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2026-01-06 23:00:51.357 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenEndDate], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-06 23:00:51.445 +03:00 [INF] Executed DbCommand (63ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-01-06 23:00:51.510 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenEndDate], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-06 23:00:51.569 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenEndDate], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-01-06 23:00:51.683 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [RefreshToken] = @p13, [RefreshTokenEndDate] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+2026-01-06 23:00:51.690 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[RuyaOptik.DTO.Auth.TokenDto, RuyaOptik.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-06 23:00:51.694 +03:00 [INF] Executed action RuyaOptik.API.Controllers.AuthController.Login (RuyaOptik.API) in 1180.5381ms
+2026-01-06 23:00:51.694 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.AuthController.Login (RuyaOptik.API)'
+2026-01-06 23:00:51.694 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 1180.8723 ms
+2026-01-06 23:00:51.694 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Tue, 06 Jan 2026 20:00:51 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+Transfer-Encoding: chunked
+2026-01-06 23:00:51.694 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/api/Auth/login - 200 null application/json; charset=utf-8 1183.313ms
+2026-01-06 23:01:16.645 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/api/Roles - null null
+2026-01-06 23:01:16.669 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /api/Roles
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:01:16.669 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.RolesController.GetRoles (RuyaOptik.API)'
+2026-01-06 23:01:16.672 +03:00 [INF] Route matched with {action = "GetRoles", controller = "Roles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRoles() on controller RuyaOptik.API.Controllers.RolesController (RuyaOptik.API).
+2026-01-06 23:01:16.731 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name]
+FROM [AspNetRoles] AS [a]
+2026-01-06 23:01:16.732 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RuyaOptik.DTO.Role.RoleDto, RuyaOptik.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-06 23:01:16.734 +03:00 [INF] Executed action RuyaOptik.API.Controllers.RolesController.GetRoles (RuyaOptik.API) in 61.6988ms
+2026-01-06 23:01:16.734 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.RolesController.GetRoles (RuyaOptik.API)'
+2026-01-06 23:01:16.734 +03:00 [INF] HTTP GET /api/Roles responded 200 in 64.5473 ms
+2026-01-06 23:01:16.734 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Tue, 06 Jan 2026 20:01:16 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2026-01-06 23:01:16.734 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/api/Roles - 200 null application/json; charset=utf-8 89.1231ms
+2026-01-06 23:03:58.519 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5188/hubs/orders/negotiate?negotiateVersion=1 - null null
+2026-01-06 23:03:58.520 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:03:58.521 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5188/hubs/orders/negotiate?negotiateVersion=1 - 204 null null 1.9807ms
+2026-01-06 23:05:58.690 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5188/hubs/orders/negotiate?negotiateVersion=1 - null null
+2026-01-06 23:05:58.690 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:05:58.690 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5188/hubs/orders/negotiate?negotiateVersion=1 - 204 null null 0.4093ms
+2026-01-06 23:07:50.177 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/index.html - null null
+2026-01-06 23:07:50.183 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/index.html - 200 null text/html;charset=utf-8 5.8319ms
+2026-01-06 23:07:50.222 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-06 23:07:50.222 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.4834ms
+2026-01-06 23:07:50.324 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - null null
+2026-01-06 23:07:50.335 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.6813ms
+2026-01-06 23:09:21.869 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/index.html - null null
+2026-01-06 23:09:21.873 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/index.html - 200 null text/html;charset=utf-8 3.696ms
+2026-01-06 23:09:21.893 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-06 23:09:21.894 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.2528ms
+2026-01-06 23:09:21.961 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - null null
+2026-01-06 23:09:21.969 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.6373ms
+2026-01-06 23:09:47.492 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/index.html - null null
+2026-01-06 23:09:47.492 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/index.html - 200 null text/html;charset=utf-8 0.4609ms
+2026-01-06 23:09:47.507 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-06 23:09:47.507 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.1959ms
+2026-01-06 23:09:47.558 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - null null
+2026-01-06 23:09:47.563 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 4.6417ms
+2026-01-06 23:09:51.760 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - null null
+2026-01-06 23:09:51.762 +03:00 [INF] No cached response available for this request.
+2026-01-06 23:09:51.764 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /signalr-admin-test.html
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:09:51.764 +03:00 [INF] HTTP GET /signalr-admin-test.html responded 404 in 0.0595 ms
+2026-01-06 23:09:51.764 +03:00 [INF] Response:
+StatusCode: 404
+2026-01-06 23:09:51.764 +03:00 [INF] The response could not be cached for this request.
+2026-01-06 23:09:51.764 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - 404 0 null 4.3294ms
+2026-01-06 23:09:51.764 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5188/signalr-admin-test.html, Response status code: 404
+2026-01-06 23:09:54.116 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - null null
+2026-01-06 23:09:54.117 +03:00 [INF] No cached response available for this request.
+2026-01-06 23:09:54.117 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /signalr-admin-test.html
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:09:54.117 +03:00 [INF] HTTP GET /signalr-admin-test.html responded 404 in 0.0147 ms
+2026-01-06 23:09:54.118 +03:00 [INF] Response:
+StatusCode: 404
+2026-01-06 23:09:54.118 +03:00 [INF] The response could not be cached for this request.
+2026-01-06 23:09:54.118 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - 404 0 null 1.7442ms
+2026-01-06 23:09:54.118 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5188/signalr-admin-test.html, Response status code: 404
+2026-01-06 23:09:54.664 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - null null
+2026-01-06 23:09:54.664 +03:00 [INF] No cached response available for this request.
+2026-01-06 23:09:54.664 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /signalr-admin-test.html
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:09:54.664 +03:00 [INF] HTTP GET /signalr-admin-test.html responded 404 in 0.0150 ms
+2026-01-06 23:09:54.664 +03:00 [INF] Response:
+StatusCode: 404
+2026-01-06 23:09:54.664 +03:00 [INF] The response could not be cached for this request.
+2026-01-06 23:09:54.665 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - 404 0 null 0.6813ms
+2026-01-06 23:09:54.665 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5188/signalr-admin-test.html, Response status code: 404
+2026-01-06 23:09:54.813 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - null null
+2026-01-06 23:09:54.813 +03:00 [INF] No cached response available for this request.
+2026-01-06 23:09:54.814 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /signalr-admin-test.html
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:09:54.814 +03:00 [INF] HTTP GET /signalr-admin-test.html responded 404 in 0.0117 ms
+2026-01-06 23:09:54.814 +03:00 [INF] Response:
+StatusCode: 404
+2026-01-06 23:09:54.814 +03:00 [INF] The response could not be cached for this request.
+2026-01-06 23:09:54.814 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - 404 0 null 0.5283ms
+2026-01-06 23:09:54.814 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5188/signalr-admin-test.html, Response status code: 404
+2026-01-06 23:09:54.964 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - null null
+2026-01-06 23:09:54.965 +03:00 [INF] No cached response available for this request.
+2026-01-06 23:09:54.965 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /signalr-admin-test.html
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:09:54.965 +03:00 [INF] HTTP GET /signalr-admin-test.html responded 404 in 0.0105 ms
+2026-01-06 23:09:54.965 +03:00 [INF] Response:
+StatusCode: 404
+2026-01-06 23:09:54.965 +03:00 [INF] The response could not be cached for this request.
+2026-01-06 23:09:54.965 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - 404 0 null 0.6082ms
+2026-01-06 23:09:54.965 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5188/signalr-admin-test.html, Response status code: 404
+2026-01-06 23:09:55.110 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - null null
+2026-01-06 23:09:55.111 +03:00 [INF] No cached response available for this request.
+2026-01-06 23:09:55.111 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /signalr-admin-test.html
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:09:55.111 +03:00 [INF] HTTP GET /signalr-admin-test.html responded 404 in 0.0141 ms
+2026-01-06 23:09:55.111 +03:00 [INF] Response:
+StatusCode: 404
+2026-01-06 23:09:55.111 +03:00 [INF] The response could not be cached for this request.
+2026-01-06 23:09:55.112 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - 404 0 null 1.2597ms
+2026-01-06 23:09:55.112 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5188/signalr-admin-test.html, Response status code: 404
+2026-01-06 23:09:55.251 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - null null
+2026-01-06 23:09:55.252 +03:00 [INF] No cached response available for this request.
+2026-01-06 23:09:55.252 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /signalr-admin-test.html
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:09:55.252 +03:00 [INF] HTTP GET /signalr-admin-test.html responded 404 in 0.0120 ms
+2026-01-06 23:09:55.252 +03:00 [INF] Response:
+StatusCode: 404
+2026-01-06 23:09:55.252 +03:00 [INF] The response could not be cached for this request.
+2026-01-06 23:09:55.252 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - 404 0 null 0.6152ms
+2026-01-06 23:09:55.252 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5188/signalr-admin-test.html, Response status code: 404
+2026-01-06 23:09:55.391 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - null null
+2026-01-06 23:09:55.391 +03:00 [INF] No cached response available for this request.
+2026-01-06 23:09:55.392 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /signalr-admin-test.html
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:09:55.392 +03:00 [INF] HTTP GET /signalr-admin-test.html responded 404 in 0.0217 ms
+2026-01-06 23:09:55.392 +03:00 [INF] Response:
+StatusCode: 404
+2026-01-06 23:09:55.392 +03:00 [INF] The response could not be cached for this request.
+2026-01-06 23:09:55.392 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - 404 0 null 0.9246ms
+2026-01-06 23:09:55.392 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5188/signalr-admin-test.html, Response status code: 404
+2026-01-06 23:12:56.510 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/index.html - null null
+2026-01-06 23:12:56.514 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/index.html - 200 null text/html;charset=utf-8 3.6793ms
+2026-01-06 23:12:56.530 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-06 23:12:56.531 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.2284ms
+2026-01-06 23:12:56.597 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - null null
+2026-01-06 23:12:56.604 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 6.9951ms
+2026-01-06 23:14:39.537 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/index.html - null null
+2026-01-06 23:14:39.541 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/index.html - 200 null text/html;charset=utf-8 3.4971ms
+2026-01-06 23:14:39.571 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-06 23:14:39.571 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.1423ms
+2026-01-06 23:14:39.670 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - null null
+2026-01-06 23:14:39.675 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 5.7411ms
+2026-01-06 23:16:15.659 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - null null
+2026-01-06 23:16:15.659 +03:00 [INF] No cached response available for this request.
+2026-01-06 23:16:15.659 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /signalr-admin-test.html
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:16:15.660 +03:00 [INF] HTTP GET /signalr-admin-test.html responded 404 in 0.0141 ms
+2026-01-06 23:16:15.660 +03:00 [INF] Response:
+StatusCode: 404
+2026-01-06 23:16:15.660 +03:00 [INF] The response could not be cached for this request.
+2026-01-06 23:16:15.660 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - 404 0 null 0.8793ms
+2026-01-06 23:16:15.660 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5188/signalr-admin-test.html, Response status code: 404
+2026-01-06 23:16:34.644 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/index.html - null null
+2026-01-06 23:16:34.648 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/index.html - 200 null text/html;charset=utf-8 3.3404ms
+2026-01-06 23:16:34.677 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-06 23:16:34.677 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.2229ms
+2026-01-06 23:16:34.727 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - null null
+2026-01-06 23:16:34.734 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 6.3532ms
+2026-01-06 23:16:40.466 +03:00 [INF] Application is shutting down...
+2026-01-06 23:16:50.904 +03:00 [INF] User profile is available. Using 'C:\Users\Hakan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-06 23:16:50.967 +03:00 [INF] Now listening on: http://localhost:5188
+2026-01-06 23:16:50.968 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-06 23:16:50.969 +03:00 [INF] Hosting environment: Development
+2026-01-06 23:16:50.969 +03:00 [INF] Content root path: C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.API
+2026-01-06 23:16:51.225 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/index.html - null null
+2026-01-06 23:16:51.292 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/index.html - 200 null text/html;charset=utf-8 68.3789ms
+2026-01-06 23:16:51.303 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-06 23:16:51.305 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 2.6291ms
+2026-01-06 23:16:51.375 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - null null
+2026-01-06 23:16:51.457 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 82.0646ms
+2026-01-06 23:17:03.716 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/api/Auth/login - application/json 62
+2026-01-06 23:17:03.730 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:17:03.748 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /api/Auth/login
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 62
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:17:03.749 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.AuthController.Login (RuyaOptik.API)'
+2026-01-06 23:17:03.764 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RuyaOptik.DTO.Auth.AspUserLoginDto) on controller RuyaOptik.API.Controllers.AuthController (RuyaOptik.API).
+2026-01-06 23:17:04.208 +03:00 [WRN] No store type was specified for the decimal property 'TotalPrice' on entity type 'Cart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-06 23:17:04.209 +03:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'CartItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-06 23:17:04.209 +03:00 [WRN] No store type was specified for the decimal property 'TotalPrice' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-06 23:17:04.209 +03:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-06 23:17:04.209 +03:00 [WRN] No store type was specified for the decimal property 'DiscountedPrice' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-06 23:17:04.209 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-06 23:17:05.011 +03:00 [INF] Executed DbCommand (68ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenEndDate], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-06 23:17:05.196 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenEndDate], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2026-01-06 23:17:05.251 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenEndDate], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-06 23:17:05.324 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-01-06 23:17:05.389 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenEndDate], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-06 23:17:05.444 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenEndDate], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-01-06 23:17:05.571 +03:00 [INF] Executed DbCommand (75ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [RefreshToken] = @p13, [RefreshTokenEndDate] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+2026-01-06 23:17:05.580 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[RuyaOptik.DTO.Auth.TokenDto, RuyaOptik.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-06 23:17:05.594 +03:00 [INF] Executed action RuyaOptik.API.Controllers.AuthController.Login (RuyaOptik.API) in 1827.8402ms
+2026-01-06 23:17:05.594 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.AuthController.Login (RuyaOptik.API)'
+2026-01-06 23:17:05.596 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 1846.2483 ms
+2026-01-06 23:17:05.597 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Tue, 06 Jan 2026 20:17:05 GMT
+Server: Kestrel
+Access-Control-Allow-Credentials: [Redacted]
+Access-Control-Allow-Origin: [Redacted]
+Transfer-Encoding: chunked
+2026-01-06 23:17:05.602 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/api/Auth/login - 200 null application/json; charset=utf-8 1886.3205ms
+2026-01-06 23:17:25.065 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/index.html - null null
+2026-01-06 23:17:25.066 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/index.html - 200 null text/html;charset=utf-8 0.8534ms
+2026-01-06 23:17:25.077 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-06 23:17:25.078 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.2983ms
+2026-01-06 23:17:25.181 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - null null
+2026-01-06 23:17:25.190 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.3461ms
+2026-01-06 23:17:30.408 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - null null
+2026-01-06 23:17:30.451 +03:00 [INF] Sending file. Request path: '/signalr-admin-test.html'. Physical path: 'C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.API\wwwroot\signalr-admin-test.html'
+2026-01-06 23:17:30.451 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - 200 null text/html 43.4117ms
+2026-01-06 23:17:30.453 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-06 23:17:30.454 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.377ms
+2026-01-06 23:17:30.566 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/hubs/orders/negotiate?negotiateVersion=1 - null 0
+2026-01-06 23:17:30.568 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:17:30.590 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/favicon.ico - null null
+2026-01-06 23:17:30.593 +03:00 [INF] No cached response available for this request.
+2026-01-06 23:17:30.596 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:17:30.596 +03:00 [INF] HTTP GET /favicon.ico responded 404 in 0.0913 ms
+2026-01-06 23:17:30.596 +03:00 [INF] Response:
+StatusCode: 404
+2026-01-06 23:17:30.597 +03:00 [INF] The response could not be cached for this request.
+2026-01-06 23:17:30.597 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/favicon.ico - 404 0 null 6.2596ms
+2026-01-06 23:17:30.597 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5188/favicon.ico, Response status code: 404
+2026-01-06 23:17:30.601 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /hubs/orders/negotiate
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Cache-Control: max-age=0
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 0
+sec-ch-ua-platform: [Redacted]
+X-Requested-With: XMLHttpRequest
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+X-SignalR-User-Agent: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:17:30.601 +03:00 [INF] Executing endpoint '/hubs/orders/negotiate'
+2026-01-06 23:17:30.605 +03:00 [INF] Executed endpoint '/hubs/orders/negotiate'
+2026-01-06 23:17:30.606 +03:00 [INF] HTTP POST /hubs/orders/negotiate responded 200 in 4.1541 ms
+2026-01-06 23:17:30.606 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json
+Date: Tue, 06 Jan 2026 20:17:30 GMT
+Server: Kestrel
+Access-Control-Allow-Credentials: [Redacted]
+Access-Control-Allow-Origin: [Redacted]
+Content-Length: 316
+2026-01-06 23:17:30.606 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/hubs/orders/negotiate?negotiateVersion=1 - 200 316 application/json 40.2309ms
+2026-01-06 23:17:30.610 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/hubs/orders?id=82UCWrAxWZY5NGxG_O9pFw&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjY1ZmU2ZDE4LWRmYWUtNDg5ZC1iY2RmLWE1NWQzNjk5NzFmYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdHJpbmciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc2Nzc4NDYyNSwiaXNzIjoicnV5YW9wdGlrLWFwaSIsImF1ZCI6InJ1eWFvcHRpay1jbGllbnQifQ.S0OTg5HrWRgiI9AQ7ckK1Lajy_IV1bncn9jNVsjDLLs - null null
+2026-01-06 23:17:30.610 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:17:30.612 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /hubs/orders
+Connection: Upgrade
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Cache-Control: no-cache
+Origin: [Redacted]
+Pragma: [Redacted]
+Upgrade: websocket
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Key: [Redacted]
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2026-01-06 23:17:30.612 +03:00 [INF] Executing endpoint '/hubs/orders'
+2026-01-06 23:17:30.618 +03:00 [INF] Response:
+StatusCode: 101
+Connection: Upgrade
+Date: Tue, 06 Jan 2026 20:17:30 GMT
+Server: Kestrel
+Access-Control-Allow-Credentials: [Redacted]
+Access-Control-Allow-Origin: [Redacted]
+Upgrade: websocket
+Sec-WebSocket-Accept: [Redacted]
+2026-01-06 23:17:57.486 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/api/Order - application/json 248
+2026-01-06 23:17:57.488 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:17:57.489 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|User)
+2026-01-06 23:17:57.492 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-01-06 23:17:57.492 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/api/Order - 401 0 null 5.7159ms
+2026-01-06 23:19:36.501 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/api/Order - application/json 248
+2026-01-06 23:19:36.501 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:19:36.503 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /api/Order
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 248
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:19:36.503 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.OrderController.Create (RuyaOptik.API)'
+2026-01-06 23:19:36.507 +03:00 [INF] Route matched with {action = "Create", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(RuyaOptik.DTO.Order.OrderCreateDto) on controller RuyaOptik.API.Controllers.OrderController (RuyaOptik.API).
+2026-01-06 23:19:36.674 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[Color], [p].[CreatedDate], [p].[Description], [p].[DiscountedPrice], [p].[FrameType], [p].[IsActive], [p].[IsDeleted], [p].[LensType], [p].[ModelCode], [p].[Name], [p].[Price], [p].[UpdatedDate]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2026-01-06 23:19:36.734 +03:00 [INF] Executed action RuyaOptik.API.Controllers.OrderController.Create (RuyaOptik.API) in 227.0738ms
+2026-01-06 23:19:36.734 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.OrderController.Create (RuyaOptik.API)'
+2026-01-06 23:19:36.734 +03:00 [ERR] HTTP POST /api/Order responded 500 in 231.7840 ms
+System.Exception: Product not found: 0
+   at RuyaOptik.Business.Services.OrderService.CreateAsync(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.Business\Services\OrderService.cs:line 66
+   at RuyaOptik.Business.Services.OrderService.CreateAsync(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.Business\Services\OrderService.cs:line 114
+   at RuyaOptik.Business.Services.OrderService.CreateAsync(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.Business\Services\OrderService.cs:line 115
+   at RuyaOptik.API.Controllers.OrderController.Create(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.API\Controllers\OrderController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-01-06 23:19:36.765 +03:00 [INF] Response:
+StatusCode: 200
+2026-01-06 23:19:36.766 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Product not found: 0
+   at RuyaOptik.Business.Services.OrderService.CreateAsync(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.Business\Services\OrderService.cs:line 66
+   at RuyaOptik.Business.Services.OrderService.CreateAsync(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.Business\Services\OrderService.cs:line 114
+   at RuyaOptik.Business.Services.OrderService.CreateAsync(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.Business\Services\OrderService.cs:line 115
+   at RuyaOptik.API.Controllers.OrderController.Create(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.API\Controllers\OrderController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at RuyaOptik.API.Program.<>c.<<Main>b__0_0>d.MoveNext() in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.API\Program.cs:line 70
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-01-06 23:19:36.770 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/api/Order - 500 null text/plain; charset=utf-8 268.5659ms
+2026-01-06 23:20:15.706 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/api/Product/1 - null null
+2026-01-06 23:20:15.708 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /api/Product/1
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:20:15.708 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.ProductController.GetById (RuyaOptik.API)'
+2026-01-06 23:20:15.712 +03:00 [INF] Route matched with {action = "GetById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller RuyaOptik.API.Controllers.ProductController (RuyaOptik.API).
+2026-01-06 23:20:15.778 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[Color], [p].[CreatedDate], [p].[Description], [p].[DiscountedPrice], [p].[FrameType], [p].[IsActive], [p].[IsDeleted], [p].[LensType], [p].[ModelCode], [p].[Name], [p].[Price], [p].[UpdatedDate]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2026-01-06 23:20:15.779 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2026-01-06 23:20:15.786 +03:00 [INF] Executed action RuyaOptik.API.Controllers.ProductController.GetById (RuyaOptik.API) in 73.641ms
+2026-01-06 23:20:15.786 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.ProductController.GetById (RuyaOptik.API)'
+2026-01-06 23:20:15.786 +03:00 [INF] HTTP GET /api/Product/1 responded 404 in 78.3033 ms
+2026-01-06 23:20:15.786 +03:00 [INF] Response:
+StatusCode: 404
+Content-Type: application/problem+json; charset=utf-8
+Date: Tue, 06 Jan 2026 20:20:15 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Transfer-Encoding: chunked
+2026-01-06 23:20:15.786 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/api/Product/1 - 404 null application/problem+json; charset=utf-8 79.9122ms
+2026-01-06 23:22:35.669 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/api/Category - application/json 90
+2026-01-06 23:22:35.669 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:22:35.670 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /api/Category
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 90
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:22:35.670 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.CategoryController.Create (RuyaOptik.API)'
+2026-01-06 23:22:35.673 +03:00 [INF] Route matched with {action = "Create", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(RuyaOptik.DTO.Category.CategoryCreateDto) on controller RuyaOptik.API.Controllers.CategoryController (RuyaOptik.API).
+2026-01-06 23:22:35.776 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Categories] ([CreatedDate], [Description], [IsDeleted], [Name], [Slug], [UpdatedDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-01-06 23:22:35.791 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'RuyaOptik.DTO.Category.CategoryDto'.
+2026-01-06 23:22:35.802 +03:00 [INF] Executed action RuyaOptik.API.Controllers.CategoryController.Create (RuyaOptik.API) in 129.3779ms
+2026-01-06 23:22:35.802 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.CategoryController.Create (RuyaOptik.API)'
+2026-01-06 23:22:35.802 +03:00 [INF] HTTP POST /api/Category responded 201 in 132.3789 ms
+2026-01-06 23:22:35.802 +03:00 [INF] Response:
+StatusCode: 201
+Content-Type: application/json; charset=utf-8
+Date: Tue, 06 Jan 2026 20:22:35 GMT
+Server: Kestrel
+Access-Control-Allow-Credentials: [Redacted]
+Access-Control-Allow-Origin: [Redacted]
+Location: http://localhost:5188/api/Category/1
+Transfer-Encoding: chunked
+2026-01-06 23:22:35.803 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/api/Category - 201 null application/json; charset=utf-8 133.4838ms
+2026-01-06 23:23:11.739 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/api/Category - null null
+2026-01-06 23:23:11.739 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /api/Category
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:23:11.739 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.CategoryController.GetAll (RuyaOptik.API)'
+2026-01-06 23:23:11.743 +03:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RuyaOptik.API.Controllers.CategoryController (RuyaOptik.API).
+2026-01-06 23:23:11.811 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedDate], [c].[Description], [c].[IsDeleted], [c].[Name], [c].[Slug], [c].[UpdatedDate]
+FROM [Categories] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)
+2026-01-06 23:23:11.824 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RuyaOptik.DTO.Category.CategoryDto, RuyaOptik.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-06 23:23:11.825 +03:00 [INF] Executed action RuyaOptik.API.Controllers.CategoryController.GetAll (RuyaOptik.API) in 82.0727ms
+2026-01-06 23:23:11.825 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.CategoryController.GetAll (RuyaOptik.API)'
+2026-01-06 23:23:11.825 +03:00 [INF] HTTP GET /api/Category responded 200 in 85.8203 ms
+2026-01-06 23:23:11.825 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Tue, 06 Jan 2026 20:23:11 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Transfer-Encoding: chunked
+2026-01-06 23:23:11.825 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/api/Category - 200 null application/json; charset=utf-8 86.8378ms
+2026-01-06 23:23:42.887 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/api/Product - application/json 271
+2026-01-06 23:23:42.888 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:23:42.888 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /api/Product
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 271
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:23:42.888 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.ProductController.Create (RuyaOptik.API)'
+2026-01-06 23:23:42.891 +03:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(RuyaOptik.DTO.Product.ProductCreateDto) on controller RuyaOptik.API.Controllers.ProductController (RuyaOptik.API).
+2026-01-06 23:23:43.009 +03:00 [INF] Executed DbCommand (59ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p13='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Products] ([Brand], [CategoryId], [Color], [CreatedDate], [Description], [DiscountedPrice], [FrameType], [IsActive], [IsDeleted], [LensType], [ModelCode], [Name], [Price], [UpdatedDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2026-01-06 23:23:43.019 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'RuyaOptik.DTO.Product.ProductDto'.
+2026-01-06 23:23:43.027 +03:00 [INF] Executed action RuyaOptik.API.Controllers.ProductController.Create (RuyaOptik.API) in 135.6706ms
+2026-01-06 23:23:43.027 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.ProductController.Create (RuyaOptik.API)'
+2026-01-06 23:23:43.027 +03:00 [INF] HTTP POST /api/Product responded 201 in 138.6559 ms
+2026-01-06 23:23:43.027 +03:00 [INF] Response:
+StatusCode: 201
+Content-Type: application/json; charset=utf-8
+Date: Tue, 06 Jan 2026 20:23:42 GMT
+Server: Kestrel
+Access-Control-Allow-Credentials: [Redacted]
+Access-Control-Allow-Origin: [Redacted]
+Location: http://localhost:5188/api/Product/1
+Transfer-Encoding: chunked
+2026-01-06 23:23:43.027 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/api/Product - 201 null application/json; charset=utf-8 139.8108ms
+2026-01-06 23:24:08.620 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/api/Order - application/json 241
+2026-01-06 23:24:08.620 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:24:08.621 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /api/Order
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 241
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:24:08.621 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.OrderController.Create (RuyaOptik.API)'
+2026-01-06 23:24:08.622 +03:00 [INF] Route matched with {action = "Create", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(RuyaOptik.DTO.Order.OrderCreateDto) on controller RuyaOptik.API.Controllers.OrderController (RuyaOptik.API).
+2026-01-06 23:24:08.625 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-01-06 23:24:08.628 +03:00 [INF] Executed action RuyaOptik.API.Controllers.OrderController.Create (RuyaOptik.API) in 6.1805ms
+2026-01-06 23:24:08.628 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.OrderController.Create (RuyaOptik.API)'
+2026-01-06 23:24:08.628 +03:00 [INF] HTTP POST /api/Order responded 400 in 6.6450 ms
+2026-01-06 23:24:08.628 +03:00 [INF] Response:
+StatusCode: 400
+Content-Type: application/problem+json; charset=utf-8
+Date: Tue, 06 Jan 2026 20:24:07 GMT
+Server: Kestrel
+Access-Control-Allow-Credentials: [Redacted]
+Access-Control-Allow-Origin: [Redacted]
+Transfer-Encoding: chunked
+2026-01-06 23:24:08.628 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/api/Order - 400 null application/problem+json; charset=utf-8 8.0345ms
+2026-01-06 23:25:56.423 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/api/Order - application/json 293
+2026-01-06 23:25:56.423 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:25:56.424 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /api/Order
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 293
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:25:56.424 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.OrderController.Create (RuyaOptik.API)'
+2026-01-06 23:25:56.424 +03:00 [INF] Route matched with {action = "Create", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(RuyaOptik.DTO.Order.OrderCreateDto) on controller RuyaOptik.API.Controllers.OrderController (RuyaOptik.API).
+2026-01-06 23:25:56.535 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[Color], [p].[CreatedDate], [p].[Description], [p].[DiscountedPrice], [p].[FrameType], [p].[IsActive], [p].[IsDeleted], [p].[LensType], [p].[ModelCode], [p].[Name], [p].[Price], [p].[UpdatedDate]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2026-01-06 23:25:56.595 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__productId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[Id], [i].[CreatedDate], [i].[IsDeleted], [i].[Location], [i].[MinimumThreshold], [i].[ProductId], [i].[Quantity], [i].[Reserved], [i].[UpdatedDate]
+FROM [Inventories] AS [i]
+WHERE [i].[ProductId] = @__productId_0
+2026-01-06 23:25:56.644 +03:00 [INF] Executed action RuyaOptik.API.Controllers.OrderController.Create (RuyaOptik.API) in 220.279ms
+2026-01-06 23:25:56.645 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.OrderController.Create (RuyaOptik.API)'
+2026-01-06 23:25:56.645 +03:00 [ERR] HTTP POST /api/Order responded 500 in 220.7255 ms
+System.Exception: Inventory not found for product: 1
+   at RuyaOptik.Business.Services.OrderService.CreateAsync(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.Business\Services\OrderService.cs:line 70
+   at RuyaOptik.Business.Services.OrderService.CreateAsync(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.Business\Services\OrderService.cs:line 114
+   at RuyaOptik.Business.Services.OrderService.CreateAsync(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.Business\Services\OrderService.cs:line 115
+   at RuyaOptik.API.Controllers.OrderController.Create(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.API\Controllers\OrderController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-01-06 23:25:56.646 +03:00 [INF] Response:
+StatusCode: 200
+2026-01-06 23:25:56.646 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Inventory not found for product: 1
+   at RuyaOptik.Business.Services.OrderService.CreateAsync(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.Business\Services\OrderService.cs:line 70
+   at RuyaOptik.Business.Services.OrderService.CreateAsync(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.Business\Services\OrderService.cs:line 114
+   at RuyaOptik.Business.Services.OrderService.CreateAsync(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.Business\Services\OrderService.cs:line 115
+   at RuyaOptik.API.Controllers.OrderController.Create(OrderCreateDto dto) in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.API\Controllers\OrderController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at RuyaOptik.API.Program.<>c.<<Main>b__0_0>d.MoveNext() in C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.API\Program.cs:line 70
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-01-06 23:25:56.648 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/api/Order - 500 null text/plain; charset=utf-8 225.3569ms
+2026-01-06 23:26:56.241 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/api/Inventory - application/json 105
+2026-01-06 23:26:56.242 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:26:56.242 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /api/Inventory
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 105
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:26:56.242 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.InventoryController.Create (RuyaOptik.API)'
+2026-01-06 23:26:56.248 +03:00 [INF] Route matched with {action = "Create", controller = "Inventory"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(RuyaOptik.DTO.Inventory.InventoryCreateDto) on controller RuyaOptik.API.Controllers.InventoryController (RuyaOptik.API).
+2026-01-06 23:26:56.306 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__productId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[Id], [i].[CreatedDate], [i].[IsDeleted], [i].[Location], [i].[MinimumThreshold], [i].[ProductId], [i].[Quantity], [i].[Reserved], [i].[UpdatedDate]
+FROM [Inventories] AS [i]
+WHERE [i].[ProductId] = @__productId_0
+2026-01-06 23:26:56.375 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Inventories] ([CreatedDate], [IsDeleted], [Location], [MinimumThreshold], [ProductId], [Quantity], [Reserved], [UpdatedDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2026-01-06 23:26:56.378 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-06 23:26:56.379 +03:00 [INF] Executed action RuyaOptik.API.Controllers.InventoryController.Create (RuyaOptik.API) in 130.5011ms
+2026-01-06 23:26:56.379 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.InventoryController.Create (RuyaOptik.API)'
+2026-01-06 23:26:56.379 +03:00 [INF] HTTP POST /api/Inventory responded 200 in 136.6254 ms
+2026-01-06 23:26:56.379 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Tue, 06 Jan 2026 20:26:56 GMT
+Server: Kestrel
+Access-Control-Allow-Credentials: [Redacted]
+Access-Control-Allow-Origin: [Redacted]
+Transfer-Encoding: chunked
+2026-01-06 23:26:56.379 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/api/Inventory - 200 null application/json; charset=utf-8 138.0363ms
+2026-01-06 23:27:15.398 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/api/Order - application/json 293
+2026-01-06 23:27:15.398 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:27:15.399 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /api/Order
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 293
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:27:15.399 +03:00 [INF] Executing endpoint 'RuyaOptik.API.Controllers.OrderController.Create (RuyaOptik.API)'
+2026-01-06 23:27:15.399 +03:00 [INF] Route matched with {action = "Create", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(RuyaOptik.DTO.Order.OrderCreateDto) on controller RuyaOptik.API.Controllers.OrderController (RuyaOptik.API).
+2026-01-06 23:27:15.552 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[Color], [p].[CreatedDate], [p].[Description], [p].[DiscountedPrice], [p].[FrameType], [p].[IsActive], [p].[IsDeleted], [p].[LensType], [p].[ModelCode], [p].[Name], [p].[Price], [p].[UpdatedDate]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2026-01-06 23:27:15.619 +03:00 [INF] Executed DbCommand (65ms) [Parameters=[@__productId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[Id], [i].[CreatedDate], [i].[IsDeleted], [i].[Location], [i].[MinimumThreshold], [i].[ProductId], [i].[Quantity], [i].[Reserved], [i].[UpdatedDate]
+FROM [Inventories] AS [i]
+WHERE [i].[ProductId] = @__productId_0
+2026-01-06 23:27:15.784 +03:00 [INF] Executed DbCommand (59ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = DateTime2), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Int32), @p18='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p19='?' (DbType = DateTime2), @p20='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Inventories] SET [CreatedDate] = @p0, [IsDeleted] = @p1, [Location] = @p2, [MinimumThreshold] = @p3, [ProductId] = @p4, [Quantity] = @p5, [Reserved] = @p6, [UpdatedDate] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+INSERT INTO [Orders] ([AddressLine], [City], [CreatedDate], [CustomerName], [District], [IsDeleted], [PhoneNumber], [PostalCode], [Status], [TotalPrice], [UpdatedDate], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20);
+2026-01-06 23:27:15.839 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[@p21='?' (DbType = DateTime2), @p22='?' (DbType = Boolean), @p23='?' (DbType = Int32), @p24='?' (DbType = Int32), @p25='?' (DbType = Int32), @p26='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p27='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([CreatedDate], [IsDeleted], [OrderId], [ProductId], [Quantity], [UnitPrice], [UpdatedDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p21, @p22, @p23, @p24, @p25, @p26, @p27);
+2026-01-06 23:27:15.941 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedDate], [t].[IsDeleted], [t].[TotalPrice], [t].[UpdatedDate], [t].[UserId], [t0].[Id], [t0].[CartId], [t0].[CreatedDate], [t0].[IsDeleted], [t0].[ProductId], [t0].[Quantity], [t0].[UnitPrice], [t0].[UpdatedDate], [t0].[Id0], [t0].[Brand], [t0].[CategoryId], [t0].[Color], [t0].[CreatedDate0], [t0].[Description], [t0].[DiscountedPrice], [t0].[FrameType], [t0].[IsActive], [t0].[IsDeleted0], [t0].[LensType], [t0].[ModelCode], [t0].[Name], [t0].[Price], [t0].[UpdatedDate0]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedDate], [c].[IsDeleted], [c].[TotalPrice], [c].[UpdatedDate], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit)
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedDate], [c0].[IsDeleted], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [c0].[UpdatedDate], [p].[Id] AS [Id0], [p].[Brand], [p].[CategoryId], [p].[Color], [p].[CreatedDate] AS [CreatedDate0], [p].[Description], [p].[DiscountedPrice], [p].[FrameType], [p].[IsActive], [p].[IsDeleted] AS [IsDeleted0], [p].[LensType], [p].[ModelCode], [p].[Name], [p].[Price], [p].[UpdatedDate] AS [UpdatedDate0]
+    FROM [CartItems] AS [c0]
+    INNER JOIN [Products] AS [p] ON [c0].[ProductId] = [p].[Id]
+) AS [t0] ON [t].[Id] = [t0].[CartId]
+ORDER BY [t].[Id], [t0].[Id]
+2026-01-06 23:27:16.006 +03:00 [INF] Executing OkObjectResult, writing value of type 'RuyaOptik.DTO.Order.OrderDto'.
+2026-01-06 23:27:16.013 +03:00 [INF] Executed action RuyaOptik.API.Controllers.OrderController.Create (RuyaOptik.API) in 614.4112ms
+2026-01-06 23:27:16.014 +03:00 [INF] Executed endpoint 'RuyaOptik.API.Controllers.OrderController.Create (RuyaOptik.API)'
+2026-01-06 23:27:16.014 +03:00 [INF] HTTP POST /api/Order responded 200 in 614.7484 ms
+2026-01-06 23:27:16.014 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Tue, 06 Jan 2026 20:27:15 GMT
+Server: Kestrel
+Access-Control-Allow-Credentials: [Redacted]
+Access-Control-Allow-Origin: [Redacted]
+Transfer-Encoding: chunked
+2026-01-06 23:27:16.014 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/api/Order - 200 null application/json; charset=utf-8 616.2793ms
+2026-01-06 23:30:05.287 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/index.html - null null
+2026-01-06 23:30:05.287 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - null null
+2026-01-06 23:30:05.288 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/index.html - 200 null text/html;charset=utf-8 0.6989ms
+2026-01-06 23:30:05.293 +03:00 [INF] Sending file. Request path: '/signalr-admin-test.html'. Physical path: 'C:\Users\Hakan\Desktop\RuyaOptic\RuyaOptik.API\wwwroot\signalr-admin-test.html'
+2026-01-06 23:30:05.293 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/signalr-admin-test.html - 200 null text/html 5.6469ms
+2026-01-06 23:30:05.298 +03:00 [INF] Executed endpoint '/hubs/orders'
+2026-01-06 23:30:05.298 +03:00 [INF] HTTP GET /hubs/orders responded 101 in 754685.7056 ms
+2026-01-06 23:30:05.298 +03:00 [INF] The response could not be cached for this request.
+2026-01-06 23:30:05.298 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/hubs/orders?id=82UCWrAxWZY5NGxG_O9pFw&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjY1ZmU2ZDE4LWRmYWUtNDg5ZC1iY2RmLWE1NWQzNjk5NzFmYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdHJpbmciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc2Nzc4NDYyNSwiaXNzIjoicnV5YW9wdGlrLWFwaSIsImF1ZCI6InJ1eWFvcHRpay1jbGllbnQifQ.S0OTg5HrWRgiI9AQ7ckK1Lajy_IV1bncn9jNVsjDLLs - 101 null null 754688.8198ms
+2026-01-06 23:30:05.310 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-06 23:30:05.310 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.209ms
+2026-01-06 23:30:05.321 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5188/hubs/orders/negotiate?negotiateVersion=1 - null 0
+2026-01-06 23:30:05.321 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:30:05.321 +03:00 [INF] Request:
+Method: POST
+PathBase: 
+Path: /hubs/orders/negotiate
+Accept: */*
+Connection: keep-alive
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Cache-Control: max-age=0
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 0
+sec-ch-ua-platform: [Redacted]
+X-Requested-With: XMLHttpRequest
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+X-SignalR-User-Agent: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-01-06 23:30:05.321 +03:00 [INF] Executing endpoint '/hubs/orders/negotiate'
+2026-01-06 23:30:05.321 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-06 23:30:05.322 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.1459ms
+2026-01-06 23:30:05.322 +03:00 [INF] Executed endpoint '/hubs/orders/negotiate'
+2026-01-06 23:30:05.322 +03:00 [INF] HTTP POST /hubs/orders/negotiate responded 200 in 0.3604 ms
+2026-01-06 23:30:05.322 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json
+Date: Tue, 06 Jan 2026 20:30:05 GMT
+Server: Kestrel
+Access-Control-Allow-Credentials: [Redacted]
+Access-Control-Allow-Origin: [Redacted]
+Content-Length: 316
+2026-01-06 23:30:05.322 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5188/hubs/orders/negotiate?negotiateVersion=1 - 200 316 application/json 1.3515ms
+2026-01-06 23:30:05.330 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/hubs/orders?id=Nh52HFfRxlNGcU_1LR0ZrQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjY1ZmU2ZDE4LWRmYWUtNDg5ZC1iY2RmLWE1NWQzNjk5NzFmYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdHJpbmciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc2Nzc4NDYyNSwiaXNzIjoicnV5YW9wdGlrLWFwaSIsImF1ZCI6InJ1eWFvcHRpay1jbGllbnQifQ.S0OTg5HrWRgiI9AQ7ckK1Lajy_IV1bncn9jNVsjDLLs - null null
+2026-01-06 23:30:05.330 +03:00 [INF] CORS policy execution successful.
+2026-01-06 23:30:05.330 +03:00 [INF] Request:
+Method: GET
+PathBase: 
+Path: /hubs/orders
+Connection: Upgrade
+Host: localhost:5188
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-GB,en;q=0.9,tr;q=0.8,tr-TR;q=0.7,en-US;q=0.6
+Cache-Control: no-cache
+Origin: [Redacted]
+Pragma: [Redacted]
+Upgrade: websocket
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Key: [Redacted]
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2026-01-06 23:30:05.330 +03:00 [INF] Executing endpoint '/hubs/orders'
+2026-01-06 23:30:05.331 +03:00 [INF] Response:
+StatusCode: 101
+Connection: Upgrade
+Date: Tue, 06 Jan 2026 20:30:05 GMT
+Server: Kestrel
+Access-Control-Allow-Credentials: [Redacted]
+Access-Control-Allow-Origin: [Redacted]
+Upgrade: websocket
+Sec-WebSocket-Accept: [Redacted]
+2026-01-06 23:30:05.444 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - null null
+2026-01-06 23:30:05.450 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 6.5969ms
+2026-01-06 23:30:13.103 +03:00 [INF] Application is shutting down...
+2026-01-06 23:30:13.107 +03:00 [INF] Executed endpoint '/hubs/orders'
+2026-01-06 23:30:13.107 +03:00 [INF] HTTP GET /hubs/orders responded 101 in 7776.7778 ms
+2026-01-06 23:30:13.107 +03:00 [INF] The response could not be cached for this request.
+2026-01-06 23:30:13.107 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5188/hubs/orders?id=Nh52HFfRxlNGcU_1LR0ZrQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjY1ZmU2ZDE4LWRmYWUtNDg5ZC1iY2RmLWE1NWQzNjk5NzFmYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdHJpbmciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc2Nzc4NDYyNSwiaXNzIjoicnV5YW9wdGlrLWFwaSIsImF1ZCI6InJ1eWFvcHRpay1jbGllbnQifQ.S0OTg5HrWRgiI9AQ7ckK1Lajy_IV1bncn9jNVsjDLLs - 101 null null 7777.7716ms

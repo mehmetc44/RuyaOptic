@@ -1,0 +1,66 @@
+
+# --- IDE ve İşletim Sistemi ---
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.cache
+*.log
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# --- Build ve Derleme Çıktıları ---
+*/bin/
+*/obj/
+*.dll
+*.exe
+*.pdb
+
+# --- Veritabanı (SQLite - Sadece Local) ---
+*.db
+*.db-shm
+*.db-wal
+
+# --- Güvenlik ve Şifreler (ÇOK ÖNEMLİ) ---
+# Environment dosyaları (Şifrelerin burada, ASLA yükleme)
+.env
+.env.*
+!.env.example
+
+# Kullanıcı Secretları
+secrets.json
+*.secrets.json
+
+# SSL Sertifikaları (Oluşturduğumuz klasör)
+certs/
+*.pfx
+*.cer
+*.pem
+*.key
+
+# --- Konfigürasyon Dosyaları ---
+# Ana şablonu (appsettings.json) genelde tutarız, 
+# ama Development/Production ayarlarını sunucuya özel bırakırız.
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+# Eğer appsettings.json içinde şifre varsa onu da engellemek için başındaki # işaretini kaldır:
+# appsettings.json
+
+# --- Docker ---
+docker-compose.override.yml
+.dockerignore
+
+# --- Node/JS ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Test Sonuçları ---
+TestResults/
+*.trx
+coverage/

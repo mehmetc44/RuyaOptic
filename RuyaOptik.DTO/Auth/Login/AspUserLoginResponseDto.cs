@@ -1,0 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using RuyaOptik.DTO.Auth;
+namespace RuyaOptik.DTO.Auth
+{
+    public class AspUserLoginResponseDto
+    {
+        public string UserId { get; set; } = string.Empty;
+        public string UserName { get; set; } = string.Empty;
+        public TokenDto Token { get; set; } = new TokenDto();
+    }
+}
