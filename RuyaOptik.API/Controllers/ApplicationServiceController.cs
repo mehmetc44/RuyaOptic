@@ -20,6 +20,7 @@ namespace RuyaOptik.API.Controllers
             _mailService = mailService;
         }
         [HttpGet("authorize-definitions")]
+        [Authorize(Roles ="Admin")]
         [AuthorizeDefinition(Action=ActionType.Reading,Definition = "Adminin Erişebileceği Tanımlar",Menu=AuthorizeDefinitionConstants.Auth)]
         public async Task<IActionResult> GetAuthorizeDefinitions()
         {
