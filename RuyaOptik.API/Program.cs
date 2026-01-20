@@ -42,7 +42,6 @@ namespace RuyaOptik.API
                 app.UseHsts();
             }
 
-            // app.UseHttpsRedirection(); signalr test için kapalı
 
             app.UseStaticFiles();
 

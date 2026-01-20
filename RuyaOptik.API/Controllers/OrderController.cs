@@ -27,11 +27,10 @@ namespace RuyaOptik.API.Controllers
 
         // POST: api/order
         [HttpPost]
-        [Authorize(Roles = "Admin, User")]
         public async Task<IActionResult> Create([FromBody] OrderCreateDto dto)
         {
-            var result = await _orderService.CreateAsync(dto);
-
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            var result = await _orderService.CreateAsync(userId, dto);
             // Yeni sipariş geldi → admin paneline anlık bildirim
             var notification = new NewOrderNotificationDto
             {
@@ -51,7 +50,6 @@ namespace RuyaOptik.API.Controllers
 
         // GET: api/order/user/{userId}
         [HttpGet("user/{userId}")]
-        [Authorize(Roles = "Admin, User")]
         public async Task<IActionResult> GetByUser(string userId)
         {
             var orders = await _orderService.GetByUserIdAsync(userId);

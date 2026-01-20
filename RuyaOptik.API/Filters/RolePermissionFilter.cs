@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace RuyaOptik.API.Filters
 {
-    public class RolePermissionFilter : IAsyncActionFilter
+    public class RolePermissionFilter : IAsyncAuthorizationFilter
     {
 
         private readonly IUserService _userService;
@@ -17,28 +17,43 @@ namespace RuyaOptik.API.Filters
         {
             _userService = userService;
         }
-        public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+         public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
+    {
+        var user = context.HttpContext.User;
+
+
+        if (user?.Identity?.IsAuthenticated != true)
         {
-            var name = context.HttpContext.User.Identity?.Name;
-            if (!string.IsNullOrEmpty(name))
-            {
-                var descriptor = context.ActionDescriptor as ControllerActionDescriptor;
-                var attribute = descriptor.MethodInfo.GetCustomAttribute(typeof(AuthorizeDefinitionAttribute))
-                    as AuthorizeDefinitionAttribute;
-                var httpAttribute = descriptor.MethodInfo.GetCustomAttribute(typeof(HttpMethodAttribute))
-                    as HttpMethodAttribute;
+            context.Result = new UnauthorizedResult();
+            return;
+        }
 
-                var code = $"{(httpAttribute != null ? httpAttribute.HttpMethods.First() : 
-                    HttpMethods.Get)}.{attribute.Action}.{attribute.Definition.Replace(" ", "")}";
+        var name = user.Identity!.Name;
 
-                var hasRole = await _userService.HasRolePermissionToEndpointAsync(name,code);
-                if (!hasRole)
-                {
-                    context.Result = new UnauthorizedResult();
-                }else 
-                    await next();
-            }else 
-                await next();
+        var descriptor = context.ActionDescriptor as ControllerActionDescriptor;
+        if (descriptor == null) return;
+
+        var attribute = descriptor.MethodInfo
+            .GetCustomAttribute<AuthorizeDefinitionAttribute>();
+
+        if (attribute == null) return;
+
+        var httpAttribute = descriptor.MethodInfo
+            .GetCustomAttribute<HttpMethodAttribute>();
+
+        var code =
+            $"{(httpAttribute?.HttpMethods.First() ?? HttpMethods.Get)}." +
+            $"{attribute.Action}." +
+            $"{attribute.Definition.Replace(" ", "")}";
+
+        var hasRole =
+            await _userService.HasRolePermissionToEndpointAsync(name!, code);
+
+        if (!hasRole)
+        {
+            context.Result = new ForbidResult();
         }
     }
 }
+    }
+

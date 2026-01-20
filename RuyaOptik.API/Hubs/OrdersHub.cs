@@ -3,14 +3,13 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace RuyaOptik.API.Hubs
 {
-    [Authorize(Roles = "Admin")] // JWT ile bağlanmak zorunda
+    [Authorize(Roles = "Admin")]
     public class OrdersHub : Hub
     {
         public const string AdminGroup = "admins";
 
         public override async Task OnConnectedAsync()
         {
-            // Admin rolündeyse admin grubuna ekle
             if (Context.User?.IsInRole("Admin") == true)
                 await Groups.AddToGroupAsync(Context.ConnectionId, AdminGroup);
 

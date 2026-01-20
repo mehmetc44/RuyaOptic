@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text;
 using Microsoft.Extensions.Configuration;
+using RuyaOptik.DataAccess.Configurations;
+
 using Microsoft.IdentityModel.Tokens;
 using RuyaOptik.Business.Interfaces;
 using RuyaOptik.DTO.Auth;
@@ -22,12 +24,12 @@ namespace RuyaOptik.Business.Services
         public TokenDto CreateAccessToken(int minute, List<Claim> claims)
         {
             TokenDto token = new TokenDto();
-            SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(AppConfiguration.jwtKey));
             SigningCredentials credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             token.Expiration = DateTime.Now.AddMinutes(minute);
             JwtSecurityToken jwtToken = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Audience"],
+                issuer: AppConfiguration.issuer,
+                audience: AppConfiguration.audience,
                 expires: token.Expiration,
                 signingCredentials: credentials,
                 claims: claims

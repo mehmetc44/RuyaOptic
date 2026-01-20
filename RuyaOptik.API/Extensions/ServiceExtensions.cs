@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using RuyaOptik.Entity.Identity;
-using RuyaOptik.DataAccess.Repositories.Configuration;
+using RuyaOptik.DataAccess.Configurations;
 using RuyaOptik.Business.Interfaces;
 using RuyaOptik.Business.Services;
 using RuyaOptik.DataAccess.Repositories.Concrete;
@@ -105,10 +105,10 @@ namespace RuyaOptik.API.Extensions
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = configuration["Jwt:Issuer"],
-                    ValidAudience = configuration["Jwt:Audience"],
+                    ValidIssuer = AppConfiguration.issuer,
+                    ValidAudience = AppConfiguration.audience,
                     IssuerSigningKey = new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(configuration["Jwt:Key"] ?? "")
+                        Encoding.UTF8.GetBytes(AppConfiguration.jwtKey)
                     ),
                     ClockSkew = TimeSpan.Zero, // token süresi bitince tolerans olmasın
 

@@ -32,7 +32,6 @@ namespace RuyaOptik.API.Controllers
 
         // POST: api/inventory
         [HttpPost]
-        [Authorize(Roles = "Admin")]
         [AuthorizeDefinition(Action = ActionType.Writing, Definition = "Envanter Oluştur", Menu = AuthorizeDefinitionConstants.Inventory)]
         public async Task<IActionResult> Create([FromBody] InventoryCreateDto dto)
         {
@@ -46,7 +45,6 @@ namespace RuyaOptik.API.Controllers
 
         // PUT: api/inventory/5
         [HttpPut("{id:int}")]
-        [Authorize(Roles = "Admin")]
         [AuthorizeDefinition(Action = ActionType.Updating, Definition = "Envanter Güncelle", Menu = AuthorizeDefinitionConstants.Inventory)]
         public async Task<IActionResult> Update(int id, [FromBody] InventoryUpdateDto dto)
         {
